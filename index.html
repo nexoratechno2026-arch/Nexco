@@ -1,0 +1,2784 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth overflow-x-hidden w-full max-w-[100vw]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Nexco — 100% Live Online Tech &amp; Career Accelerator | Joint Collaboration of Nexora Techno &amp; Gencode</title>
+  
+  <meta name="description" content="Nexco is an official joint venture by Nexora Techno and Gencode. Premier 100% Live Online Tech &amp; Career Accelerator with bilingual Tamil &amp; English mentorship. Registered Headquarters: 15/2, Sankar Nagar, Salem-7." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0D0E',
+            charcoal: '#12171A',
+            emeraldBrand: '#10B981',
+            mintBrand: '#22C55E',
+            forestGlass: '#064E3B'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS System -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-[#0A0D0E] text-slate-100 font-sans antialiased overflow-x-hidden w-full max-w-[100vw] min-h-screen relative selection:bg-emerald-500 selection:text-black">
+
+  <!-- ========================================================================= -->
+  <!-- PORTAL VIEW 1: DYNAMIC PUBLIC WEBSITE (100% Live Online Interactive) -->
+  <!-- ========================================================================= -->
+  <div id="view-landing-page" class="transition-opacity duration-300 w-full overflow-x-hidden">
+
+    <!-- 1 & 2. PERMANENT FIXED SITE HEADER (Top Announcement + Floating Glassmorphic Navbar) -->
+    <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-[9995] w-full box-border">
+      <!-- 1. LIVE TOP ANNOUNCEMENT BANNER (Compact Single-Line on Mobile, Managed via CMS) -->
+      <div id="top-live-announcement-bar" class="w-full bg-emerald-950/95 border-b border-emerald-500/25 py-2 px-3 text-[11px] sm:text-xs text-emerald-300 relative">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 overflow-hidden truncate">
+            <span id="top-ann-badge" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-[10px] uppercase tracking-wider shrink-0 animate-pulse">🟢 100% LIVE ONLINE</span>
+            <span id="top-ann-text" class="font-medium text-emerald-200 truncate">Founding Batch Admissions Open | 100% Live Interactive Online Classes | Nexora Techno × Gencode</span>
+          </div>
+          <a id="top-ann-cta" href="#workshops" class="inline-flex items-center gap-1 font-bold text-white hover:text-emerald-400 underline transition-colors shrink-0 whitespace-nowrap text-[11px]">
+            Free Masterclass ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. FLOATING GLASSMORPHIC NAVBAR (Mobile Crushing Fixed) -->
+      <div class="mx-auto max-w-7xl px-3 sm:px-4 mt-2 sm:mt-2.5 w-full box-border">
+        <div class="navbar-pill flex items-center justify-between bg-[#181C1E]/90 backdrop-blur-xl border border-white/15 rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-2xl">
+          
+          <!-- Left: Nexco Logo + Collaboration Pill -->
+          <a href="#hero" class="flex items-center gap-2 sm:gap-2.5 text-base sm:text-xl font-bold text-white shrink-0 group">
+            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5 shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+              <img src="assets/logo.png" alt="Nexco Logo" class="w-full h-full object-contain" />
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5 leading-none">
+                <span class="tracking-tight text-white font-extrabold text-sm sm:text-base">Nexco</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              </div>
+              <span class="brand-subtitle desktop-only text-[9px] font-mono text-emerald-400 tracking-wider font-semibold">Nexora Techno × Gencode</span>
+            </div>
+          </a>
+
+          <!-- Center Navigation Links (Desktop: min-width: 992px) -->
+          <nav class="nav-center navbar-links desktop-only items-center gap-1 sm:gap-1.5 text-xs font-semibold text-slate-300">
+            <a href="#programs" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors">Programs ▾</a>
+            <a href="#impact" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors flex items-center gap-1.5">
+              <span>Founding Batch</span>
+              <span class="bg-[#22C55E] text-black text-[10px] font-extrabold px-1.5 py-0.2 rounded-full leading-tight">100% ONLINE</span>
+            </a>
+            <a href="#workshops" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors">Free Masterclasses</a>
+            <a href="#charter" class="px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors">The Nexco Charter</a>
+            <a href="#salem-hub" class="nav-link-salem px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors">Registered HQ</a>
+          </nav>
+
+          <!-- Right Action Controls -->
+          <div class="flex items-center gap-2 shrink-0" id="nav-actions">
+            
+            <!-- State A: Logged Out Actions -->
+            <div id="nav-logged-out-actions" class="desktop-only flex items-center gap-2">
+              <button id="nav-login-btn" class="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-semibold border border-white/15 transition-all">
+                Login / Sign Up
+              </button>
+              <a id="nav-masterclass-btn" href="#workshops" class="btn-shimmer px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#22C55E] hover:bg-[#16A34A] text-black font-extrabold text-xs shadow-lg shadow-emerald-500/25 transition-all flex items-center gap-1.5">
+                <span>Join Masterclass</span>
+                <span>↗</span>
+              </a>
+            </div>
+
+            <!-- State B: Logged In User Controls -->
+            <div id="nav-user-controls" class="hidden items-center gap-2 sm:gap-3">
+              <!-- Notification Bell: Visible on both mobile and desktop -->
+              <div class="relative" id="nav-notif-wrapper">
+                <button id="nav-notif-btn" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 transition-colors relative" title="Notifications">
+                  <span class="text-sm">🔔</span>
+                  <span id="nav-notif-badge" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-extrabold flex items-center justify-center">0</span>
+                </button>
+                
+                <div id="nav-notif-popover" class="hidden notification-popover absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-[#12171A] border border-white/15 shadow-2xl overflow-hidden text-xs z-50">
+                  <div class="p-3.5 bg-black/60 border-b border-white/10 flex items-center justify-between">
+                    <span class="font-bold text-white flex items-center gap-1.5"><span>🔔</span> Notifications</span>
+                    <button id="nav-notif-read-all" class="text-[11px] text-emerald-400 hover:underline">Mark all as read</button>
+                  </div>
+                  <div id="nav-notif-list" class="max-h-72 overflow-y-auto divide-y divide-white/5 p-2 space-y-1"></div>
+                </div>
+              </div>
+
+              <!-- Container for dynamic auth buttons: LearnHub LMS / Admin Center / Preview LMS -->
+              <div id="nav-dynamic-auth-buttons" class="desktop-only flex items-center gap-2"></div>
+
+              <!-- User Name & Logout (Desktop Only) -->
+              <div class="desktop-only flex items-center gap-2 pl-2 border-l border-white/15" id="nav-user-profile-group">
+                <span id="nav-user-name" class="text-xs font-semibold text-white hidden sm:inline truncate max-w-[110px]">Student</span>
+                <button id="nav-logout-btn" class="text-xs text-slate-400 hover:text-red-400 font-medium transition-colors" title="Log Out">Log Out</button>
+              </div>
+            </div>
+
+            <!-- Mobile Menu Hamburger Button (visible on < lg) -->
+            <button id="mobile-menu-toggle" class="mobile-menu-btn lg:hidden p-2 rounded-xl bg-white/10 text-slate-200 border border-white/10 hover:text-white shrink-0" aria-label="Toggle Navigation">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Mobile Drawer for Mobile Viewports (< lg) -->
+        <div id="mobile-menu-drawer" class="mobile-drawer hidden lg:hidden mt-2 p-4 rounded-2xl bg-[#181C1E]/98 backdrop-blur-xl border border-white/15 space-y-3 text-xs shadow-2xl">
+          <div class="flex justify-between items-center pb-2 border-b border-white/10">
+            <span class="text-xs font-bold text-emerald-400">Navigation Menu</span>
+            <button id="mobile-menu-close" class="text-slate-400 hover:text-white text-xs">✕ Close</button>
+          </div>
+          
+          <a href="#hero" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Home</a>
+          <a href="#programs" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Programs</a>
+          <a href="#impact" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Founding Batch (100% Online)</a>
+          <a href="#workshops" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Free Masterclasses</a>
+          <a href="#diagnostic" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Diagnostic Engine</a>
+          <a href="#charter" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">The Nexco Charter</a>
+          <a href="#feedback" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Attendee Feedback</a>
+          <a href="#salem-hub" class="block py-2 text-slate-200 hover:text-emerald-400 font-semibold mobile-nav-link">Registered HQ</a>
+
+          <!-- State A: Mobile Logged Out Controls -->
+          <div id="mobile-logged-out-actions" class="pt-3 border-t border-white/10 flex flex-col gap-2.5">
+            <button id="mobile-login-btn" class="w-full py-3 text-center rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors">
+              Login / Sign Up
+            </button>
+            <a id="mobile-masterclass-btn" href="#workshops" class="w-full py-3 text-center rounded-xl bg-[#22C55E] hover:bg-[#16A34A] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-1.5 btn-shimmer shadow-lg shadow-emerald-500/25">
+              <span>Join Free Masterclass ↗</span>
+            </a>
+            <a href="https://wa.me/919345121988?text=Vanakkam%20Nexco!%20I%20am%20interested%20in%20100%25%20Live%20Online%20batches." target="_blank" class="w-full py-3 text-center rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-bold text-xs flex items-center justify-center gap-1.5">
+              <span>💬 Chat on WhatsApp (+91 93451 21988)</span>
+            </a>
+          </div>
+
+          <!-- State B: Mobile Logged In User Controls -->
+          <div id="mobile-user-controls" class="hidden pt-3 border-t border-white/10 flex flex-col gap-2.5">
+            <div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-black/40 border border-white/5">
+              <span class="text-slate-400 text-[11px]">Logged in as:</span>
+              <span id="mobile-user-name" class="font-bold text-white text-xs truncate max-w-[150px]">Student</span>
+            </div>
+            <button id="mobile-lms-btn" class="w-full py-3 text-center rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center justify-center gap-2 btn-shimmer">
+              <span>🎓 Launch Student LearnHub LMS</span>
+            </button>
+            <button id="mobile-admin-btn" class="admin-portal-trigger hidden w-full py-3 text-center rounded-xl bg-red-500/20 border border-red-500/40 text-red-300 font-bold text-xs flex items-center justify-center gap-2">
+              <span>⚡ Open Admin Command Center</span>
+            </button>
+            <button id="mobile-logout-btn" class="w-full py-2.5 text-center rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-300 font-semibold text-xs transition-colors">
+              Log Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: HERO (Full-Bleed Background + 2-Column Split + 100% Online Copy) -->
+    <section id="hero" class="relative min-h-[85vh] flex items-center overflow-hidden bg-[#0A0D0E] pt-4 sm:pt-6 pb-14 sm:pb-16 tech-grid-bg">
+      
+      <!-- Aurora Floating Mesh Glow Orbs -->
+      <div class="aurora-orb-1 -top-24 -left-24 pointer-events-none"></div>
+      <div class="aurora-orb-2 top-1/4 -right-24 pointer-events-none"></div>
+
+      <!-- Full-Bleed Background Mentor Image with Gradient Overlay -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-35 md:opacity-45" 
+           style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=85'); background-position: 45% 25%;">
+      </div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-[#0A0D0E] via-[#0A0D0E]/90 to-[#0A0D0E]/70 md:via-[#0A0D0E]/80"></div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0A0D0E] via-transparent to-black/30"></div>
+
+      <!-- Main Responsive 2-Column Container -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 py-6 sm:py-8 lg:py-14">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Column (lg:col-span-7) -->
+          <div class="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-6 reveal-left">
+            
+            <!-- Sleek Glowing Pill Collaboration Badge -->
+            <div id="hero-collaboration-badge" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 text-xs font-semibold backdrop-blur-md w-fit shadow-lg shadow-emerald-500/15">
+              <span>🤝</span>
+              <span class="font-bold">An Official Collaboration of Nexora Techno &amp; Gencode</span>
+            </div>
+
+            <!-- Regional Salem Registered HQ Badge (Strictly 100% Live Online) -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs w-fit">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 radar-online"></span>
+              <span>📍 Registered HQ: Salem, TN • 100% Live Online Interactive Batches • Bilingual Tamil &amp; English</span>
+            </div>
+
+            <h1 id="hero-display-headline" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Become the Professional the <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-300 glow-text-emerald">
+                Future of Technology Demands.
+              </span>
+            </h1>
+
+            <p id="hero-display-subheadline" class="text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl leading-relaxed">
+              Tamil Nadu's premier 100% Live Online Tech &amp; Career Accelerator — powered by the unified engineering collaboration of <strong>Nexora Techno &amp; Gencode</strong>. Master Full Stack Web Development, UI/UX Design, and AI Tools through intensive live interactive coding sessions, bilingual Tamil &amp; English mentorship, and real production projects.
+            </p>
+
+            <!-- Dual Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a id="hero-cta-explore" href="#programs" 
+                 class="btn-shimmer px-6 py-3.5 rounded-full bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 text-slate-950 text-xs sm:text-sm font-extrabold shadow-xl shadow-emerald-500/30 transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
+                <span>Explore Flagship Programs</span>
+                <span class="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center text-xs font-bold">↗</span>
+              </a>
+
+              <a id="hero-cta-masterclass" href="#workshops" 
+                 class="px-5 py-3.5 rounded-full bg-black/60 hover:bg-black/80 text-white text-xs sm:text-sm font-semibold border border-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-red-500 radar-live"></span>
+                <span>Join Free Live Masterclass ▷</span>
+              </a>
+            </div>
+
+            <!-- Honest Trust Points (Zero Fake Placement Claims) -->
+            <div class="pt-4 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span>100% Live Interactive Online Classes with Screen-Share Reviews</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span>Bilingual Tamil &amp; English Guidance from Practicing Engineers</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column (lg:col-span-5): Lead Inquiry Card -->
+          <div class="lg:col-span-5 flex items-center reveal-right delay-200">
+            <div class="w-full relative rounded-2xl p-5 sm:p-7 glass-panel-dark border border-white/15 shadow-2xl backdrop-blur-xl card-3d-hover">
+              
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-3 border border-emerald-500/20">
+                <span>Free 1-on-1 Counseling (No Fees)</span>
+              </div>
+
+              <h3 id="hero-form-title" class="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug">
+                Get Personalized Course Plan from Our Team
+              </h3>
+              <p id="hero-form-sub" class="text-xs text-slate-400 mt-1 mb-4">
+                Speak directly with an engineering mentor online in &lt; 15 mins.
+              </p>
+
+              <!-- Real-time Lead Form -->
+              <form id="hero-lead-form" class="space-y-3">
+                <input type="text" name="website_url" id="hero-lead-honeypot" tabindex="-1" autocomplete="off" class="hidden pointer-events-none opacity-0 absolute -z-50" aria-hidden="true" />
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+                  <input id="hero-lead-name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+                  <input id="hero-lead-email" type="email" required placeholder="dinesh@gmail.com" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp / Mobile Number (+91) *</label>
+                  <input id="hero-lead-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City *</label>
+                  <input id="hero-lead-city" type="text" required placeholder="e.g. Sona College of Tech / Salem / Coimbatore" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Interested 100% Live Online Track</label>
+                  <select id="hero-lead-track" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
+                    <option value="Full Stack Web Development (MERN & Python)">Full Stack Web Development (MERN &amp; Python)</option>
+                    <option value="UI/UX Design & Product Prototyping">UI/UX Design &amp; Product Prototyping</option>
+                    <option value="AI Tools, Prompt Engineering & Automation">AI Tools, Prompt Engineering &amp; Automation</option>
+                    <option value="Data Science & Analytics Accelerator">Data Science &amp; Analytics Accelerator</option>
+                  </select>
+                </div>
+
+                <button id="hero-lead-submit" type="submit" 
+                        class="btn-shimmer w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-emerald-500/30 transition-all duration-300 mt-2 flex items-center justify-center gap-1.5">
+                  <span>Talk to an Expert (Free)</span>
+                  <span class="text-sm">↗</span>
+                </button>
+
+                <p class="text-[10px] text-slate-400 text-center mt-2">
+                  🔒 Zero payment required. Counseling-led admissions for 100% Live Online batches.
+                </p>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Continuous Infinite Marquee Ticker Strip (Non-crushing Horizontal Ticker) -->
+      <div class="absolute bottom-0 inset-x-0 z-10 marquee-wrapper ticker-wrap">
+        <div class="marquee-track ticker-track">
+          <div class="marquee-item ticker-item">
+            <span>100% Live Interactive Online Classes</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Official Collaboration of Nexora Techno &amp; Gencode</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Hands-On Real-World Projects</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Bilingual Mentor Support in Tamil &amp; English</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Direct Live Screen-Share Code Reviews</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Registered HQ: 15/2 Sankar Nagar, Salem-7</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <!-- Duplicate set for seamless continuous loop -->
+          <div class="marquee-item ticker-item">
+            <span>100% Live Interactive Online Classes</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Official Collaboration of Nexora Techno &amp; Gencode</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Hands-On Real-World Projects</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Bilingual Mentor Support in Tamil &amp; English</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Direct Live Screen-Share Code Reviews</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+          <div class="marquee-item ticker-item">
+            <span>Registered HQ: 15/2 Sankar Nagar, Salem-7</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: PROMOTIONAL INDEX BANNER (Collaboration Launch Banner - CMS Managed) -->
+    <section id="promo-banner" class="relative py-10 bg-gradient-to-r from-emerald-950/70 via-[#12171A] to-emerald-950/70 border-y border-emerald-500/30 overflow-hidden tech-grid-bg">
+      <div class="aurora-orb-2 -top-20 -right-20 pointer-events-none opacity-40"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 reveal-up">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 radar-online"></span>
+              <span id="promo-banner-badge">Joint Venture Launch</span>
+            </div>
+            <h3 id="promo-banner-title" class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              Founding Online Cohort Admissions Open — Build Real Projects with Industry Mentors
+            </h3>
+            <p id="promo-banner-sub" class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+              Join the inaugural cohort jointly delivered by <strong>Nexora Techno &amp; Gencode</strong>. Strict 30-seat cap per track. Zero fake job promises — only rigorous engineering, verified GitHub portfolios, and direct bilingual mentorship.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 shrink-0">
+            <a href="#hero" class="btn-shimmer px-5 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-emerald-500/20 transition-all">
+              Apply for Founding Seat ↗
+            </a>
+            <a href="https://wa.me/919345121988?text=Vanakkam%20Nexco!%20I%20want%20to%20know%20about%20the%20Founding%20Batch%20admissions." target="_blank" class="px-5 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/20 transition-all flex items-center gap-1.5">
+              <span>💬 WhatsApp a Mentor</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LIVE & UPCOMING MASTERCLASSES / WORKSHOPS -->
+    <section id="workshops" class="py-20 bg-[#0E1317] border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-up">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 mb-3">
+              <span class="w-2 h-2 rounded-full bg-red-500 radar-live"></span>
+              <span>100% Live Online Events</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
+              Live &amp; Upcoming Masterclasses
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2 max-w-xl leading-relaxed">
+              Attend live weekend interactive sessions via Google Meet. Build real systems alongside Staff Engineers in Tamil &amp; English.
+            </p>
+          </div>
+          
+          <div class="flex items-center gap-3 text-xs">
+            <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-emerald-300 font-mono">
+              100% Free • No Payment Required
+            </span>
+          </div>
+        </div>
+
+        <!-- Dynamic Sessions Container -->
+        <div id="workshops-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by js/landing.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BENTO GRID (100% Online Delivery Architecture - CMS Managed) -->
+    <section id="impact" class="py-20 bg-[#F8FAFC] text-slate-900 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal-up">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200">
+            Regional Impact
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mt-3 mb-3">
+            Learn Skills to Future-Proof Your Career
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            100% Live Online learning tailored for engineering students and working professionals in Salem, Rasipuram, Namakkal, and Pan-India.
+          </p>
+        </div>
+
+        <!-- Strict 3-Column Responsive Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto items-stretch">
+          
+          <!-- Card 1: 100% Live Online Interactive Sessions -->
+          <div class="reveal-scale card-3d-hover delay-100 rounded-2xl relative overflow-hidden shadow-xl min-h-[420px] flex flex-col justify-end group border border-slate-200">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                 alt="Nexco Staff Architect & Mentor" 
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+            <div class="relative z-10 p-5">
+              <div class="p-4 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 shadow-xl border border-white/50">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">1-on-1 Guidance</span>
+                  <span class="text-emerald-700 text-xs font-bold">100% Live Online</span>
+                </div>
+                <h4 id="bento-card1-title" class="text-sm font-bold text-slate-900 mt-1 leading-snug">
+                  100% Live Online Interactive Sessions
+                </h4>
+                <p id="bento-card1-desc" class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                  Learn from anywhere with live interactive code-alongs and real-time mentor Q&amp;A in Tamil &amp; English.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Hands-On Real-World Project Building -->
+          <div class="reveal-scale card-3d-hover delay-200 rounded-2xl p-6 sm:p-7 bg-white border border-slate-200 shadow-xl flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+                  🚀 Founding Cohort #1
+                </span>
+                <span class="text-xs font-mono font-bold text-emerald-700">100% Online</span>
+              </div>
+
+              <h3 id="bento-card2-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-4 leading-snug">
+                Hands-On Real-World Project Building
+              </h3>
+              <p id="bento-card2-desc" class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Founding Batch Admissions Open. Build verified production microservices, full stack apps, and AI tools with zero fake marketing.
+              </p>
+
+              <div class="grid grid-cols-2 gap-3.5 mt-5">
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-2xl font-extrabold text-slate-900 tracking-tight">30</div>
+                  <div class="text-[11px] font-medium text-slate-500 mt-0.5">Seats per Track</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <div class="text-2xl font-extrabold text-emerald-600 tracking-tight">100%</div>
+                  <div class="text-[11px] font-medium text-slate-500 mt-0.5">Practical Coding</div>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 rounded-xl bg-emerald-50/70 border border-emerald-100">
+                <div class="flex items-center justify-between text-xs font-bold text-slate-700 mb-2">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Founding Batch Registration</span>
+                  </span>
+                  <span class="text-emerald-700 font-mono font-extrabold">Seats Filling</span>
+                </div>
+                <div class="w-full bg-emerald-200/60 rounded-full h-2.5 overflow-hidden">
+                  <div class="bg-gradient-to-r from-emerald-500 to-green-500 h-2.5 rounded-full" style="width: 62%;"></div>
+                </div>
+                <div class="text-[11px] text-slate-600 mt-2 font-medium">Bilingual Tamil &amp; English interactive online batches.</div>
+              </div>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+              <span>Direct 1-on-1 Code Reviews</span>
+              <span class="text-emerald-600 font-bold">100% Live Online Interactive Classes</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Direct 1-on-1 Live Screen-Share Code & Design Reviews -->
+          <div class="flex flex-col gap-5 justify-between">
+            
+            <!-- Top Neon-Green Card (#22C55E Background) -->
+            <div class="reveal-scale card-3d-hover delay-300 rounded-2xl p-6 bg-[#22C55E] text-slate-950 shadow-xl flex-1 flex flex-col justify-between">
+              <div>
+                <span class="px-2.5 py-0.5 rounded-full bg-black/15 text-slate-950 text-[10px] font-bold uppercase tracking-wider">
+                  Zero to One Bridge
+                </span>
+                <h4 id="bento-card3-title" class="text-lg sm:text-xl font-extrabold tracking-tight mt-2.5 leading-snug">
+                  Direct 1-on-1 Live Screen-Share Code &amp; Design Reviews
+                </h4>
+                <p id="bento-card3-desc" class="text-xs text-slate-900/90 mt-1.5 leading-relaxed font-medium">
+                  Personalized code reviews, architectural whiteboarding, and bilingual Tamil &amp; English guidance from senior engineers.
+                </p>
+              </div>
+              <a href="#diagnostic" class="mt-4 inline-flex items-center gap-1 text-xs font-extrabold text-slate-950 hover:underline">
+                <span>View Beginner Curriculum →</span>
+              </a>
+            </div>
+
+            <!-- Bottom Dark Card (#12171A Background) -->
+            <div class="reveal-scale card-3d-hover delay-400 rounded-2xl p-6 bg-[#12171A] text-white border border-white/10 shadow-xl flex-1 flex flex-col justify-between">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-emerald-400">
+                  Career Proof
+                </span>
+                <h4 class="text-base font-bold text-white mt-2">Dedicated Career &amp; Portfolio Proof</h4>
+                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  Deploy 8+ production apps to your GitHub portfolio. Get 1-on-1 mock interview preparation and resume reviews.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 mt-3.5">
+                  <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-slate-300">Live Deployments</span>
+                  <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-slate-300">GitHub Verified</span>
+                  <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-slate-300">Bilingual Prep</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: FLAGSHIP PROGRAMS -->
+    <section id="programs" class="py-20 bg-[#0A0D0E] text-white border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 mb-3">
+            <span>🤝 Joint Engineering Curriculum</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-3">
+            Flagship Engineering Programs
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Every program is jointly designed and certified by <strong>Nexora Techno &amp; Gencode</strong>. Master modern systems with bilingual mentorship and real deployment pipelines — delivered 100% Live Online.
+          </p>
+
+          <!-- Filter Pills -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mt-8 reveal-up delay-100">
+            <button data-filter="all" class="course-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-emerald-500 text-black">
+              All Tracks
+            </button>
+            <button data-filter="fullstack" class="course-filter-btn px-4 py-2 rounded-full text-xs font-medium text-slate-400 bg-slate-900/60 hover:text-white transition-all">
+              Full Stack (MERN &amp; Python)
+            </button>
+            <button data-filter="uiux" class="course-filter-btn px-4 py-2 rounded-full text-xs font-medium text-slate-400 bg-slate-900/60 hover:text-white transition-all">
+              UI/UX &amp; Prototyping
+            </button>
+            <button data-filter="ai" class="course-filter-btn px-4 py-2 rounded-full text-xs font-medium text-slate-400 bg-slate-900/60 hover:text-white transition-all">
+              AI Tools &amp; Automation
+            </button>
+            <button data-filter="datascience" class="course-filter-btn px-4 py-2 rounded-full text-xs font-medium text-slate-400 bg-slate-900/60 hover:text-white transition-all">
+              Data Science
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Courses Grid -->
+        <div id="courses-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered dynamically by js/landing.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: DIAGNOSTIC CONFIGURATOR -->
+    <section id="diagnostic" class="py-20 bg-[#F8FAFC] text-slate-900 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal-up">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200">
+            Interactive Diagnostic Engine
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mt-3 mb-3">
+            Your situation is probably on this list.
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Select your background below. Our diagnostic engine tailors an exact execution roadmap for 100% Live Online interactive batches.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left Column (lg:col-span-5): 4 Selectable Radio Options -->
+          <div class="lg:col-span-5 space-y-3.5 reveal-left">
+            <div data-situation="career-transition" class="diagnostic-radio-card radio-card-active p-4 sm:p-5 rounded-2xl bg-white border-2 border-emerald-500 cursor-pointer transition-all shadow-sm flex items-start gap-3.5 card-3d-hover">
+              <div class="w-5 h-5 rounded-full border-2 border-emerald-500 p-0.5 flex items-center justify-center mt-0.5 shrink-0">
+                <div class="radio-dot w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">I want a career transition</h4>
+                <p class="text-xs text-slate-600 mt-1">Switching from non-tech, QA, support or another domain into software engineering.</p>
+              </div>
+            </div>
+
+            <div data-situation="fresh-graduate" class="diagnostic-radio-card p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer transition-all shadow-sm flex items-start gap-3.5 card-3d-hover">
+              <div class="w-5 h-5 rounded-full border-2 border-slate-300 p-0.5 flex items-center justify-center mt-0.5 shrink-0">
+                <div class="radio-dot w-2.5 h-2.5 rounded-full"></div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">I am a final-year student / fresh graduate</h4>
+                <p class="text-xs text-slate-600 mt-1">Looking for my first high-paying tech role, bypassing low-tier mass service IT companies.</p>
+              </div>
+            </div>
+
+            <div data-situation="upskill-ai" class="diagnostic-radio-card p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer transition-all shadow-sm flex items-start gap-3.5 card-3d-hover">
+              <div class="w-5 h-5 rounded-full border-2 border-slate-300 p-0.5 flex items-center justify-center mt-0.5 shrink-0">
+                <div class="radio-dot w-2.5 h-2.5 rounded-full"></div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">I want to upskill in AI &amp; Modern Tech</h4>
+                <p class="text-xs text-slate-600 mt-1">Stuck in legacy stack; aiming for modern AI copilot &amp; automation skills.</p>
+              </div>
+            </div>
+
+            <div data-situation="build-saas" class="diagnostic-radio-card p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 cursor-pointer transition-all shadow-sm flex items-start gap-3.5 card-3d-hover">
+              <div class="w-5 h-5 rounded-full border-2 border-slate-300 p-0.5 flex items-center justify-center mt-0.5 shrink-0">
+                <div class="radio-dot w-2.5 h-2.5 rounded-full"></div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">I want to build real-world SaaS products</h4>
+                <p class="text-xs text-slate-600 mt-1">Learn end-to-end design, UI/UX prototyping, and modern production architectures.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (lg:col-span-7): Recommendation Card -->
+          <div class="lg:col-span-7 reveal-right delay-200">
+            <div class="rounded-2xl p-6 sm:p-8 bg-[#12171A] text-white border border-white/10 shadow-2xl relative space-y-5 card-3d-hover">
+              
+              <div class="flex items-center justify-between">
+                <span id="diag-situation-badge" class="px-2.5 py-1 rounded-md bg-white/10 text-emerald-400 text-xs font-semibold">
+                  100% Live Online Interactive Batch
+                </span>
+                <span id="diag-match-badge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-extrabold font-mono border border-emerald-500/30">
+                  98% Match
+                </span>
+              </div>
+
+              <div>
+                <h3 id="diag-track-title" class="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug">
+                  Full Stack Web Development (MERN &amp; Python)
+                </h3>
+                <p class="text-xs text-slate-400 mt-1">Curriculum curated by Nexora Techno &amp; Gencode staff engineers.</p>
+              </div>
+
+              <div>
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">What Your Custom Plan Includes:</h5>
+                <ul id="diag-highlights-list" class="space-y-2"></ul>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 p-4 rounded-xl bg-black/40 border border-white/5 text-xs">
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-semibold">Time Investment</div>
+                  <div id="diag-time-investment" class="font-bold text-white mt-0.5">15-18 hrs/week</div>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-semibold">Target Outcome</div>
+                  <div id="diag-projected-hike" class="font-bold text-emerald-400 mt-0.5">Full Stack SDE Role</div>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-400 uppercase font-semibold">Cohort Duration</div>
+                  <div id="diag-duration" class="font-bold text-white mt-0.5">24 Weeks</div>
+                </div>
+              </div>
+
+              <!-- Full-width touch-friendly buttons on mobile -->
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3 border-t border-white/10">
+                <button id="diagnostic-plan-cta" onclick="NexcoLanding.openCounselingModal('fs-mern-python')" 
+                        class="btn-shimmer w-full sm:flex-1 py-3.5 px-5 rounded-full bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-emerald-500/25 transition-all text-center flex items-center justify-center gap-1.5">
+                  <span>Get Personalized Roadmap ↗</span>
+                </button>
+                <a href="https://wa.me/919345121988?text=Vanakkam%20Nexco!%20I%20completed%20the%20diagnostic%20test%20and%20want%20to%20review%20my%20roadmap." target="_blank" 
+                   class="w-full sm:w-auto py-3.5 px-5 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-xs border border-white/15 transition-all flex items-center justify-center gap-1.5 text-center">
+                  <span>💬 Discuss on WhatsApp</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Unlock Your Syllabus & Roadmap Form Banner -->
+        <div class="mt-12 rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-slate-900 via-[#12171A] to-slate-900 text-white border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 reveal-up">
+          <div class="max-w-xl">
+            <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              Download Full 2026 Curriculum Guide
+            </span>
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white mt-2">
+              Unlock Your Detailed Syllabus &amp; Project Specifications
+            </h3>
+            <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              Get weekly breakdown, interview problem sets, capstone specifications, and live screen-share code review criteria sent straight to your WhatsApp or Email.
+            </p>
+          </div>
+
+          <form id="syllabus-unlock-form" class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2.5 shrink-0">
+            <input id="syllabus-unlock-contact" type="text" required placeholder="Enter Email or WhatsApp" 
+                   class="w-full sm:w-72 px-4 py-3 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+            <button type="submit" class="btn-shimmer w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md flex items-center justify-center gap-1.5 shrink-0">
+              <span>Download Brochure ↓</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: REAL CAPSTONE DEMOS & LAB WALKTHROUGHS -->
+    <section id="demos" class="py-20 bg-[#0A0D0E] text-white border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        <div class="reveal-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 mb-3">
+            <span>🛠 Live Engineering Demos</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-3">
+            Real Projects Built in the Accelerator
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            You don't learn tech by watching recorded slideshows. Here are real enterprise architectures built, tested, and shipped by learners in our 100% Live Online interactive sessions.
+          </p>
+        </div>
+
+        <!-- Large Featured Video Player Mockup -->
+        <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-slate-950 shadow-2xl max-w-4xl mx-auto aspect-video group mb-10 reveal-scale card-3d-hover">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" 
+               class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-left">
+            <div>
+              <div class="text-xs font-semibold text-emerald-400">100% Live Online Student Spotlight</div>
+              <h3 class="text-lg sm:text-2xl font-bold text-white mt-1">Full-Stack Architecture &amp; Vector RAG Deep Dive</h3>
+              <p class="text-xs text-slate-300 mt-1">Anand K. &amp; Team — Building a Distributed Microservice from scratch</p>
+            </div>
+            <button id="featured-video-play-btn" class="w-16 h-16 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center shadow-2xl shadow-emerald-500/50 hover:scale-110 transition-all shrink-0">
+              ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-Column Capstone Showcase Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
+          <!-- Capstone 1 -->
+          <div class="rounded-2xl bg-[#12171A] border border-white/10 p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all shadow-xl reveal-scale card-3d-hover delay-100">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 font-mono">Backend &amp; Cloud</span>
+                <span class="text-xs text-slate-400 font-mono">Go + PostgreSQL</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-2">Distributed E-Commerce Microservices &amp; Vector Search</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Built with Go, gRPC, and PostgreSQL pgvector. Implements distributed token-bucket rate limiting and sub-15ms semantic product search.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+              <span class="text-slate-500 font-mono">Online Cohort Capstone</span>
+              <button onclick="NexcoLanding.openVideoStoryModal('capstone-1')" class="text-emerald-400 hover:underline font-bold">Watch Demo ▶</button>
+            </div>
+          </div>
+
+          <!-- Capstone 2 -->
+          <div class="rounded-2xl bg-[#12171A] border border-white/10 p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all shadow-xl reveal-scale card-3d-hover delay-200">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300 font-mono">Agentic AI</span>
+                <span class="text-xs text-slate-400 font-mono">LangGraph + FastAPI</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-2">Autonomous Multi-Agent AI Workflow Orchestrator</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Multi-agent system using LangGraph and Python FastAPI that automates financial report extraction, verification, and Slack executive summaries.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+              <span class="text-slate-500 font-mono">AI Track Capstone</span>
+              <button onclick="NexcoLanding.openVideoStoryModal('capstone-2')" class="text-emerald-400 hover:underline font-bold">Watch Demo ▶</button>
+            </div>
+          </div>
+
+          <!-- Capstone 3 -->
+          <div class="rounded-2xl bg-[#12171A] border border-white/10 p-6 flex flex-col justify-between hover:border-emerald-500/40 transition-all shadow-xl reveal-scale card-3d-hover delay-300">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-300 font-mono">Product Design</span>
+                <span class="text-xs text-slate-400 font-mono">Figma + React 19</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-2">Enterprise Design System &amp; Accessible Components</h4>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Production design token pipeline built in Figma 2026, synchronized to React 19 and Tailwind CSS with 100% WCAG AAA accessibility compliance.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+              <span class="text-slate-500 font-mono">UI/UX Capstone</span>
+              <button onclick="NexcoLanding.openVideoStoryModal('capstone-3')" class="text-emerald-400 hover:underline font-bold">Watch Demo ▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: THE NEXCO CHARTER — DYNAMIC HONEST COMMITMENTS (Requirement 3 & 4) -->
+    <section id="charter" class="py-20 bg-[#0A0D0E] text-white border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal-up">
+          <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-400 border border-emerald-500/30">
+            Transparency First
+          </span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mt-3 mb-3">
+            The Nexco Charter — <span class="text-emerald-400">Our Honest Commitments to You</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            We believe tech education in India needs less marketing hype and more rigorous engineering truth. Managed live from the Admin Command Center.
+          </p>
+        </div>
+
+        <!-- Dynamic Charter Cards Grid -->
+        <div id="charter-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <!-- Rendered dynamically by js/landing.js from NexcoStore.getCharter() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: EARLY LEARNER & WORKSHOP FEEDBACK -->
+    <section id="feedback" class="py-16 bg-slate-100 text-slate-900 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 reveal-up">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-emerald-700 border border-slate-200 shadow-sm">
+              Attendee Reviews
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">
+              Early Learner &amp; Workshop Feedback
+            </h3>
+            <p class="text-xs text-slate-600 mt-1">
+              Honest feedback from engineers and students who attended our 100% Live Online interactive masterclasses and webinars.
+            </p>
+          </div>
+          <button id="open-feedback-modal-btn" class="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs tracking-wide shadow-md transition-all shrink-0 flex items-center gap-1.5 self-start sm:self-auto">
+            <span>✎</span>
+            <span>Submit Your Workshop Feedback</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Cards Container from Store -->
+        <div id="dynamic-feedback-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Rendered dynamically by js/landing.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: REGISTERED HEADQUARTERS & ADMINISTRATION CONTACT -->
+    <section id="salem-hub" class="py-16 bg-[#12171A] text-white border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="p-6 rounded-2xl bg-black/40 border border-white/10 space-y-3 reveal-up card-3d-hover delay-100">
+            <span class="text-2xl">🏢</span>
+            <h4 class="text-base font-bold text-white">Registered Headquarters &amp; Administration</h4>
+            <p class="text-xs text-slate-300 leading-relaxed contact-address-display">
+              15/2, Sankar Nagar, Salem - 636007, Tamil Nadu, India.<br />
+              <span class="text-emerald-400 font-medium">Display: 15/2, Sankar Nagar, Salem-7</span>
+            </p>
+            <p class="text-[11px] text-emerald-300 font-mono">
+              100% Live Interactive Online Classes — Learn from Anywhere with Live Mentor Guidance in Tamil &amp; English.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-black/40 border border-white/10 space-y-3 reveal-up card-3d-hover delay-200">
+            <span class="text-2xl">📞</span>
+            <h4 class="text-base font-bold text-white">Direct WhatsApp &amp; Admissions Desk</h4>
+            <div class="space-y-1 text-xs">
+              <div>Phone / WhatsApp: <a href="https://wa.me/919345121988" target="_blank" class="contact-phone-display contact-wa-link text-emerald-400 font-mono font-bold hover:underline">+91 93451 21988</a></div>
+              <div>Admissions Email: <span class="contact-email-display font-mono text-slate-300">admissions@nexco.in</span></div>
+              <div class="text-[11px] text-slate-400">Counseling Desk: 10:00 AM – 8:00 PM IST (Mon – Sat)</div>
+            </div>
+            <a href="https://wa.me/919345121988?text=Vanakkam%20Nexco!%20I%20would%20like%20to%20inquire%20about%20100%25%20Live%20Online%20batches." target="_blank" class="contact-wa-link inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:underline font-semibold mt-1">
+              <span>Connect on WhatsApp</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-black/40 border border-white/10 space-y-3 reveal-up card-3d-hover delay-300">
+            <span class="text-2xl">🤝</span>
+            <h4 class="text-base font-bold text-white">An Official Joint Venture</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Powered by the official collaboration of <strong>Nexora Techno</strong> and <strong>Gencode</strong>. Bridging high-impact modern tech training to Salem, Rasipuram, Namakkal, Erode, Coimbatore, and Pan-India.
+            </p>
+            <div class="flex items-center gap-2 pt-1 text-[11px] text-emerald-400 font-mono">
+              <span>✓ Bilingual Tamil &amp; English • Zero Offline Claims</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: PUBLIC FOOTER -->
+    <footer id="footer" class="bg-[#0A0D0E] text-slate-400 border-t border-white/10 py-12 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5">
+            <img src="assets/logo.png" alt="Nexco Logo" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <div class="font-bold text-white text-sm">Nexco</div>
+            <div class="text-[11px] text-slate-400">An Official Collaboration of Nexora Techno &amp; Gencode</div>
+          </div>
+        </div>
+
+        <!-- Links including Terms and Privacy Policy -->
+        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400">
+          <a href="#programs" class="hover:text-white transition-colors">Programs</a>
+          <a href="#workshops" class="hover:text-white transition-colors">Masterclasses</a>
+          <a href="#charter" class="hover:text-white transition-colors">The Nexco Charter</a>
+          <a href="#terms" id="footer-terms-link" class="terms-link hover:text-white transition-colors">Terms &amp; Conditions</a>
+          <a href="#privacy" id="footer-privacy-link" class="privacy-link hover:text-white transition-colors">Privacy Policy</a>
+          <button id="footer-admin-login-link" class="text-slate-400 hover:text-white transition-colors">Staff &amp; Mentor Command Center</button>
+        </div>
+
+        <div class="text-center md:text-right text-[11px] text-slate-400">
+          <div>Registered HQ: 15/2, Sankar Nagar, Salem-7, Tamil Nadu, India • +91 93451 21988</div>
+          <div>© 2026 Nexco (Nexora Techno × Gencode). Zero Payment Gateways. Counseling-Led Admissions.</div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div> <!-- CLOSE OF PORTAL VIEW 1 -->
+
+
+  <!-- ========================================================================= -->
+  <!-- PORTAL VIEW 2: DYNAMIC STUDENT LMS (Nexco LearnHub) -->
+  <!-- ========================================================================= -->
+  <div id="view-lms-portal" class="hidden min-h-screen bg-[#0A0D0E] text-slate-100 flex-col">
+    
+    <!-- Top Header -->
+    <header class="h-16 border-b border-white/10 bg-[#12171A]/90 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30">
+      <div class="flex items-center gap-3">
+        <button id="lms-back-to-web-logo" class="back-to-website-trigger flex items-center gap-2 group p-1 rounded-lg hover:bg-white/5" title="Back to Public Website">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5">
+            <img src="assets/logo.png" class="w-full h-full object-contain" />
+          </div>
+          <div class="text-left hidden sm:block">
+            <div class="text-xs font-bold text-white flex items-center gap-1">
+              <span>Nexco LearnHub</span>
+              <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 font-mono">STUDENT</span>
+            </div>
+            <div id="lms-header-cohort" class="text-[10px] text-slate-400">100% Live Online Cohort #1</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Notification Bell -->
+        <div class="relative">
+          <button id="lms-notif-btn" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-200 transition-colors relative" title="Notifications">
+            <span class="text-sm">🔔</span>
+            <span id="lms-notif-badge" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-extrabold flex items-center justify-center">2</span>
+          </button>
+          
+          <div id="lms-notif-popover" class="hidden notification-popover absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-[#12171A] border border-white/15 shadow-2xl overflow-hidden text-xs z-50">
+            <div class="p-3.5 bg-black/60 border-b border-white/10 flex items-center justify-between">
+              <span class="font-bold text-white flex items-center gap-1.5"><span>🔔</span> Notifications</span>
+              <button id="lms-notif-read-all" class="text-[11px] text-emerald-400 hover:underline">Mark all as read</button>
+            </div>
+            <div id="lms-notif-list" class="max-h-72 overflow-y-auto divide-y divide-white/5 p-2 space-y-1"></div>
+          </div>
+        </div>
+
+        <!-- Back to Website Button -->
+        <button id="lms-back-to-web" class="back-to-website-trigger px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 text-slate-200 text-xs font-semibold border border-white/15 transition-colors">
+          ← Back to Website
+        </button>
+
+        <!-- Student Profile Pill + Logout -->
+        <div class="flex items-center gap-2 pl-2 border-l border-white/15">
+          <span id="lms-header-user-name" class="text-xs font-semibold text-white hidden sm:inline truncate max-w-[120px]">Learner</span>
+          <button id="lms-logout-btn" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white text-xs font-medium transition-colors" title="Log Out">
+            Log Out
+          </button>
+        </div>
+
+        <!-- LMS Mobile Drawer Toggle Button -->
+        <button id="lms-mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-white/10 text-slate-200 border border-white/10 hover:text-white shrink-0" aria-label="Toggle LMS Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- LMS Mobile Slide-Over Drawer -->
+    <div id="lms-mobile-drawer" class="hidden md:hidden p-4 bg-[#12171A] border-b border-white/15 space-y-2 text-xs shadow-2xl z-30">
+      <div class="flex justify-between items-center pb-2 border-b border-white/10">
+        <span class="text-xs font-bold text-emerald-400">Student Navigation</span>
+        <button id="lms-mobile-menu-close" class="text-slate-400 hover:text-white text-xs">✕ Close</button>
+      </div>
+      <button data-tab="dashboard" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left bg-emerald-500/15 text-emerald-400 font-semibold">
+        <span>📊 Dashboard</span>
+      </button>
+      <button data-tab="classroom" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🎥 Video Classroom</span>
+      </button>
+      <button data-tab="assignments" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>📝 Assignments &amp; Labs</span>
+      </button>
+      <button data-tab="leaderboard" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🏆 Leaderboard</span>
+      </button>
+      <button data-tab="certificates" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🎓 Joint Certification</span>
+      </button>
+    </div>
+
+    <!-- LMS Body -->
+    <div class="flex-1 flex overflow-hidden">
+      
+      <!-- LMS Sidebar -->
+      <aside class="w-64 border-r border-white/10 bg-[#12171A] p-4 flex flex-col justify-between hidden md:flex shrink-0">
+        <div class="space-y-1">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 px-3 mb-2 font-mono">Student Menu</div>
+
+          <button data-tab="dashboard" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs transition-colors bg-emerald-500/15 text-emerald-400 font-semibold border border-emerald-500/30">
+            <span>📊</span>
+            <span>Dashboard</span>
+          </button>
+
+          <button data-tab="classroom" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🎥</span>
+            <span>Interactive Classroom</span>
+          </button>
+
+          <button data-tab="assignments" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>📝</span>
+            <span>Assignments &amp; Labs</span>
+          </button>
+
+          <button data-tab="leaderboard" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🏆</span>
+            <span>Leaderboard</span>
+          </button>
+
+          <button data-tab="certificates" class="lms-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🎓</span>
+            <span>Certificates</span>
+          </button>
+        </div>
+
+        <div class="rounded-xl p-3 bg-black/40 border border-emerald-500/20 text-xs text-slate-300">
+          <div class="text-emerald-400 font-bold mb-1">100% Live Online Portal Pass</div>
+          <div class="text-[11px] text-slate-400">Live 1-on-1 mentor code review room access.</div>
+        </div>
+      </aside>
+
+      <!-- Main LMS Content -->
+      <main class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#0A0D0E]">
+        
+        <!-- DYNAMIC LIVE CLASS ALERT BANNER -->
+        <div id="lms-live-class-alert" class="mb-6 hidden"></div>
+
+        <!-- TAB: DASHBOARD -->
+        <div id="lms-view-dashboard" class="space-y-6 max-w-6xl mx-auto">
+          
+          <div class="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-emerald-950 via-[#12171A] to-[#12171A] border border-emerald-500/30 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-2">
+                <span>🔥 12 Day Streak • 100% Live Online Cohort #1</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Welcome back, <span id="lms-student-name">Learner</span>!
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+                Enrolled in: <strong class="text-emerald-400">Full Stack Web Development (MERN &amp; Python)</strong>. Live doubt session today at 6:00 PM IST.
+              </p>
+            </div>
+            <button onclick="NexcoLMS.switchLMSTab('classroom')" class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg transition-all shrink-0">
+              Resume Lesson 2.2 ▶
+            </button>
+          </div>
+
+          <!-- Weekly Chart -->
+          <div class="rounded-2xl p-6 bg-[#161D22] border border-white/10 shadow-xl">
+            <h3 class="text-sm font-bold text-white mb-1">Weekly Study Analytics</h3>
+            <p class="text-xs text-slate-400 mb-4">Hours spent coding vs online cohort average</p>
+            <div id="weekly-chart-svg-container" class="w-full"></div>
+          </div>
+
+        </div>
+
+        <!-- TAB: CLASSROOM -->
+        <div id="lms-view-classroom" class="hidden space-y-6 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div class="lg:col-span-8 space-y-4">
+              <div class="relative rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl aspect-video flex flex-col justify-between">
+                <video id="classroom-video-element" class="w-full h-full object-cover" 
+                       src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" 
+                       poster="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80">
+                </video>
+
+                <!-- Video Controls -->
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-3.5 space-y-2">
+                  <input id="classroom-scrubber" type="range" min="0" max="100" value="33" class="w-full video-scrubber cursor-pointer" />
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <button id="classroom-play-toggle" class="p-2 rounded-lg bg-white/10 hover:bg-emerald-500 hover:text-black transition-colors text-white">
+                        ▶
+                      </button>
+                      <span id="classroom-time-display" class="text-xs font-mono text-slate-300">14:28 / 42:15</span>
+                    </div>
+                    <button id="classroom-speed-btn" class="px-2.5 py-1 rounded-md bg-white/10 text-xs font-mono text-slate-200">1.0x</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lesson Chapters -->
+              <div class="p-4 rounded-xl bg-[#161D22] border border-white/10">
+                <h4 class="text-xs font-bold text-white mb-2">Lesson Chapters</h4>
+                <div id="classroom-chapters-list" class="space-y-1.5"></div>
+              </div>
+
+              <!-- Timestamped Notes -->
+              <div class="rounded-2xl p-5 bg-[#161D22] border border-white/10 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold text-white">Timestamped Lecture Notes</h4>
+                  <button id="export-notes-btn" class="text-xs text-emerald-400 hover:underline">Export (.md) ↓</button>
+                </div>
+                <div class="flex items-center gap-2">
+                  <input id="classroom-note-input" type="text" placeholder="Type a note... auto-captures active video moment" 
+                         class="flex-1 px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
+                  <button id="add-note-btn" class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">Save Note</button>
+                </div>
+                <div id="classroom-notes-list" class="space-y-2 max-h-48 overflow-y-auto"></div>
+              </div>
+
+              <!-- AI Tutor Tab in Classroom -->
+              <div class="rounded-2xl p-5 bg-[#161D22] border border-white/10 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold text-white">Ask Nexco AI Tutor (Lesson 2.2)</h4>
+                  <span class="text-[10px] text-emerald-400 font-mono">Bilingual Tamil &amp; English</span>
+                </div>
+                <div id="classroom-ai-feed" class="p-3 bg-black/40 border border-white/5 rounded-xl space-y-2 max-h-48 overflow-y-auto text-xs"></div>
+                <div class="flex items-center gap-2">
+                  <input id="classroom-ai-input" type="text" placeholder="Ask AI mentor about code or live sessions..." 
+                         class="flex-1 px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
+                  <button id="classroom-ai-send" class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">Ask AI</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Syllabus Accordion -->
+            <div class="lg:col-span-4 space-y-4">
+              <div class="rounded-2xl p-5 bg-[#161D22] border border-white/10">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-xs font-bold text-white">Track Modules</h4>
+                  <span class="text-[10px] font-mono text-emerald-400">Week 4 of 24</span>
+                </div>
+                <div id="classroom-syllabus-accordion" class="space-y-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: ASSIGNMENTS -->
+        <div id="lms-view-assignments" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div>
+            <h2 class="text-xl font-bold text-white">Capstone Project Dropzone</h2>
+            <p class="text-xs text-slate-400">Submit your production GitHub repo and live deployment URL for senior engineer code review.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <form id="lms-assignment-form" class="p-6 rounded-2xl bg-[#161D22] border border-white/10 space-y-4 shadow-xl">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Project Milestone *</label>
+                  <select id="lms-assign-project" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
+                    <option value="Module 2: Vector DB Optimization & Microservices">Module 2: Vector DB Optimization &amp; Microservices</option>
+                    <option value="Module 3: Distributed Token-Bucket Rate Limiter">Module 3: Distributed Token-Bucket Rate Limiter</option>
+                    <option value="Module 4: LangGraph Multi-Agent Financial Assistant">Module 4: LangGraph Multi-Agent Financial Assistant</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">GitHub Repository URL *</label>
+                  <input id="lms-assign-github" type="url" required placeholder="https://github.com/yourhandle/microservice-project" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Live Deployment URL *</label>
+                  <input id="lms-assign-deploy" type="url" required placeholder="https://api.yourdomain.com or Vercel link" 
+                         class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Architecture Notes &amp; Challenges</label>
+                  <textarea id="lms-assign-notes" rows="3" placeholder="Explain your design decisions, database indexing strategy, and test coverage..." 
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide shadow-md transition-all">
+                  Submit Project for Mentor Review ↗
+                </button>
+              </form>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4">
+              <div class="p-6 rounded-2xl bg-[#161D22] border border-white/10 shadow-xl space-y-3">
+                <h4 class="text-sm font-bold text-white">Review Criteria</h4>
+                <div class="space-y-2 text-xs text-slate-300">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span>Composite B-Tree Indexes on Foreign Keys</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span>Automated Integration Tests (&gt; 80% coverage)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span>Docker Multi-Stage Build &lt; 50MB</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span>Production Environment Config via Secrets</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: LEADERBOARD -->
+        <div id="lms-view-leaderboard" class="hidden space-y-6 max-w-5xl mx-auto">
+          <div>
+            <h2 class="text-xl font-bold text-white">Cohort Engineering Leaderboard</h2>
+            <p class="text-xs text-slate-400">Ranked by verified GitHub pull requests, architectural reviews, and quiz accuracy.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-[#12171A] overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left min-w-[600px] text-xs">
+                <thead class="bg-black/40 border-b border-white/10 text-[10px] uppercase font-mono text-slate-400">
+                  <tr>
+                    <th class="py-3 px-4">Rank</th>
+                    <th class="py-3 px-4">Learner</th>
+                    <th class="py-3 px-4">Milestones Shipped</th>
+                    <th class="py-3 px-4">PR Reviews</th>
+                    <th class="py-3 px-4 text-right">Engineering Points</th>
+                  </tr>
+                </thead>
+                <tbody id="lms-leaderboard-body" class="divide-y divide-white/5"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: CERTIFICATES -->
+        <div id="lms-view-certificates" class="hidden space-y-6 max-w-4xl mx-auto">
+          <div>
+            <h2 class="text-xl font-bold text-white">Joint Verifiable Certification</h2>
+            <p class="text-xs text-slate-400">Issued jointly by Nexora Techno &amp; Gencode upon completion of all capstone reviews.</p>
+          </div>
+
+          <div class="rounded-3xl p-8 bg-gradient-to-br from-slate-900 via-[#12171A] to-slate-950 border-2 border-emerald-500/40 shadow-2xl space-y-6 text-center relative overflow-hidden">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="text-left">
+                <div class="text-xs font-bold text-emerald-400 font-mono">CREDENTIAL ID: NEX-2026-FS-0142</div>
+                <div class="text-[11px] text-slate-400">Official Joint Technology Credential</div>
+              </div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500 text-black flex items-center justify-center font-bold text-sm">
+                N
+              </div>
+            </div>
+
+            <div class="space-y-2 py-4">
+              <div class="text-xs uppercase font-mono tracking-widest text-slate-400">This certifies that</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight" id="certificate-recipient-name">
+                Alex Rivera
+              </div>
+              <p class="text-xs text-slate-300 max-w-lg mx-auto leading-relaxed pt-2">
+                has successfully architected, built, and shipped 8 production microservices and verified capstones under the <strong>Nexco Career Acceleration Track</strong> jointly reviewed by <strong>Nexora Techno &amp; Gencode</strong>.
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+              <div class="text-left text-slate-400">
+                <div>Lead Verifier: <strong>Karthik Sundaram</strong> (Staff Architect)</div>
+                <div class="text-[10px]">Joint Steering Committee, Nexora Techno × Gencode</div>
+              </div>
+              <button onclick="NexcoApp.showToast('Official Verifiable Credential dispatched to your email & registered WhatsApp.', 'success')" class="px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md">
+                Download Official Certificate (PDF) ↓
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+  </div> <!-- CLOSE OF PORTAL VIEW 2 -->
+
+
+  <!-- ========================================================================= -->
+  <!-- PORTAL VIEW 3: DYNAMIC ADMIN COMMAND CENTER (100% Full CMS Architecture) -->
+  <!-- ========================================================================= -->
+  <div id="view-admin-portal" class="hidden min-h-screen bg-[#0A0D0E] text-slate-100 flex-col">
+    
+    <!-- Admin Header (Responsive & Mobile-Optimized) -->
+    <header class="admin-topbar border-b border-white/10 bg-[#12171A]/95 backdrop-blur-md px-3 sm:px-6 py-2.5 sm:py-3 sticky top-0 z-30 flex flex-wrap items-center justify-between gap-2.5">
+      <!-- Left: Mobile Menu Toggle + Title -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Admin Mobile Tabs Drawer Button -->
+        <button id="admin-mobile-menu-btn" class="md:hidden p-1.5 rounded-lg bg-white/10 text-slate-200 border border-white/10 hover:text-white shrink-0" aria-label="Toggle Admin Tabs">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5 shrink-0">
+          <img src="assets/logo.png" alt="Logo" class="w-full h-full object-contain" />
+        </div>
+        
+        <div class="min-w-0">
+          <div class="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5 truncate">
+            <span>Nexco Command Center</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 font-mono font-bold shrink-0">ADMIN</span>
+          </div>
+          <div class="hidden sm:block text-[10px] text-slate-400 truncate">Headquarters Management Suite (Nexora × Gencode)</div>
+        </div>
+      </div>
+
+      <!-- Right: Action Buttons (Responsive Compact Labels) -->
+      <div class="admin-header-actions flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+        <button id="admin-back-to-web" class="back-to-website-trigger px-2.5 sm:px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/15 text-slate-200 text-xs font-semibold border border-white/15 transition-colors whitespace-nowrap flex items-center gap-1">
+          <span>🌐</span>
+          <span class="hidden sm:inline">Back to Website</span>
+          <span class="sm:hidden">Site</span>
+        </button>
+
+        <button id="admin-to-lms-btn" class="px-2.5 sm:px-3.5 py-1.5 rounded-full bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold transition-colors whitespace-nowrap flex items-center gap-1">
+          <span>🎓</span>
+          <span class="hidden sm:inline">View Student LMS ↗</span>
+          <span class="sm:hidden">LMS</span>
+        </button>
+
+        <button id="admin-logout-btn" class="px-2.5 sm:px-3 py-1.5 rounded-full bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1">
+          <span>🚪</span>
+          <span class="hidden sm:inline">Log Out</span>
+          <span class="sm:hidden">Exit</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Admin Mobile Drawer -->
+    <div id="admin-mobile-drawer" class="hidden md:hidden p-4 bg-[#12171A] border-b border-white/15 space-y-2 text-xs shadow-2xl z-30">
+      <div class="flex justify-between items-center pb-2 border-b border-white/10">
+        <span class="text-xs font-bold text-red-400">Admin Control Modules</span>
+        <button id="admin-mobile-menu-close" class="text-slate-400 hover:text-white text-xs">✕ Close</button>
+      </div>
+      <button data-admin-tab="site-content" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left bg-emerald-500/15 text-emerald-400 font-semibold">
+        <span>🌐 Site Content CMS</span>
+      </button>
+      <button data-admin-tab="courses" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>📚 Course Manager (CRUD)</span>
+      </button>
+      <button data-admin-tab="sessions" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🔴 Live Masterclasses (CRUD)</span>
+      </button>
+      <button data-admin-tab="feedback" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🤝 Charter &amp; Reviews</span>
+      </button>
+      <button data-admin-tab="leads" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>👥 Leads &amp; Enrollments</span>
+      </button>
+      <button data-admin-tab="submissions" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>📝 Capstone Reviews</span>
+      </button>
+      <button data-admin-tab="overview" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>📊 Live Overview</span>
+      </button>
+      <button data-admin-tab="qa-tests" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2 rounded-xl text-left text-slate-300 hover:bg-white/5">
+        <span>🧪 QA &amp; System Tests</span>
+      </button>
+    </div>
+
+    <!-- Admin Body: Sidebar + Tabs -->
+    <div class="flex-1 flex overflow-hidden">
+      
+      <!-- Admin Desktop Sidebar -->
+      <aside class="w-64 border-r border-white/10 bg-[#12171A] p-4 flex flex-col justify-between hidden md:flex shrink-0">
+        <div class="space-y-1">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500 px-3 mb-2 font-mono">Control Modules</div>
+
+          <button data-admin-tab="site-content" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs transition-colors bg-emerald-500/15 text-emerald-400 font-semibold border border-emerald-500/30">
+            <span>🌐</span>
+            <span>Site Content CMS</span>
+          </button>
+
+          <button data-admin-tab="courses" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>📚</span>
+            <span>Course Manager (CRUD)</span>
+          </button>
+
+          <button data-admin-tab="sessions" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🔴</span>
+            <span>Live Masterclasses (CRUD)</span>
+          </button>
+
+          <button data-admin-tab="feedback" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🤝</span>
+            <span>Charter &amp; Reviews</span>
+          </button>
+
+          <button data-admin-tab="leads" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>👥</span>
+            <span>Leads &amp; Enrollments</span>
+          </button>
+
+          <button data-admin-tab="submissions" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>📝</span>
+            <span>Capstone Reviews</span>
+          </button>
+
+          <button data-admin-tab="overview" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>📊</span>
+            <span>Live Overview</span>
+          </button>
+
+          <button data-admin-tab="qa-tests" class="admin-nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors border border-transparent">
+            <span>🧪</span>
+            <span>QA &amp; System Tests</span>
+          </button>
+        </div>
+
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-slate-400">
+          <div class="text-white font-bold mb-1">Salem Headquarters</div>
+          <div>Nexora Techno × Gencode reactive management suite.</div>
+        </div>
+      </aside>
+
+      <!-- Admin Main Content Area -->
+      <main class="flex-1 overflow-y-auto p-4 sm:p-8 bg-[#0A0D0E]">
+        
+        <!-- ADMIN TAB 1: SITE CONTENT & HERO EDITOR (FULL CMS SETTINGS) -->
+        <div id="admin-tab-site-content" class="space-y-6 max-w-5xl mx-auto">
+          <div class="admin-cms-header flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
+            <div>
+              <h2 class="text-xl font-bold text-white">Site Content &amp; Hero Editor (Full CMS)</h2>
+              <p class="text-xs text-slate-400">Edit every piece of text across the website. Saves instantly to backend API and updates the public site live.</p>
+            </div>
+            <button id="admin-save-site-settings-btn" class="w-full sm:w-auto justify-center px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md transition-all flex items-center gap-2 shrink-0">
+              <span>💾 Save All Site Settings</span>
+            </button>
+          </div>
+
+          <!-- Section A: Top Announcement Bar -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-4 shadow-xl">
+            <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+              <span>📢</span> Top Announcement Banner Settings
+            </h3>
+            <div class="space-y-3 text-xs">
+              <label class="flex items-center gap-2 font-semibold text-slate-300">
+                <input id="admin-site-ann-active" type="checkbox" checked class="text-emerald-500 rounded bg-black" />
+                <span>Show Top Announcement Banner Live on Website</span>
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Banner Badge</label>
+                  <input id="admin-site-ann-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">CTA Button Text</label>
+                  <input id="admin-site-ann-cta" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Announcement Text</label>
+                <input id="admin-site-ann-text" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">CTA Target Link</label>
+                <input id="admin-site-ann-link" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Section B: Hero Section Copy -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-4 shadow-xl">
+            <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+              <span>🎯</span> Hero Headline, Subheadline &amp; CTAs
+            </h3>
+            <div class="space-y-3 text-xs">
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Collaboration Badge Text</label>
+                <input id="admin-site-hero-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Main Hero Headline</label>
+                <input id="admin-site-hero-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Hero Subheadline</label>
+                <textarea id="admin-site-hero-sub" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Primary CTA Button</label>
+                  <input id="admin-site-hero-cta1" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Secondary CTA Button</label>
+                  <input id="admin-site-hero-cta2" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Lead Card Form Title</label>
+                  <input id="admin-site-hero-form-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Lead Card Subtitle</label>
+                  <input id="admin-site-hero-form-sub" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section C: Promotional Launch Banner -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-4 shadow-xl">
+            <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+              <span>🚀</span> Promotional Launch Banner
+            </h3>
+            <div class="space-y-3 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Promo Badge</label>
+                  <input id="admin-site-promo-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block font-semibold text-slate-300 mb-1">Promo Banner Headline</label>
+                  <input id="admin-site-promo-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Promo Subtitle</label>
+                <textarea id="admin-site-promo-sub" rows="2" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section D: Bento Grid Cards Copy -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-4 shadow-xl">
+            <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+              <span>🍱</span> Bento Grid 3-Card Architecture
+            </h3>
+            <div class="space-y-4 text-xs">
+              <!-- Card 1 -->
+              <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-white text-xs">Card 1 (Left Photo Card)</span>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento1-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-white text-xs">Card 2 (Middle White Card)</span>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento2-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-white text-xs">Card 3 (Right Neon Green Card)</span>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento3-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section E: Official Contact & Headquarters -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-4 shadow-xl">
+            <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+              <span>📞</span> Official Contact &amp; Registered Office
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Phone / WhatsApp Number</label>
+                <input id="admin-site-phone" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-300 mb-1">Admissions Email Address</label>
+                <input id="admin-site-email" type="email" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-slate-300 mb-1">Registered Headquarters Address</label>
+                <input id="admin-site-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-slate-300 mb-1">Display Address (Footer/Header)</label>
+                <input id="admin-site-display-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 2: COURSE & CURRICULUM MANAGER (CRUD) -->
+        <div id="admin-tab-courses" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-xl font-bold text-white">Course &amp; Curriculum Manager (Full CRUD)</h2>
+              <p class="text-xs text-slate-400">Add, edit, or delete courses. Any change updates the Public Website and Student LMS immediately.</p>
+            </div>
+            <button id="admin-add-course-btn" data-action="add-course" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md">
+              + Add New Course
+            </button>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[#12171A] shadow-2xl overflow-hidden">
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left min-w-[700px]">
+                <thead>
+                  <tr class="border-b border-white/10 bg-black/40 text-[10px] uppercase font-mono text-slate-400">
+                    <th class="py-3 px-4">Course Title &amp; Category</th>
+                    <th class="py-3 px-4">Batch Mode</th>
+                    <th class="py-3 px-4">Assigned Mentor</th>
+                    <th class="py-3 px-4">Rating</th>
+                    <th class="py-3 px-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-courses-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 3: LIVE SESSIONS & WORKSHOPS (CRUD) -->
+        <div id="admin-tab-sessions" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-xl font-bold text-white">Live Sessions, Workshops &amp; Masterclasses (Full CRUD)</h2>
+              <p class="text-xs text-slate-400">Schedule sessions, edit meeting links, and 1-click toggle status to '🔴 LIVE NOW' or 'Completed'.</p>
+            </div>
+            <button id="admin-add-session-btn" data-action="add-session" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md">
+              + Schedule Workshop
+            </button>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[#12171A] shadow-2xl overflow-hidden">
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left min-w-[700px]">
+                <thead>
+                  <tr class="border-b border-white/10 bg-black/40 text-[10px] uppercase font-mono text-slate-400">
+                    <th class="py-3 px-4">Session Title &amp; Mentor</th>
+                    <th class="py-3 px-4">Date &amp; Time (IST)</th>
+                    <th class="py-3 px-4">Capacity</th>
+                    <th class="py-3 px-4">Live Status Toggle</th>
+                    <th class="py-3 px-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-sessions-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 4: CHARTER COMMITMENTS & FEEDBACK REVIEWS -->
+        <div id="admin-tab-feedback" class="hidden space-y-8 max-w-6xl mx-auto">
+          
+          <!-- Sub-module 1: Charter Commitments Editor -->
+          <div class="p-6 rounded-2xl bg-[#12171A] border border-white/10 space-y-5 shadow-xl">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                  <span>📜</span> The Nexco Charter Commitments Editor
+                </h3>
+                <p class="text-xs text-slate-400">Edit the 4 transparent trust cards displayed on the public landing page.</p>
+              </div>
+              <button id="admin-save-charter-btn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md">
+                💾 Save Charter Cards
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <!-- Card 1 -->
+              <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-emerald-400 text-xs">Commitment 01</span>
+                <div>
+                  <label class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter1-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-emerald-400 text-xs">Commitment 02</span>
+                <div>
+                  <label class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter2-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-emerald-400 text-xs">Commitment 03</span>
+                <div>
+                  <label class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter3-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
+                <span class="font-bold text-emerald-400 text-xs">Commitment 04</span>
+                <div>
+                  <label class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter4-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter4-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-module 2: Workshop Feedback & Reviews Manager -->
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-base font-bold text-white tracking-tight">Workshop Feedback &amp; Reviews</h3>
+              <p class="text-xs text-slate-400">Review, approve, or delete attendee reviews for the public landing page.</p>
+            </div>
+
+            <div class="rounded-2xl bg-[#12171A] border border-white/10 overflow-hidden shadow-xl">
+              <div class="overflow-x-auto w-full">
+                <table class="w-full text-left min-w-[700px]">
+                  <thead class="bg-black/40 border-b border-white/10 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    <tr>
+                      <th class="py-3 px-4">Attendee</th>
+                      <th class="py-3 px-4">Workshop</th>
+                      <th class="py-3 px-4">Status</th>
+                      <th class="py-3 px-4 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-feedback-table-body" class="divide-y divide-white/5"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ADMIN TAB 5: LEADS, COUNSELING & ENROLLMENT APPROVALS -->
+        <div id="admin-tab-leads" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-bold text-white">Leads, Inquiries &amp; Enrollment Approvals</h2>
+              <p class="text-xs text-slate-400">Click 'Approve &amp; Enroll' to grant student LMS access. Update statuses or delete spam entries.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex items-center gap-2">
+              <input type="text" oninput="NexcoAdmin.searchLeads(this.value)" placeholder="Search name, phone, city..." 
+                     class="px-3 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs text-white focus:outline-none focus:border-emerald-500" />
+              
+              <button onclick="NexcoAdmin.filterLeads('all')" class="admin-leads-filter-btn px-2.5 py-1.5 rounded-lg text-xs bg-emerald-500 text-black font-bold" data-status="all">All</button>
+              <button onclick="NexcoAdmin.filterLeads('New')" class="admin-leads-filter-btn px-2.5 py-1.5 rounded-lg text-xs bg-white/5 text-slate-400" data-status="New">New</button>
+              <button onclick="NexcoAdmin.filterLeads('Enrolled')" class="admin-leads-filter-btn px-2.5 py-1.5 rounded-lg text-xs bg-white/5 text-slate-400" data-status="Enrolled">Enrolled</button>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-[#12171A] shadow-2xl overflow-hidden">
+            <div class="overflow-x-auto w-full">
+              <table class="w-full text-left min-w-[700px]">
+                <thead>
+                  <tr class="border-b border-white/10 bg-black/40 text-[10px] uppercase font-mono text-slate-400">
+                    <th class="py-3 px-4">Applicant</th>
+                    <th class="py-3 px-4">Phone / WhatsApp</th>
+                    <th class="py-3 px-4">College / City</th>
+                    <th class="py-3 px-4">Program</th>
+                    <th class="py-3 px-4">Status</th>
+                    <th class="py-3 px-4 text-right">Approval Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-leads-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 6: CAPSTONE PROJECT REVIEWS -->
+        <div id="admin-tab-submissions" class="hidden space-y-6 max-w-4xl mx-auto">
+          <div>
+            <h2 class="text-xl font-bold text-white">Student Capstone Submissions Queue</h2>
+            <p class="text-xs text-slate-400">Review student GitHub repositories and live deployments submitted from the LMS.</p>
+          </div>
+
+          <div id="admin-submissions-container" class="space-y-4"></div>
+        </div>
+
+        <!-- ADMIN TAB 7: LIVE OVERVIEW & METRICS -->
+        <div id="admin-tab-overview" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-extrabold text-white">Nexco Command Center Overview</h2>
+              <p class="text-xs text-slate-400">Real-time control for Salem tech programs, counseling leads, and live sessions.</p>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button onclick="NexcoAdmin.openAddCourseModal()" class="px-3 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md">
+                + Add Course
+              </button>
+              <button onclick="NexcoAdmin.openScheduleSessionModal()" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/15">
+                + Schedule Workshop
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Metrics Row -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-5 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-xs text-slate-400 font-medium">Total Inquiries / Leads</div>
+              <div class="text-3xl font-extrabold text-white mt-1" id="admin-metric-leads">0</div>
+              <span id="admin-metric-new-leads" class="inline-block mt-2 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300">
+                0 New
+              </span>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-xs text-slate-400 font-medium">Active Enrolled Students</div>
+              <div class="text-3xl font-extrabold text-emerald-400 mt-1" id="admin-metric-students">0</div>
+              <div class="text-[10px] text-slate-500 mt-2">100% Live Online Cohorts</div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-xs text-slate-400 font-medium">Live Programs</div>
+              <div class="text-3xl font-extrabold text-white mt-1" id="admin-metric-courses">0</div>
+              <div class="text-[10px] text-slate-500 mt-2">Flagship curricula</div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-xs text-slate-400 font-medium">Live / Scheduled Workshops</div>
+              <div class="text-3xl font-extrabold text-red-400 mt-1" id="admin-metric-sessions">0</div>
+              <div class="text-[10px] text-slate-500 mt-2">Google Meet sessions</div>
+            </div>
+          </div>
+
+          <!-- Live Security Threat & Audit Monitor -->
+          <div class="rounded-2xl bg-[#161D22] border border-white/10 p-5 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-sm font-bold text-white">🛡️ Live Security Threat &amp; Audit Monitor</h3>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Zero-Trust Active</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-0.5">Real-time audit log of blocked XSS/CSRF attempts, honeypot traps, and admin state mutations.</p>
+              </div>
+              <button onclick="NexcoAdmin.refreshSecurityLogs()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-mono border border-white/10 flex items-center gap-1.5 self-start sm:self-auto">
+                <span>🔄</span>
+                <span>Refresh Audit Log</span>
+              </button>
+            </div>
+
+            <div id="admin-security-logs-container" class="space-y-2 max-h-72 overflow-y-auto pr-1 text-xs">
+              <div class="p-4 text-center text-slate-500">Loading security audit trail...</div>
+            </div>
+
+            <!-- Active Locked Accounts & IP Blacklist with 1-Click Admin Unlock -->
+            <div class="rounded-xl bg-black/40 border border-white/10 p-4 space-y-3 mt-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <h4 class="text-xs font-bold text-white flex items-center gap-1.5">
+                    <span>🔒 Locked Accounts &amp; IP Blacklist</span>
+                  </h4>
+                  <span id="admin-locked-count-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300">0 Locked</span>
+                </div>
+                <button onclick="NexcoAdmin.refreshLockedTargets()" class="text-[11px] text-slate-400 hover:text-white flex items-center gap-1">
+                  <span>🔄</span>
+                  <span>Refresh List</span>
+                </button>
+              </div>
+              <div id="admin-locked-targets-container" class="space-y-2 text-xs">
+                <div class="p-3 text-center text-slate-500">No accounts or IPs are currently locked out.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN TAB 8: QA & SYSTEM TESTING SUITE -->
+        <div id="admin-tab-qa-tests" class="hidden space-y-6 max-w-6xl mx-auto">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-2xl font-extrabold text-white">Automated QA &amp; System Tests</h2>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">21 Active Assertions</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">Live White-Box, Black-Box, Gray-Box &amp; OWASP Penetration Verification for Nexco.</p>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <button id="btn-run-all-tests" onclick="NexcoAdmin.runQASuite()" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg flex items-center gap-2 transition-all">
+                <span>▶</span>
+                <span id="btn-run-tests-text">Run All System QA Tests</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Metrics Row for Tests -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <div class="p-4 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-[11px] text-slate-400 font-medium">Total Assertions</div>
+              <div class="text-2xl font-extrabold text-white mt-1" id="qa-metric-total">21</div>
+              <div class="text-[10px] text-slate-500 mt-1">Automated suite</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-[11px] text-slate-400 font-medium">Passed</div>
+              <div class="text-2xl font-extrabold text-emerald-400 mt-1" id="qa-metric-passed">-</div>
+              <div class="text-[10px] text-emerald-500/80 mt-1" id="qa-metric-passrate">Ready to execute</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-[11px] text-slate-400 font-medium">Failed</div>
+              <div class="text-2xl font-extrabold text-red-400 mt-1" id="qa-metric-failed">-</div>
+              <div class="text-[10px] text-slate-500 mt-1" id="qa-metric-fail-status">0 errors</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#161D22] border border-white/10">
+              <div class="text-[11px] text-slate-400 font-medium">Execution Latency</div>
+              <div class="text-2xl font-extrabold text-cyan-400 mt-1" id="qa-metric-latency">-</div>
+              <div class="text-[10px] text-slate-500 mt-1">High-speed runner</div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#161D22] border border-white/10 col-span-2 md:col-span-1">
+              <div class="text-[11px] text-slate-400 font-medium">Security &amp; OWASP</div>
+              <div class="text-sm font-extrabold text-emerald-400 mt-2 flex items-center gap-1.5" id="qa-metric-security">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>PROTECTED</span>
+              </div>
+              <div class="text-[10px] text-slate-500 mt-1">Access, XSS &amp; Rate-limit</div>
+            </div>
+          </div>
+
+          <!-- Category Filter Tabs & Filter Controls -->
+          <div class="flex flex-wrap items-center justify-between gap-3 bg-[#12171A] p-2 rounded-xl border border-white/10">
+            <div class="flex flex-wrap items-center gap-1.5" id="qa-filter-group">
+              <button onclick="NexcoAdmin.filterQATests('all')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" data-filter="all">All Tests (21)</button>
+              <button onclick="NexcoAdmin.filterQATests('White-Box')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors" data-filter="White-Box">White-Box (4)</button>
+              <button onclick="NexcoAdmin.filterQATests('Black-Box')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors" data-filter="Black-Box">Black-Box (5)</button>
+              <button onclick="NexcoAdmin.filterQATests('Gray-Box & Integration')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors" data-filter="Gray-Box & Integration">Gray-Box / Sync (2)</button>
+              <button onclick="NexcoAdmin.filterQATests('Security & OWASP')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors" data-filter="Security & OWASP">Security &amp; OWASP (7)</button>
+              <button onclick="NexcoAdmin.filterQATests('Auth & Rate Limiting')" class="qa-filter-btn px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white hover:bg-white/5 transition-colors" data-filter="Auth & Rate Limiting">Auth &amp; Lockouts (3)</button>
+            </div>
+            <div class="text-xs text-slate-400 font-mono text-right" id="qa-last-run-timestamp">Last Run: Ready to execute</div>
+          </div>
+
+          <!-- Dynamic Test Result List Container -->
+          <div id="qa-test-results-container" class="space-y-3">
+            <div class="p-8 rounded-2xl bg-[#161D22] border border-white/10 text-center">
+              <div class="text-3xl mb-2">🧪</div>
+              <h3 class="text-base font-bold text-white">System QA Suite Ready</h3>
+              <p class="text-xs text-slate-400 max-w-md mx-auto mt-1">
+                Click "Run All System QA Tests" to execute the 18 automated test assertions covering White-Box logic, Black-Box boundary values, Gray-Box store synchronization, and OWASP penetration checks.
+              </p>
+              <button onclick="NexcoAdmin.runQASuite()" class="mt-4 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-md">
+                ▶ Execute 18 QA Tests Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+  </div> <!-- CLOSE OF PORTAL VIEW 3 -->
+
+
+  <!-- ========================================================================= -->
+  <!-- PORTAL VIEW 4: DEDICATED TERMS & CONDITIONS PAGE -->
+  <!-- ========================================================================= -->
+  <div id="view-terms-page" class="hidden min-h-screen bg-[#0A0D0E] text-slate-100 flex-col">
+    <header class="h-16 border-b border-white/10 bg-[#12171A]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5">
+          <img src="assets/logo.png" class="w-full h-full object-contain" />
+        </div>
+        <div>
+          <div class="text-xs font-bold text-white flex items-center gap-1.5">
+            <span>Nexco</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Nexora Techno × Gencode</span>
+          </div>
+          <div class="text-[10px] text-slate-400">Terms &amp; Conditions of Enrollment</div>
+        </div>
+      </div>
+      <button id="terms-back-to-web" class="back-to-website-trigger px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition-all flex items-center gap-1.5">
+        <span>← Return to Public Website</span>
+      </button>
+    </header>
+
+    <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 py-12 text-slate-300 space-y-8">
+      <div class="border-b border-white/10 pb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-3">
+          <span>📜 Official Policy</span>
+          <span>•</span>
+          <span>Effective: November 2026</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Terms and Conditions of Enrollment</h1>
+        <p class="text-xs text-slate-400 mt-2">
+          Governing all academic accelerators and masterclasses offered by <strong>Nexco — An Official Joint Collaboration of Nexora Techno &amp; Gencode</strong> (Registered HQ: 15/2, Sankar Nagar, Salem - 636007, Tamil Nadu, India).
+        </p>
+      </div>
+
+      <div class="space-y-6 text-xs sm:text-sm leading-relaxed">
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">1. Nature of the Program</h2>
+          <p>
+            Nexco provides rigorous 100% Live Online training, mentorship, and project portfolio development. All live lectures, code reviews, and office hours are conducted live online via interactive video conferencing.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">2. No Payment Gateways &amp; Admissions Protocol</h2>
+          <p>
+            Admissions to Nexco cohorts are strictly counseling-led. Nexco does not process automated self-checkout fees through online payment gateways. Enrollment is confirmed only after counseling assessment and formal verification by our academic admissions committee.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">3. Honest Commitments &amp; Zero Fake Guarantees</h2>
+          <p>
+            In alignment with The Nexco Charter, we do not promise or advertise speculative job guarantees. We commit to delivering production-grade engineering curricula, rigorous milestone assessments, and verified joint credentials backed by Nexora Techno &amp; Gencode.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">4. Code of Conduct</h2>
+          <p>
+            Our bilingual Tamil and English learning environment is built on mutual respect and collaborative growth. Harassment, discriminatory language, or disruptive behavior during live Google Meet sessions or peer review channels will result in immediate termination of portal access.
+          </p>
+        </section>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex justify-between items-center text-xs">
+        <span class="text-slate-500">© 2026 Nexco (Nexora Techno × Gencode). All rights reserved.</span>
+        <button class="back-to-website-trigger text-emerald-400 hover:underline font-semibold">
+          Return to Public Website →
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PORTAL VIEW 5: DEDICATED PRIVACY POLICY PAGE -->
+  <!-- ========================================================================= -->
+  <div id="view-privacy-page" class="hidden min-h-screen bg-[#0A0D0E] text-slate-100 flex-col">
+    <header class="h-16 border-b border-white/10 bg-[#12171A]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-bold text-xs p-0.5">
+          <img src="assets/logo.png" class="w-full h-full object-contain" />
+        </div>
+        <div>
+          <div class="text-xs font-bold text-white flex items-center gap-1.5">
+            <span>Nexco</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Nexora Techno × Gencode</span>
+          </div>
+          <div class="text-[10px] text-slate-400">Privacy &amp; Data Protection Policy</div>
+        </div>
+      </div>
+      <button id="privacy-back-to-web" class="back-to-website-trigger px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold transition-all flex items-center gap-1.5">
+        <span>← Return to Public Website</span>
+      </button>
+    </header>
+
+    <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 py-12 text-slate-300 space-y-8">
+      <div class="border-b border-white/10 pb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-3">
+          <span>🔒 Privacy First</span>
+          <span>•</span>
+          <span>Effective: November 2026</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Privacy Policy &amp; Data Protection</h1>
+        <p class="text-xs text-slate-400 mt-2">
+          Your privacy is sacred. Here is how <strong>Nexco (Nexora Techno × Gencode)</strong> collects, handles, and protects your data.
+        </p>
+      </div>
+
+      <div class="space-y-6 text-xs sm:text-sm leading-relaxed">
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">1. Information We Collect</h2>
+          <p>
+            We collect personal information necessary to deliver educational counseling and 100% Live Online learning services, including Full Name, Email Address, WhatsApp / Mobile Number (+91), College/City, and Track preferences.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">2. Zero Third-Party Data Selling</h2>
+          <p>
+            Nexco strictly <strong>never sells, rents, leases, or trades</strong> your personal information or contact details to third-party telemarketers or advertising brokers. All inquiry data remains securely stored.
+          </p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-bold text-white">3. Contact for Privacy Inquiries</h2>
+          <p>
+            Registered Headquarters: 15/2, Sankar Nagar, Salem - 636007, Tamil Nadu, India<br/>
+            Phone: +91 93451 21988 • Email: privacy@nexco.in
+          </p>
+        </section>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex justify-between items-center text-xs">
+        <span class="text-slate-500">© 2026 Nexco (Nexora Techno × Gencode). All rights reserved.</span>
+        <button class="back-to-website-trigger text-emerald-400 hover:underline font-semibold">
+          Return to Public Website →
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING WIDGETS (AI ASSISTANT & WHATSAPP) - Compact on Mobile -->
+  <!-- ========================================================================= -->
+  <div id="floating-widgets-container" class="floating-widgets-container fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+    <!-- WhatsApp Floating Button -->
+    <button id="floating-wa-btn" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-105 transition-all relative" title="Chat on WhatsApp">
+      <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.05-2.021-.497-1.688-.697-2.766-2.42-2.85-2.534-.084-.113-.679-.904-.679-1.724 0-.82.427-1.223.579-1.391.152-.169.333-.211.444-.211.111 0 .222.001.319.006.103.004.24-.039.375.285.144.343.491 1.198.533 1.285.043.086.071.189.014.304-.057.114-.085.186-.17.286-.086.101-.181.225-.258.303-.09.089-.184.186-.079.366.106.182.47 1.053 1.009 1.533.693.618 1.277.81 1.458.9.181.09.288.077.394-.047.106-.124.457-.532.579-.714.122-.182.244-.152.41-.091.167.061 1.057.498 1.238.589.181.091.303.136.347.213.044.077.044.448-.1 1.026z"></path></svg>
+      <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-[#0A0D0E]"></span>
+    </button>
+
+    <!-- Nexco AI Advisor Button (Icon Pill on mobile) -->
+    <button id="floating-ai-btn" class="ai-mentor-btn w-11 h-11 sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white border border-emerald-500/40 shadow-2xl flex items-center justify-center gap-2">
+      <div class="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center text-xs font-extrabold shrink-0">AI</div>
+      <span class="ai-btn-text hidden sm:inline text-xs font-bold text-slate-100">Ask Nexco Live AI</span>
+    </button>
+  </div>
+
+  <!-- AI Drawer -->
+  <div id="floating-ai-drawer" class="hidden fixed bottom-20 right-4 w-96 max-w-[calc(100vw-2rem)] rounded-2xl bg-[#12171A] border border-white/15 shadow-2xl z-50 flex-col overflow-hidden">
+    <div class="p-3.5 bg-black/60 border-b border-white/10 flex items-center justify-between">
+      <span class="text-xs font-bold text-white">Nexco Live Admissions AI</span>
+      <button id="floating-ai-close" class="text-slate-400 hover:text-white">✕</button>
+    </div>
+    <div class="p-2.5 bg-black/30 border-b border-white/5 flex flex-wrap gap-1.5 text-[11px]">
+      <button data-prompt="Are classes 100% online?" class="ai-advisor-chip px-2 py-0.5 rounded-full bg-white/5 text-slate-300">100% online?</button>
+      <button data-prompt="Do you provide Tamil & English bilingual mentorship?" class="ai-advisor-chip px-2 py-0.5 rounded-full bg-white/5 text-slate-300">Tamil support?</button>
+      <button data-prompt="Tell me about the collaboration of Nexora Techno & Gencode" class="ai-advisor-chip px-2 py-0.5 rounded-full bg-white/5 text-slate-300">Collaboration?</button>
+    </div>
+    <div id="floating-ai-feed" class="p-4 space-y-3 h-72 overflow-y-auto text-xs bg-[#0A0D0E]/60">
+      <div class="flex justify-start">
+        <div class="max-w-[85%] p-3 rounded-2xl bg-[#181C1E] border border-white/10 text-xs text-slate-200 leading-relaxed">
+          Vanakkam! I am your Nexco Live Admissions Advisor. All classes and code reviews are conducted 100% Live Online with bilingual Tamil &amp; English mentor guidance. Ask me anything!
+        </div>
+      </div>
+    </div>
+    <div class="p-3 bg-black/60 border-t border-white/10 flex items-center gap-2">
+      <input id="floating-ai-input" type="text" placeholder="Ask about live sessions, curriculum, fees..." class="flex-1 px-3 py-2 text-xs rounded-xl bg-[#12171A] border border-white/15 text-white focus:outline-none focus:border-emerald-500" />
+      <button id="floating-ai-send" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors">Send</button>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODALS -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. AUTH MODAL (LOGIN & SIGNUP) -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-5 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-md bg-emerald-500 text-black flex items-center justify-center font-bold text-[10px]">N</div>
+            <h3 id="auth-modal-title" class="text-lg font-bold text-white tracking-tight">Sign In to Nexco Portal</h3>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-0.5">Joint Platform by Nexora Techno &amp; Gencode</p>
+        </div>
+        <button id="auth-modal-close" class="text-slate-400 hover:text-white text-sm p-1 rounded-lg hover:bg-white/5 transition-colors">✕</button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-1.5 p-1 rounded-xl bg-black/50 border border-white/10 text-xs font-semibold">
+        <button id="auth-tab-login" class="py-2 rounded-lg bg-emerald-500 text-black font-bold transition-all shadow-md">
+          Sign In
+        </button>
+        <button id="auth-tab-signup" class="py-2 rounded-lg text-slate-400 hover:text-white transition-all">
+          Create Account
+        </button>
+      </div>
+
+      <!-- 1-Click Continue with Google Button -->
+      <div class="space-y-3 pt-1">
+        <button id="google-signin-btn" type="button" class="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-900 font-bold py-2.5 sm:py-3 px-4 rounded-xl shadow-md transition-all cursor-pointer text-xs">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span id="google-btn-text">Continue with Google</span>
+        </button>
+
+        <div class="flex items-center gap-3 my-1.5">
+          <div class="flex-1 h-px bg-white/10"></div>
+          <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">or continue with email</span>
+          <div class="flex-1 h-px bg-white/10"></div>
+        </div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="auth-login-form" class="space-y-4">
+        <!-- Live Countdown Lockout Banner -->
+        <div id="auth-login-lockout-banner" class="hidden p-3.5 rounded-xl border border-red-500/40 bg-red-500/15 text-red-200 text-xs flex items-center gap-2.5 font-mono">
+          <span class="text-base">🔒</span>
+          <div class="flex-1">
+            <div class="font-bold text-red-400">Account Temporarily Locked</div>
+            <div id="auth-lockout-timer-text" class="text-[11px] text-red-300/90 mt-0.5">Please wait 15:00 before trying again.</div>
+          </div>
+        </div>
+
+        <!-- Attempt Warning Badge -->
+        <div id="auth-login-warning-badge" class="hidden p-3 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs flex items-start gap-2">
+          <span class="text-sm">⚠️</span>
+          <div id="auth-warning-badge-text" class="flex-1 text-[11px] leading-relaxed">
+            Incorrect credentials. 4 attempts remaining before temporary 15-minute lockout.
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+          <input id="auth-login-email" type="email" required placeholder="name@example.com" 
+                 class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-opacity" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Password *</label>
+          <div class="relative">
+            <input id="auth-login-password" type="password" required placeholder="••••••••" 
+                   class="w-full pl-3.5 pr-10 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-opacity" />
+            <button type="button" id="toggle-login-pass-visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm transition-colors" aria-label="Toggle password visibility">
+              👁
+            </button>
+          </div>
+        </div>
+
+        <!-- Human Verification Security Challenge (Reveals after 2 failed attempts) -->
+        <div id="auth-challenge-container" class="hidden p-3 rounded-xl bg-black/50 border border-emerald-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <label class="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5">
+              <span>🛡️ Human Verification Security Challenge</span>
+            </label>
+            <button type="button" id="auth-challenge-refresh-btn" class="text-[10px] text-slate-400 hover:text-white underline">Refresh</button>
+          </div>
+          <p class="text-[11px] text-slate-300">Solve the verification puzzle to continue:</p>
+          <div class="flex items-center gap-2">
+            <div id="auth-challenge-display" class="px-3 py-2 rounded-lg bg-[#181C1E] border border-white/15 text-emerald-400 font-mono text-xs font-bold tracking-wider select-none shrink-0">
+              Loading puzzle...
+            </div>
+            <input id="auth-challenge-input" type="text" placeholder="Enter answer" class="flex-1 px-3 py-2 rounded-lg bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500 font-mono" />
+          </div>
+          <input type="hidden" id="auth-challenge-id" />
+        </div>
+
+        <button id="auth-login-submit" type="submit" 
+                class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-emerald-500/25 transition-all">
+          Sign In to Portal ↗
+        </button>
+
+        <p class="text-[11px] text-slate-400 text-center pt-1">
+          Learners route to LearnHub LMS. Staff access is managed securely.
+        </p>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form id="auth-signup-form" class="space-y-3.5 hidden">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+          <input id="auth-signup-name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
+                 class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+          <input id="auth-signup-email" type="email" required placeholder="dinesh@gmail.com" 
+                 class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Mobile / WhatsApp Number (+91) *</label>
+          <input id="auth-signup-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
+                 class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Create Password *</label>
+          <div class="relative">
+            <input id="auth-signup-password" type="password" required minlength="8" placeholder="Min 8 characters (Upper, Lower, Num, Symbol)" 
+                   class="w-full pl-3.5 pr-10 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+            <button type="button" id="toggle-signup-pass-visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm transition-colors" aria-label="Toggle password visibility">
+              👁
+            </button>
+          </div>
+
+          <!-- Password Strength Meter -->
+          <div id="password-strength-container" class="space-y-1.5 pt-2">
+            <div class="flex items-center justify-between text-[10px]">
+              <span class="text-slate-400">Password Strength:</span>
+              <span id="password-strength-text" class="font-bold text-slate-500">Requires 8+ chars</span>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5 h-1.5">
+              <div id="pwd-bar-1" class="h-full rounded-full bg-white/10 transition-colors"></div>
+              <div id="pwd-bar-2" class="h-full rounded-full bg-white/10 transition-colors"></div>
+              <div id="pwd-bar-3" class="h-full rounded-full bg-white/10 transition-colors"></div>
+              <div id="pwd-bar-4" class="h-full rounded-full bg-white/10 transition-colors"></div>
+            </div>
+            <p class="text-[10px] text-slate-400 leading-tight">Must include: 8+ characters, 1 uppercase (A-Z), 1 lowercase (a-z), 1 number (0-9), and 1 symbol (!@#$%^&amp;*).</p>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <div class="flex items-start gap-2">
+            <input id="auth-signup-terms" type="checkbox" required checked class="mt-0.5 rounded border-white/20 bg-black/60 text-emerald-500 focus:ring-0 cursor-pointer" />
+            <label for="auth-signup-terms" class="text-[11px] text-slate-300 cursor-pointer leading-tight">
+              I agree to the <a href="#terms" class="terms-link text-emerald-400 underline">Terms &amp; Conditions</a> and <a href="#privacy" class="privacy-link text-emerald-400 underline">Privacy Policy</a>
+            </label>
+          </div>
+
+          <div class="flex items-start gap-2">
+            <input id="auth-signup-alerts" type="checkbox" checked class="mt-0.5 rounded border-white/20 bg-black/60 text-emerald-500 focus:ring-0 cursor-pointer" />
+            <label for="auth-signup-alerts" class="text-[11px] text-slate-300 cursor-pointer leading-tight">
+              Receive live class alerts, workshop invitations &amp; course notifications
+            </label>
+          </div>
+        </div>
+
+        <button id="auth-signup-submit" type="submit" 
+                class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 text-slate-950 font-bold text-xs tracking-wide shadow-lg shadow-emerald-500/25 transition-all mt-2">
+          Create Account &amp; Launch LearnHub 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. WORKSHOP FEEDBACK SUBMISSION MODAL -->
+  <div id="feedback-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-white">Submit Workshop Feedback</h3>
+          <p class="text-[11px] text-slate-400 mt-0.5">Share your honest experience with Nexco mentors</p>
+        </div>
+        <button id="feedback-modal-close" class="text-slate-400 hover:text-white text-sm">✕</button>
+      </div>
+
+      <form id="feedback-form" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Your Full Name *</label>
+          <input id="feedback-name" type="text" required placeholder="e.g. Anand R." 
+                 class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Your Role / College / City *</label>
+          <input id="feedback-role" type="text" required placeholder="e.g. Final Year CSE, Salem" 
+                 class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Workshop / Track Attended *</label>
+          <select id="feedback-workshop" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
+            <option value="100% Live Online Microservices Masterclass">100% Live Online Microservices Masterclass</option>
+            <option value="Full Stack MERN & Python Live Masterclass">Full Stack MERN &amp; Python Live Masterclass</option>
+            <option value="UI/UX Design Systems & Figma Studio">UI/UX Design Systems &amp; Figma Studio</option>
+            <option value="AI Tools & LLM Workflow Automation">AI Tools &amp; LLM Workflow Automation</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Rating *</label>
+          <select id="feedback-rating" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
+            <option value="5">★★★★★ (5 Stars - Exceptional)</option>
+            <option value="4">★★★★☆ (4 Stars - Very Good)</option>
+            <option value="3">★★★☆☆ (3 Stars - Average)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Your Honest Feedback *</label>
+          <textarea id="feedback-comment" required rows="3" placeholder="What did you build? How was the mentor code review and bilingual explanation?" 
+                    class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">LinkedIn or GitHub Profile (Optional)</label>
+          <input id="feedback-linkedin" type="url" placeholder="https://linkedin.com/in/yourname" 
+                 class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide shadow-md transition-all mt-2">
+          Submit Feedback for Mentor Review ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. COUNSELING & DIRECT ENROLLMENT MODAL (No Payment Gateway!) -->
+  <div id="counseling-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-md w-full overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-white/10 flex items-start justify-between bg-black/40">
+        <div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 uppercase font-mono">Free Counseling</span>
+          <h3 id="counseling-modal-course-title" class="text-base font-bold text-white mt-1">Full Stack Web Development</h3>
+          <p class="text-xs text-slate-400 mt-0.5">100% Live Online Interactive Classes</p>
+        </div>
+        <button onclick="NexcoLanding.closeCounselingModal()" class="text-slate-400 hover:text-white p-1">✕</button>
+      </div>
+
+      <form id="counseling-form" class="p-6 space-y-3.5 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Full Name *</label>
+          <input id="counseling-name" type="text" required placeholder="e.g. K. Dinesh" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">WhatsApp / Phone Number (+91) *</label>
+          <input id="counseling-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Email Address</label>
+          <input id="counseling-email" type="email" placeholder="dinesh@gmail.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">College / Organization / City</label>
+          <input id="counseling-city" type="text" placeholder="Salem, Rasipuram, Namakkal, Coimbatore, etc." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Select Program</label>
+          <select id="counseling-modal-course-select" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs"></select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Preferred Batch Timing</label>
+          <select id="counseling-batch-pref" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs">
+            <option value="100% Live Online (Weekend Mornings)">100% Live Online (Weekend Mornings: 10:00 AM - 1:00 PM IST)</option>
+            <option value="100% Live Online (Weekday Evenings)">100% Live Online (Weekday Evenings: 7:30 PM - 9:00 PM IST)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg mt-2">
+          Confirm &amp; Request Counselor Call ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. WHATSAPP DIRECT CONNECT MODAL -->
+  <div id="wa-direct-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+      <div class="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center text-xl font-bold mx-auto">
+        💬
+      </div>
+      <h3 class="text-base font-bold text-white">Inquiry Received!</h3>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Connect immediately with a Senior Engineering Counselor on WhatsApp to receive the 100% Live Online syllabus PDF, batch timetable, and 1-on-1 mentor details.
+      </p>
+      <div class="space-y-2 pt-2">
+        <a id="wa-direct-modal-link" href="#" target="_blank" class="block w-full py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs">
+          Open WhatsApp Chat Now ↗
+        </a>
+        <button onclick="NexcoLanding.closeWhatsAppConnectModal()" class="w-full py-2 text-xs text-slate-400 hover:text-white">
+          Continue Browsing
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. WORKSHOP REGISTRATION MODAL -->
+  <div id="workshop-reg-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h3 id="workshop-reg-title" class="text-base font-bold text-white">Workshop Registration</h3>
+          <p id="workshop-reg-mentor" class="text-xs text-slate-400"></p>
+        </div>
+        <button onclick="NexcoLanding.closeWorkshopRegisterModal()" class="text-slate-400 hover:text-white">✕</button>
+      </div>
+
+      <form onsubmit="event.preventDefault(); NexcoStore.addLead({ name: document.getElementById('ws-reg-name').value, phone: document.getElementById('ws-reg-phone').value, email: document.getElementById('ws-reg-email').value, cityCollege: document.getElementById('ws-reg-city').value, program: document.getElementById('workshop-reg-title').textContent, source: 'Live Workshop Registration' }); NexcoApp.showToast('Registered! Google Meet invite sent to your WhatsApp.', 'success'); NexcoLanding.closeWorkshopRegisterModal();" class="space-y-3">
+        <input type="hidden" id="workshop-reg-session-id" />
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name *</label>
+          <input id="ws-reg-name" type="text" required placeholder="Alex Rivera / K. Anand" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Mobile (+91) *</label>
+          <input id="ws-reg-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Email (for Meet Invite) *</label>
+          <input id="ws-reg-email" type="email" required placeholder="name@domain.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City</label>
+          <input id="ws-reg-city" type="text" placeholder="Salem, Coimbatore, Chennai, Bangalore" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs mt-2">
+          Claim Free Live Seat ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. ADMIN ADD / EDIT COURSE MODAL -->
+  <div id="admin-course-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <h3 id="admin-course-modal-title" class="text-base font-bold text-white">Add New 100% Online Program</h3>
+        <button type="button" onclick="NexcoAdmin.closeCourseModal()" data-action="close-course-modal" class="text-slate-400 hover:text-white p-1">✕</button>
+      </div>
+
+      <form id="admin-course-form" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Course Title *</label>
+          <input id="admin-course-title" type="text" required placeholder="e.g. Next.js 15 & AI Systems" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Category</label>
+            <select id="admin-course-category" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
+              <option value="fullstack">Full Stack</option>
+              <option value="uiux">UI/UX Design</option>
+              <option value="ai">AI Tools</option>
+              <option value="datascience">Data Science</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1">Duration</label>
+            <input id="admin-course-duration" type="text" placeholder="e.g. 24 Weeks" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Batch Mode</label>
+          <input id="admin-course-batch-mode" type="text" value="100% Live Online Interactive Classes" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Mentor Name</label>
+          <input id="admin-course-mentor" type="text" placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Thumbnail Image URL</label>
+          <input id="admin-course-thumbnail" type="url" placeholder="https://images.unsplash.com/photo-..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Description</label>
+          <textarea id="admin-course-desc" rows="3" placeholder="Course highlights and learning outcomes..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Skills (comma separated)</label>
+          <input id="admin-course-skills" type="text" placeholder="React 19, Node.js, Python, PostgreSQL, Docker" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-black font-bold text-xs mt-3">
+          Save &amp; Publish Course Live ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. ADMIN SCHEDULE SESSION MODAL -->
+  <div id="admin-session-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <h3 id="admin-session-modal-title" class="text-base font-bold text-white">Schedule Live Workshop / Masterclass</h3>
+        <button type="button" onclick="NexcoAdmin.closeSessionModal()" data-action="close-session-modal" class="text-slate-400 hover:text-white p-1">✕</button>
+      </div>
+
+      <form id="admin-session-form" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Workshop Title *</label>
+          <input id="admin-session-title" type="text" required placeholder="e.g. Building Full Stack MERN App in 90 Mins" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Mentor Name *</label>
+          <input id="admin-session-mentor" type="text" required placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Date &amp; Time (IST) *</label>
+          <input id="admin-session-datetime" type="text" required placeholder="Sunday, 6:00 PM - 8:30 PM IST" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Batch / Mode</label>
+          <input id="admin-session-batch" type="text" value="100% Live Online Stream (Google Meet)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Google Meet / Zoom URL *</label>
+          <input id="admin-session-link" type="url" required placeholder="https://meet.google.com/nex-live-stream" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Status</label>
+          <select id="admin-session-status" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
+            <option value="Upcoming Workshop">Upcoming Workshop</option>
+            <option value="LIVE NOW">LIVE NOW (Red Pulse)</option>
+            <option value="Seats Filling Fast">Seats Filling Fast</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Description</label>
+          <textarea id="admin-session-desc" rows="2" placeholder="Topics covered in workshop..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-black font-bold text-xs mt-2">
+          Save &amp; Schedule Session ↗
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8. SYLLABUS MODAL -->
+  <div id="syllabus-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="p-6 border-b border-white/10 flex items-start justify-between bg-black/40">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 uppercase tracking-wider">Live Curriculum</span>
+          <h3 id="syllabus-modal-title" class="text-xl font-bold text-white mt-1">Full Stack Web Development</h3>
+          <p id="syllabus-modal-meta" class="text-xs text-slate-400 mt-1 font-mono"></p>
+        </div>
+        <button onclick="NexcoLanding.closeSyllabusModal()" class="text-slate-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-4">
+        <p id="syllabus-modal-desc" class="text-xs text-slate-300 leading-relaxed mb-4"></p>
+        <div id="syllabus-modal-modules" class="space-y-3"></div>
+      </div>
+
+      <div class="p-4 border-t border-white/10 bg-black/40 flex items-center justify-between">
+        <button onclick="NexcoLanding.closeSyllabusModal()" class="px-4 py-2 text-xs text-slate-400 hover:text-white">Close</button>
+        <button id="syllabus-modal-counselor-btn" class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">
+          Request Counseling for this Program ↗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. VIDEO STORY MODAL -->
+  <div id="video-modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4">
+    <div class="bg-[#12171A] border border-white/15 rounded-2xl max-w-3xl w-full flex flex-col overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-black/40">
+        <h3 class="text-sm font-bold text-white">Student Video Story</h3>
+        <button onclick="NexcoLanding.closeVideoStoryModal()" class="text-slate-400 hover:text-white p-1">✕</button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center">
+        <video id="video-modal-player" controls class="w-full h-full object-contain"></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Firebase Web SDK (v10 Compat) & Initialization for Project: tamilan-mart-c9aa8 -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script>
+    window.firebaseConfig = {
+      apiKey: "AIzaSyDl_lR7plVzaSgl6gNWYt-lW1QO_VdnO6c",
+      authDomain: "tamilan-mart-c9aa8.firebaseapp.com",
+      projectId: "tamilan-mart-c9aa8",
+      storageBucket: "tamilan-mart-c9aa8.firebasestorage.app",
+      messagingSenderId: "344534695132",
+      appId: "1:344534695132:web:1be38919c11f3706574819",
+      measurementId: "G-X6PJJB11EX"
+    };
+    if (typeof firebase !== 'undefined' && !firebase.apps.length) {
+      try {
+        firebase.initializeApp(window.firebaseConfig);
+        console.log("🔥 [Nexco Firebase] Web Client initialized with project: tamilan-mart-c9aa8");
+      } catch (err) {
+        console.warn("⚠️ [Nexco Firebase] Web SDK initialization note:", err.message);
+      }
+    }
+  </script>
+
+  <!-- Core Reactive State Store & Application Scripts (Strictly Modular) -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/lms.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

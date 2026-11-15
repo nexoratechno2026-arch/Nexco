@@ -1,0 +1,819 @@
+/* Nexco Design System & Custom Styles - Salem, Tamil Nadu Localized */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --color-obsidian: #0A0D0E;
+  --color-charcoal: #12171A;
+  --color-surface-dark: #161D22;
+  --color-surface-card: #1A2228;
+  --color-alabaster: #F8FAFC;
+  --color-white: #FFFFFF;
+  --color-emerald: #10B981;
+  --color-mint: #22C55E;
+  --color-forest-glass: #064E3B;
+  --color-forest-dark: #072B21;
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+  --color-border-emerald: rgba(16, 185, 129, 0.35);
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-obsidian);
+  color: #E2E8F0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* ========================================================================= */
+/* GLASSMORPHISM DESIGN SYSTEM                                               */
+/* ========================================================================= */
+
+.glass-panel-dark {
+  background: rgba(18, 23, 26, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-dark);
+}
+
+.glass-panel-emerald {
+  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), rgba(6, 78, 59, 0.22) 60%, rgba(10, 13, 14, 0.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-emerald);
+}
+
+.glass-nav {
+  background: rgba(10, 13, 14, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================================================= */
+/* MOTION GRAPHICS, AURORA BACKDROP & TECH GRID                              */
+/* ========================================================================= */
+
+/* Perspective Tech Grid Background */
+.tech-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+/* Floating Blurred Mesh-Gradient Orbs (Aurora Effect) */
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(35px, -45px) scale(1.12);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.94);
+  }
+}
+
+@keyframes floatOrbReverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 35px) scale(0.92);
+  }
+  66% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+}
+
+.aurora-orb-1 {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(6, 78, 59, 0.08) 50%, transparent 70%);
+  filter: blur(65px);
+  -webkit-filter: blur(65px);
+  animation: floatOrb 18s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aurora-orb-2 {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+  animation: floatOrbReverse 22s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========================================================================= */
+/* CONTINUOUS SEAMLESS MARQUEE TICKER (30s Infinite Scroll)                  */
+/* ========================================================================= */
+
+@keyframes marqueeScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee-wrapper, .ticker-wrap {
+  width: 100% !important;
+  overflow: hidden !important;
+  background: rgba(10, 15, 13, 0.95) !important;
+  border-top: 1px solid rgba(34, 197, 94, 0.18) !important;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.18) !important;
+  padding: 14px 0 !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-track, .ticker-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  gap: 36px !important;
+  animation: marqueeScroll 30s linear infinite !important;
+  will-change: transform;
+}
+
+.marquee-track:hover, .ticker-track:hover {
+  animation-play-state: paused !important;
+}
+
+.marquee-item, .ticker-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: #d1fae5 !important;
+}
+
+/* Container alias */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+}
+
+/* ========================================================================= */
+/* CTA BUTTON SHIMMER & LIVE RADAR PULSE                                     */
+/* ========================================================================= */
+
+/* Diagonal Light-Shimmer Sweep */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.38),
+    transparent
+  );
+  animation: shimmerSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* 3D Card Hover Lift */
+.card-3d-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-3d-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.25), 0 0 20px -2px rgba(34, 197, 94, 0.35);
+  border-color: rgba(34, 197, 94, 0.6) !important;
+}
+
+/* Animated Pulsing Radar Rings */
+@keyframes radarPulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes radarPulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.radar-live {
+  position: relative;
+  animation: radarPulseRed 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.radar-online {
+  position: relative;
+  animation: radarPulseGreen 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Glow & Shimmer Utility Classes */
+.glow-emerald {
+  box-shadow: 0 0 25px -4px rgba(34, 197, 94, 0.38);
+}
+
+.glow-emerald-lg {
+  box-shadow: 0 0 45px -5px rgba(16, 185, 129, 0.45);
+}
+
+.glow-border-hover:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 20px -3px rgba(34, 197, 94, 0.25);
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.45);
+}
+
+/* ========================================================================= */
+/* SCROLL REVEAL ANIMATIONS (IntersectionObserver)                           */
+/* ========================================================================= */
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Staggered Delay Helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* ========================================================================= */
+/* FLOATING WIDGETS (Fixed Bottom-Right & Mobile Compact)                    */
+/* ========================================================================= */
+
+#floating-widgets-container,
+.floating-widgets-container {
+  position: fixed !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 9990 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 767px) {
+  .ai-btn-text {
+    display: none !important;
+  }
+  .ai-mentor-btn {
+    width: 46px !important;
+    height: 46px !important;
+    padding: 0 !important;
+    border-radius: 9999px !important;
+    justify-content: center !important;
+  }
+  #floating-wa-btn {
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
+
+/* ========================================================================= */
+/* PERMANENT TOP FIXED NAVBAR & HERO PADDING FOR LAPTOP / DESKTOP VIEW       */
+/* ========================================================================= */
+
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9995 !important;
+  width: 100% !important;
+}
+
+#hero {
+  padding-top: 120px !important;
+  padding-bottom: 64px !important;
+}
+
+@media screen and (min-width: 992px) {
+  #hero {
+    padding-top: 130px !important;
+    padding-bottom: 72px !important;
+  }
+  
+  .desktop-only {
+    display: inline-flex !important;
+  }
+  
+  nav.desktop-only {
+    display: flex !important;
+  }
+
+  #nav-logged-out-actions.desktop-only {
+    display: flex !important;
+  }
+
+  #nav-user-controls.desktop-only {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn, #mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* ========================================================================= */
+/* HARD MOBILE NAVBAR BREAKPOINT OVERRIDES (< 992px)                         */
+/* ========================================================================= */
+
+@media screen and (max-width: 991px) {
+  /* Strictly hide all desktop-only navigation links & buttons on mobile */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Force the top pill navbar to remain a single, clean, uncrushed row */
+  .navbar-pill {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    height: 58px !important;
+    padding: 0 16px !important;
+    width: calc(100% - 24px) !important;
+    margin: 8px auto !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hide long brand subtitle so Logo never wraps or crushes */
+  .brand-subtitle {
+    display: none !important;
+  }
+
+  /* Glassmorphic Slide-Down Mobile Drawer */
+  .mobile-drawer {
+    background: rgba(18, 23, 26, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.15) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+}
+
+/* ========================================================================= */
+/* IPHONE 16 & MOBILE COMPACT UTILITIES                                      */
+/* ========================================================================= */
+
+@media (max-width: 640px) {
+  /* Compact Top Announcement Bar */
+  #top-live-announcement-bar {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+  
+  /* Full Width Touch-Friendly Cards */
+  .glass-panel-dark, .glass-card-light {
+    padding: 1rem !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+  }
+
+  /* Modals: Mobile Full Screen Safe Area & Scrollable */
+  .modal-backdrop > div {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    width: 95% !important;
+    margin: auto !important;
+    padding: 1.25rem !important;
+  }
+
+  /* Admin Tables & Forms on Mobile */
+  .admin-table-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* Radio Card Checked State Transitions */
+.radio-card-active {
+  border-color: #10B981 !important;
+  background-color: rgba(16, 185, 129, 0.06) !important;
+  box-shadow: 0 0 0 1.5px #10B981, 0 10px 25px -5px rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Global Display & Pointer-Event Fix for Closed Modals & Hidden Elements */
+.hidden {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(5, 8, 9, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.modal-backdrop.hidden,
+.modal-overlay.hidden,
+.drawer-backdrop.hidden {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Navbar Pill Desktop Dimensions & Link Spacing */
+.navbar-pill {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin: 6px auto !important;
+  padding: 8px 24px !important;
+  border-radius: 9999px !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+@media screen and (min-width: 992px) {
+  .desktop-only {
+    display: flex !important;
+  }
+  .nav-center,
+  .navbar-links,
+  .navbar-pill nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .navbar-pill nav a {
+    font-size: 12.5px !important;
+    padding: 5px 9px !important;
+    white-space: nowrap !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-radius: 9999px !important;
+  }
+  .navbar-pill nav a:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  /* On 992px-1199px (laptops/MacBooks), hide the redundant Registered HQ link to give luxury breathing room */
+  .nav-link-salem {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-pill {
+    padding: 8px 28px !important;
+    gap: 16px !important;
+  }
+  .nav-center,
+  .navbar-links,
+  .navbar-pill nav {
+    gap: 12px !important;
+  }
+  .navbar-pill nav a {
+    font-size: 13px !important;
+    padding: 5px 11px !important;
+  }
+  .nav-link-salem {
+    display: inline-flex !important;
+  }
+}
+
+#nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+#nav-logged-out-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#nav-actions button,
+#nav-actions a,
+#nav-actions .btn-admin,
+#nav-actions .btn-lms,
+#nav-dynamic-auth-buttons button {
+  padding: 7px 14px !important;
+  font-size: 12.5px !important;
+  white-space: nowrap !important;
+  border-radius: 9999px !important;
+  line-height: normal !important;
+}
+
+#nav-masterclass-btn {
+  margin-right: 2px !important;
+}
+
+#nav-dynamic-auth-buttons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+#nav-user-profile-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+@media screen and (max-width: 991px) {
+  .desktop-only,
+  #nav-actions .desktop-only,
+  #nav-actions .btn-admin,
+  #nav-actions .btn-lms,
+  #nav-actions .btn-logout,
+  #nav-user-profile-group,
+  #nav-logged-out-actions,
+  #nav-dynamic-auth-buttons {
+    display: none !important;
+  }
+  .navbar-pill {
+    padding: 0 16px !important;
+    height: 56px !important;
+    gap: 8px !important;
+    width: calc(100% - 16px) !important;
+    margin: 6px auto !important;
+  }
+}
+
+/* ========================================================================= */
+/* ADMIN COMMAND CENTER RESPONSIVE TOPBAR                                    */
+/* ========================================================================= */
+.admin-topbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-sizing: border-box !important;
+}
+
+.admin-header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+}
+
+.admin-header-actions button,
+.admin-header-actions a {
+  white-space: nowrap !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  border-radius: 9999px !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+/* Site Content & Hero Editor Section Header Stacking on Mobile */
+@media screen and (max-width: 639px) {
+  .admin-cms-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .admin-cms-header button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  animation: toast-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.toast-out {
+  animation: toast-out 0.25s ease-in forwards;
+}
+
+@keyframes toast-out {
+  to {
+    transform: translateY(10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Notification Popover Animation */
+.notification-popover {
+  animation: popover-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popover-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Video Player Custom Timeline */
+input[type="range"].video-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  height: 6px;
+  outline: none;
+}
+
+input[type="range"].video-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22C55E;
+  cursor: pointer;
+  box-shadow: 0 0 10px #22C55E;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].video-scrubber::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background: #22C55E;
+  cursor: pointer;
+  box-shadow: 0 0 10px #22C55E;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].video-scrubber::-webkit-slider-thumb:hover,
+input[type="range"].video-scrubber::-moz-range-thumb:hover {
+  transform: scale(1.3);
+}
+
+/* Hide scrollbar for clean horizontal pill overflow */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0D0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}

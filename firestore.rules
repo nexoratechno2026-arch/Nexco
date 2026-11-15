@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'admin@nexco.in' ||
+        request.auth.token.role == 'admin' ||
+        request.auth.token.admin == true
+      );
+    }
+
+    // Public read-only collections; ONLY Admin or Admin SDK can write
+    match /courses/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /workshops/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /announcements/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /site_settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /feedbacks/{docId} {
+      allow read: if true;
+      allow create: if isSignedIn();
+      allow update, delete: if isAdmin();
+    }
+
+    // Leads: Public cannot read; creations must pass strict schema & boundary checks
+    match /leads/{leadId} {
+      allow read, update, delete: if isAdmin();
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'phone', 'city', 'track', 'createdAt', 'status', 'timing', 'source'])
+                    && request.resource.data.phone.matches('^[6-9][0-9]{9}$')
+                    && request.resource.data.name.size() <= 80;
+    }
+
+    // Student Profiles & LMS Data: Strictly isolated to owner UID or Admin
+    match /students/{userId} {
+      allow read: if (isSignedIn() && request.auth.uid == userId) || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /submissions/{subId} {
+      allow read: if (isSignedIn() && (resource.data.studentId == request.auth.uid || resource.data.studentUid == request.auth.uid)) || isAdmin();
+      allow create: if isSignedIn() && (request.resource.data.studentId == request.auth.uid || request.resource.data.studentUid == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // Security Audit Logs: Read & write strictly by Admin
+    match /security_logs/{logId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
