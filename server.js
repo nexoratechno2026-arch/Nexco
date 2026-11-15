@@ -35,8 +35,8 @@ app.use(
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
         imgSrc: ["'self'", "data:", "https:", "blob:"],
-        connectSrc: ["'self'", "http://localhost:3000", "https://*.googleapis.com", "https://*.firebaseio.com", "https://*"],
-        frameSrc: ["'self'"],
+        connectSrc: ["'self'", "http://localhost:3000", "https://*.googleapis.com", "https://*.firebaseio.com", "https://*.vercel.app", "https://*"],
+        frameSrc: ["'self'", "https://*.firebaseapp.com", "https://*.google.com", "https://apis.google.com"],
         frameAncestors: ["'none'"], // Strict anti-clickjacking protection
         objectSrc: ["'none'"],
         upgradeInsecureRequests: process.env.NODE_ENV === 'production' ? [] : null
@@ -63,7 +63,9 @@ app.use(cors({
       !origin ||
       origin === allowedOrigin ||
       origin === 'http://127.0.0.1:3000' ||
-      origin === 'http://localhost:3000'
+      origin === 'http://localhost:3000' ||
+      origin.endsWith('.vercel.app') ||
+      (process.env.VERCEL_URL && origin.includes(process.env.VERCEL_URL))
     ) {
       return callback(null, true);
     }
@@ -208,12 +210,16 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 Nexco Server Running at http://localhost:${PORT}`);
-  console.log(`🤝 Collaboration: Nexora Techno × Gencode`);
-  console.log(`📍 Salem Campus: 15/2, Sankar Nagar, Salem-7`);
-  console.log(`🛡️  Security Profile: ZERO-TRUST ENTERPRISE HARDENED`);
-  console.log(`🔥 Firebase Status: ${isFirebaseConfigured ? 'CONNECTED (Cloud Firestore & Auth)' : 'LOCAL DATASTORE (Zero-Crash Fallback)'}`);
-  console.log(`======================================================\n`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n======================================================`);
+    console.log(`🚀 Nexco Server Running at http://localhost:${PORT}`);
+    console.log(`🤝 Collaboration: Nexora Techno × Gencode`);
+    console.log(`📍 Salem Campus: 15/2, Sankar Nagar, Salem-7`);
+    console.log(`🛡️  Security Profile: ZERO-TRUST ENTERPRISE HARDENED`);
+    console.log(`🔥 Firebase Status: ${isFirebaseConfigured ? 'CONNECTED (Cloud Firestore & Auth)' : 'LOCAL DATASTORE (Zero-Crash Fallback)'}`);
+    console.log(`======================================================\n`);
+  });
+}
+
+module.exports = app;
