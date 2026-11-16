@@ -287,6 +287,38 @@ async function runFullQASuite() {
     return `Datastore write, read, and delete succeeded cleanly in [${mode}] mode.`;
   });
 
+  // Test 1.5: Frontend Syntax & Integrity Verification across all 6 modular JS files
+  await runner.runTest('1.5 Unit Test: Frontend Syntax Integrity (data.js, store.js, landing.js, lms.js, admin.js, app.js)', async () => {
+    const fs = require('fs');
+    const path = require('path');
+    const vm = require('vm');
+
+    const files = [
+      'public/js/data.js',
+      'public/js/store.js',
+      'public/js/landing.js',
+      'public/js/lms.js',
+      'public/js/admin.js',
+      'public/js/app.js'
+    ];
+
+    const validated = [];
+    for (const f of files) {
+      const fullPath = path.resolve(__dirname, '..', f);
+      if (!fs.existsSync(fullPath)) {
+        throw new Error(`Frontend script missing: ${f}`);
+      }
+      const code = fs.readFileSync(fullPath, 'utf8');
+      try {
+        new vm.Script(code, { filename: f });
+        validated.push(path.basename(f));
+      } catch (err) {
+        throw new Error(`Fatal syntax error in ${f}: ${err.message}`);
+      }
+    }
+    return `All 6 frontend scripts validated with 0 syntax errors (${validated.join(', ')}).`;
+  });
+
   // =========================================================================
   // 2. BLACK-BOX TESTING (Functional End-to-End User Flows & Equivalence Partitioning)
   // =========================================================================

@@ -130,6 +130,14 @@ class NexcoApplication {
       }
       if (floatingWidgets) floatingWidgets.classList.add("hidden"); // do not obstruct admin tables
       window.scrollTo({ top: 0, behavior: "smooth" });
+      if (window.Admin && typeof window.Admin.init === "function") {
+        window.Admin.init();
+      } else if (window.NexcoAdmin && typeof window.NexcoAdmin.init === "function") {
+        window.NexcoAdmin.init();
+      }
+      if (window.Admin && typeof window.Admin.populateSiteSettingsForm === "function") {
+        window.Admin.populateSiteSettingsForm();
+      }
       this.showToast("⚡ Nexco Admin Command Center Active", "success");
     } else if (targetView === "terms") {
       if (termsContainer) {

@@ -354,14 +354,6 @@ async function saveAdminSiteSettings() {
   }
 }
 
-  if (btn) {
-    btn.disabled = false;
-    btn.innerHTML = `<span>Save Site Settings ↗</span>`;
-  }
-
-  NexcoApp.showToast("✔ Changes saved & published live!", "success");
-}
-
 // =========================================================================
 // TAB 2: COURSES & CURRICULUM FULL CRUD
 // =========================================================================
@@ -407,19 +399,19 @@ function addCourseResourceRow(data = {}) {
   const row = document.createElement("div");
   row.className = "course-resource-row p-2.5 rounded-xl bg-black/40 border border-white/10 flex flex-col sm:flex-row items-center gap-2 text-xs";
   row.innerHTML = `
-    <input type="text" placeholder="Resource Title (e.g. Live Class / Study Guide)" value="${escapeHTML(data.title || '')}" 
+    <input type="text" name="resource_title" aria-label="Resource Title" placeholder="Resource Title (e.g. Live Class / Study Guide)" value="${escapeHTML(data.title || '')}" 
            class="resource-title-input flex-1 px-2.5 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto" />
-    <select class="resource-type-select px-2 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto">
+    <select name="resource_type" aria-label="Resource Type" class="resource-type-select px-2 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto">
       <option value="live" ${data.type === 'live' ? 'selected' : ''}>🔴 Live Class</option>
       <option value="doc" ${data.type === 'doc' ? 'selected' : ''}>📄 Study Doc</option>
       <option value="repo" ${data.type === 'repo' ? 'selected' : ''}>💻 Code Repo</option>
       <option value="task" ${data.type === 'task' ? 'selected' : ''}>📝 Task</option>
       <option value="video" ${data.type === 'video' ? 'selected' : ''}>🎥 Video</option>
     </select>
-    <input type="url" placeholder="URL (Meet, Doc, GitHub, YouTube)" value="${escapeHTML(data.url || '')}" 
+    <input type="url" name="resource_url" aria-label="Resource URL" placeholder="URL (Meet, Doc, GitHub, YouTube)" value="${escapeHTML(data.url || '')}" 
            class="resource-url-input flex-1 px-2.5 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto" />
     <button type="button" onclick="this.closest('.course-resource-row').remove()" 
-            class="p-1.5 rounded-lg bg-red-500/20 text-red-300 hover:bg-red-500 hover:text-white transition-colors shrink-0" title="Remove Resource">
+            class="p-1.5 rounded-lg bg-red-500/20 text-red-300 hover:bg-red-500 hover:text-white transition-colors shrink-0" title="Remove Resource" aria-label="Remove Resource">
       ✕
     </button>
   `;
@@ -1396,5 +1388,11 @@ window.NexcoAdmin = {
   filterQATests: (f) => filterAdminQATests(f),
   refreshSecurityLogs: () => refreshSecurityLogs(),
   refreshLockedTargets: () => refreshLockedTargets(),
-  unlockUserTarget: (t) => unlockUserTarget(t)
+  unlockUserTarget: (t) => unlockUserTarget(t),
+  init: initAdminDashboard,
+  populateSiteSettingsForm: renderAdminSiteSettings,
+  renderAdminSiteSettings
 };
+
+// Aliases for window.Admin
+window.Admin = window.NexcoAdmin;

@@ -281,34 +281,34 @@
 
               <!-- Real-time Lead Form -->
               <form id="hero-lead-form" class="space-y-3">
-                <input type="text" name="website_url" id="hero-lead-honeypot" tabindex="-1" autocomplete="off" class="hidden pointer-events-none opacity-0 absolute -z-50" aria-hidden="true" />
+                <input type="text" name="website_url" id="hero-lead-honeypot" tabindex="-1" autocomplete="off" class="hidden pointer-events-none opacity-0 absolute -z-50" aria-hidden="true" aria-label="Website URL" />
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
-                  <input id="hero-lead-name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
+                  <label for="hero-lead-name" class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+                  <input id="hero-lead-name" name="hero_lead_name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-                  <input id="hero-lead-email" type="email" required placeholder="dinesh@gmail.com" 
+                  <label for="hero-lead-email" class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+                  <input id="hero-lead-email" name="hero_lead_email" type="email" required placeholder="dinesh@gmail.com" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp / Mobile Number (+91) *</label>
-                  <input id="hero-lead-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
+                  <label for="hero-lead-phone" class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp / Mobile Number (+91) *</label>
+                  <input id="hero-lead-phone" name="hero_lead_phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City *</label>
-                  <input id="hero-lead-city" type="text" required placeholder="e.g. Sona College of Tech / Salem / Coimbatore" 
+                  <label for="hero-lead-city" class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City *</label>
+                  <input id="hero-lead-city" name="hero_lead_city" type="text" required placeholder="e.g. Sona College of Tech / Salem / Coimbatore" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Interested 100% Live Online Track</label>
-                  <select id="hero-lead-track" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
+                  <label for="hero-lead-track" class="block text-xs font-semibold text-slate-300 mb-1">Interested 100% Live Online Track</label>
+                  <select id="hero-lead-track" name="hero_lead_track" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
                     <option value="Full Stack Web Development (MERN & Python)">Full Stack Web Development (MERN &amp; Python)</option>
                     <option value="UI/UX Design & Product Prototyping">UI/UX Design &amp; Product Prototyping</option>
                     <option value="AI Tools, Prompt Engineering & Automation">AI Tools, Prompt Engineering &amp; Automation</option>
@@ -764,7 +764,8 @@
           </div>
 
           <form id="syllabus-unlock-form" class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2.5 shrink-0">
-            <input id="syllabus-unlock-contact" type="text" required placeholder="Enter Email or WhatsApp" 
+            <label for="syllabus-unlock-contact" class="sr-only">Enter Email or WhatsApp for syllabus brochure</label>
+            <input id="syllabus-unlock-contact" name="syllabus_unlock_contact" aria-label="Enter Email or WhatsApp" type="text" required placeholder="Enter Email or WhatsApp" 
                    class="w-full sm:w-72 px-4 py-3 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
             <button type="submit" class="btn-shimmer w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md flex items-center justify-center gap-1.5 shrink-0">
               <span>Download Brochure ↓</span>
@@ -1218,7 +1219,8 @@
                   <button id="export-notes-btn" class="text-xs text-emerald-400 hover:underline">Export (.md) ↓</button>
                 </div>
                 <div class="flex items-center gap-2">
-                  <input id="classroom-note-input" type="text" placeholder="Add a key note, code snippet, or question..." 
+                  <label for="classroom-note-input" class="sr-only">Session note input</label>
+                  <input id="classroom-note-input" name="classroom_note_input" aria-label="Add a key note, code snippet, or question" type="text" placeholder="Add a key note, code snippet, or question..." 
                          class="flex-1 px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
                   <button id="add-note-btn" class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">Save Note</button>
                 </div>
@@ -1236,7 +1238,8 @@
                 </div>
                 <div id="classroom-ai-feed" class="p-3 bg-black/40 border border-white/5 rounded-xl space-y-2 max-h-48 overflow-y-auto text-xs"></div>
                 <div class="flex items-center gap-2">
-                  <input id="classroom-ai-input" type="text" placeholder="Ask about code errors, PostgreSQL, React, or class notes..." 
+                  <label for="classroom-ai-input" class="sr-only">Ask Nexco AI Mentor</label>
+                  <input id="classroom-ai-input" name="classroom_ai_input" aria-label="Ask about code errors, PostgreSQL, React, or class notes" type="text" placeholder="Ask about code errors, PostgreSQL, React, or class notes..." 
                          class="flex-1 px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
                   <button id="classroom-ai-send" class="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs">Ask Mentor</button>
                 </div>
@@ -1268,26 +1271,26 @@
             <div class="lg:col-span-7">
               <form id="lms-assignment-form" class="p-6 rounded-2xl bg-[#161D22] border border-white/10 space-y-4 shadow-xl">
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Project Milestone *</label>
-                  <select id="lms-assign-project" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
+                  <label for="lms-assign-project" class="block text-xs font-semibold text-slate-300 mb-1">Project Milestone *</label>
+                  <select id="lms-assign-project" name="lms_assign_project" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500">
                     <option value="Module 2: Vector DB Optimization & Microservices">Module 2: Vector DB Optimization &amp; Microservices</option>
                     <option value="Module 3: Distributed Token-Bucket Rate Limiter">Module 3: Distributed Token-Bucket Rate Limiter</option>
                     <option value="Module 4: LangGraph Multi-Agent Financial Assistant">Module 4: LangGraph Multi-Agent Financial Assistant</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">GitHub Repository URL *</label>
-                  <input id="lms-assign-github" type="url" required placeholder="https://github.com/yourhandle/microservice-project" 
+                  <label for="lms-assign-github" class="block text-xs font-semibold text-slate-300 mb-1">GitHub Repository URL *</label>
+                  <input id="lms-assign-github" name="lms_assign_github" type="url" required placeholder="https://github.com/yourhandle/microservice-project" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Live Deployment URL *</label>
-                  <input id="lms-assign-deploy" type="url" required placeholder="https://api.yourdomain.com or Vercel link" 
+                  <label for="lms-assign-deploy" class="block text-xs font-semibold text-slate-300 mb-1">Live Deployment URL *</label>
+                  <input id="lms-assign-deploy" name="lms_assign_deploy" type="url" required placeholder="https://api.yourdomain.com or Vercel link" 
                          class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500" />
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-300 mb-1">Architecture Notes &amp; Challenges</label>
-                  <textarea id="lms-assign-notes" rows="3" placeholder="Explain your design decisions, database indexing strategy, and test coverage..." 
+                  <label for="lms-assign-notes" class="block text-xs font-semibold text-slate-300 mb-1">Architecture Notes &amp; Challenges</label>
+                  <textarea id="lms-assign-notes" name="lms_assign_notes" rows="3" placeholder="Explain your design decisions, database indexing strategy, and test coverage..." 
                             class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500"></textarea>
                 </div>
                 <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs tracking-wide shadow-md transition-all">
@@ -1537,27 +1540,27 @@
               <span>📢</span> Top Announcement Banner Settings
             </h3>
             <div class="space-y-3 text-xs">
-              <label class="flex items-center gap-2 font-semibold text-slate-300">
-                <input id="admin-site-ann-active" type="checkbox" checked class="text-emerald-500 rounded bg-black" />
+              <label for="admin-site-ann-active" class="flex items-center gap-2 font-semibold text-slate-300">
+                <input id="admin-site-ann-active" name="admin_site_ann_active" type="checkbox" checked class="text-emerald-500 rounded bg-black" />
                 <span>Show Top Announcement Banner Live on Website</span>
               </label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Banner Badge</label>
-                  <input id="admin-site-ann-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-ann-badge" class="block font-semibold text-slate-300 mb-1">Banner Badge</label>
+                  <input id="admin-site-ann-badge" name="admin-site-ann-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">CTA Button Text</label>
-                  <input id="admin-site-ann-cta" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-ann-cta" class="block font-semibold text-slate-300 mb-1">CTA Button Text</label>
+                  <input id="admin-site-ann-cta" name="admin-site-ann-cta" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Announcement Text</label>
-                <input id="admin-site-ann-text" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-ann-text" class="block font-semibold text-slate-300 mb-1">Announcement Text</label>
+                <input id="admin-site-ann-text" name="admin-site-ann-text" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">CTA Target Link</label>
-                <input id="admin-site-ann-link" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-ann-link" class="block font-semibold text-slate-300 mb-1">CTA Target Link</label>
+                <input id="admin-site-ann-link" name="admin-site-ann-link" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
             </div>
           </div>
@@ -1569,35 +1572,35 @@
             </h3>
             <div class="space-y-3 text-xs">
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Collaboration Badge Text</label>
-                <input id="admin-site-hero-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-hero-badge" class="block font-semibold text-slate-300 mb-1">Collaboration Badge Text</label>
+                <input id="admin-site-hero-badge" name="admin-site-hero-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Main Hero Headline</label>
-                <input id="admin-site-hero-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-hero-title" class="block font-semibold text-slate-300 mb-1">Main Hero Headline</label>
+                <input id="admin-site-hero-title" name="admin-site-hero-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Hero Subheadline</label>
-                <textarea id="admin-site-hero-sub" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                <label for="admin-site-hero-sub" class="block font-semibold text-slate-300 mb-1">Hero Subheadline</label>
+                <textarea id="admin-site-hero-sub" name="admin-site-hero-sub" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Primary CTA Button</label>
-                  <input id="admin-site-hero-cta1" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-hero-cta1" class="block font-semibold text-slate-300 mb-1">Primary CTA Button</label>
+                  <input id="admin-site-hero-cta1" name="admin-site-hero-cta1" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Secondary CTA Button</label>
-                  <input id="admin-site-hero-cta2" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-hero-cta2" class="block font-semibold text-slate-300 mb-1">Secondary CTA Button</label>
+                  <input id="admin-site-hero-cta2" name="admin-site-hero-cta2" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Lead Card Form Title</label>
-                  <input id="admin-site-hero-form-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-hero-form-title" class="block font-semibold text-slate-300 mb-1">Lead Card Form Title</label>
+                  <input id="admin-site-hero-form-title" name="admin-site-hero-form-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Lead Card Subtitle</label>
-                  <input id="admin-site-hero-form-sub" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-hero-form-sub" class="block font-semibold text-slate-300 mb-1">Lead Card Subtitle</label>
+                  <input id="admin-site-hero-form-sub" name="admin-site-hero-form-sub" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
             </div>
@@ -1611,17 +1614,17 @@
             <div class="space-y-3 text-xs">
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Promo Badge</label>
-                  <input id="admin-site-promo-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-promo-badge" class="block font-semibold text-slate-300 mb-1">Promo Badge</label>
+                  <input id="admin-site-promo-badge" name="admin-site-promo-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div class="sm:col-span-2">
-                  <label class="block font-semibold text-slate-300 mb-1">Promo Banner Headline</label>
-                  <input id="admin-site-promo-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-promo-title" class="block font-semibold text-slate-300 mb-1">Promo Banner Headline</label>
+                  <input id="admin-site-promo-title" name="admin-site-promo-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Promo Subtitle</label>
-                <textarea id="admin-site-promo-sub" rows="2" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                <label for="admin-site-promo-sub" class="block font-semibold text-slate-300 mb-1">Promo Subtitle</label>
+                <textarea id="admin-site-promo-sub" name="admin-site-promo-sub" rows="2" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
               </div>
             </div>
           </div>
@@ -1636,12 +1639,12 @@
               <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-white text-xs">Card 1 (Left Photo Card)</span>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
-                  <input id="admin-site-bento1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento1-title" class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento1-title" name="admin-site-bento1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
-                  <input id="admin-site-bento1-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento1-desc" class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento1-desc" name="admin-site-bento1-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
 
@@ -1649,12 +1652,12 @@
               <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-white text-xs">Card 2 (Middle White Card)</span>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
-                  <input id="admin-site-bento2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento2-title" class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento2-title" name="admin-site-bento2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
-                  <input id="admin-site-bento2-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento2-desc" class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento2-desc" name="admin-site-bento2-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
 
@@ -1662,12 +1665,12 @@
               <div class="p-3.5 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-white text-xs">Card 3 (Right Neon Green Card)</span>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Title</label>
-                  <input id="admin-site-bento3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento3-title" class="block font-semibold text-slate-300 mb-1">Title</label>
+                  <input id="admin-site-bento3-title" name="admin-site-bento3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block font-semibold text-slate-300 mb-1">Description</label>
-                  <input id="admin-site-bento3-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-site-bento3-desc" class="block font-semibold text-slate-300 mb-1">Description</label>
+                  <input id="admin-site-bento3-desc" name="admin-site-bento3-desc" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
               </div>
             </div>
@@ -1680,20 +1683,20 @@
             </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Phone / WhatsApp Number</label>
-                <input id="admin-site-phone" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-phone" class="block font-semibold text-slate-300 mb-1">Phone / WhatsApp Number</label>
+                <input id="admin-site-phone" name="admin-site-phone" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div>
-                <label class="block font-semibold text-slate-300 mb-1">Admissions Email Address</label>
-                <input id="admin-site-email" type="email" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-email" class="block font-semibold text-slate-300 mb-1">Admissions Email Address</label>
+                <input id="admin-site-email" name="admin-site-email" type="email" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div class="sm:col-span-2">
-                <label class="block font-semibold text-slate-300 mb-1">Registered Headquarters Address</label>
-                <input id="admin-site-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-address" class="block font-semibold text-slate-300 mb-1">Registered Headquarters Address</label>
+                <input id="admin-site-address" name="admin-site-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
               <div class="sm:col-span-2">
-                <label class="block font-semibold text-slate-300 mb-1">Display Address (Footer/Header)</label>
-                <input id="admin-site-display-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                <label for="admin-site-display-address" class="block font-semibold text-slate-300 mb-1">Display Address (Footer/Header)</label>
+                <input id="admin-site-display-address" name="admin-site-display-address" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
               </div>
             </div>
           </div>
@@ -1781,12 +1784,12 @@
               <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-emerald-400 text-xs">Commitment 01</span>
                 <div>
-                  <label class="block text-slate-400 mb-1">Title</label>
-                  <input id="admin-charter1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-charter1-title" class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter1-title" name="admin-charter1-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block text-slate-400 mb-1">Description</label>
-                  <textarea id="admin-charter1-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                  <label for="admin-charter1-desc" class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter1-desc" name="admin-charter1-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
                 </div>
               </div>
 
@@ -1794,12 +1797,12 @@
               <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-emerald-400 text-xs">Commitment 02</span>
                 <div>
-                  <label class="block text-slate-400 mb-1">Title</label>
-                  <input id="admin-charter2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-charter2-title" class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter2-title" name="admin-charter2-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block text-slate-400 mb-1">Description</label>
-                  <textarea id="admin-charter2-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                  <label for="admin-charter2-desc" class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter2-desc" name="admin-charter2-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
                 </div>
               </div>
 
@@ -1807,12 +1810,12 @@
               <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-emerald-400 text-xs">Commitment 03</span>
                 <div>
-                  <label class="block text-slate-400 mb-1">Title</label>
-                  <input id="admin-charter3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-charter3-title" class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter3-title" name="admin-charter3-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block text-slate-400 mb-1">Description</label>
-                  <textarea id="admin-charter3-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                  <label for="admin-charter3-desc" class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter3-desc" name="admin-charter3-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
                 </div>
               </div>
 
@@ -1820,12 +1823,12 @@
               <div class="p-4 rounded-xl bg-black/40 border border-white/5 space-y-2">
                 <span class="font-bold text-emerald-400 text-xs">Commitment 04</span>
                 <div>
-                  <label class="block text-slate-400 mb-1">Title</label>
-                  <input id="admin-charter4-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+                  <label for="admin-charter4-title" class="block text-slate-400 mb-1">Title</label>
+                  <input id="admin-charter4-title" name="admin-charter4-title" type="text" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
                 </div>
                 <div>
-                  <label class="block text-slate-400 mb-1">Description</label>
-                  <textarea id="admin-charter4-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+                  <label for="admin-charter4-desc" class="block text-slate-400 mb-1">Description</label>
+                  <textarea id="admin-charter4-desc" name="admin-charter4-desc" rows="3" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
                 </div>
               </div>
             </div>
@@ -1867,7 +1870,8 @@
 
             <!-- Filters -->
             <div class="flex items-center gap-2">
-              <input type="text" oninput="NexcoAdmin.searchLeads(this.value)" placeholder="Search name, phone, city..." 
+              <label for="admin-leads-search" class="sr-only">Search leads</label>
+              <input id="admin-leads-search" name="admin_leads_search" type="text" oninput="NexcoAdmin.searchLeads(this.value)" placeholder="Search name, phone, city..." aria-label="Search name, phone, city..." 
                      class="px-3 py-1.5 rounded-xl bg-black/60 border border-white/15 text-xs text-white focus:outline-none focus:border-emerald-500" />
               
               <button onclick="NexcoAdmin.filterLeads('all')" class="admin-leads-filter-btn px-2.5 py-1.5 rounded-lg text-xs bg-emerald-500 text-black font-bold" data-status="all">All</button>
@@ -2263,7 +2267,8 @@
       </div>
     </div>
     <div class="p-3 bg-black/60 border-t border-white/10 flex items-center gap-2">
-      <input id="floating-ai-input" type="text" placeholder="Ask about live sessions, curriculum, fees..." class="flex-1 px-3 py-2 text-xs rounded-xl bg-[#12171A] border border-white/15 text-white focus:outline-none focus:border-emerald-500" />
+      <label for="floating-ai-input" class="sr-only">Ask live admissions advisor</label>
+      <input id="floating-ai-input" name="floating_ai_input" aria-label="Ask about live sessions, curriculum, fees" type="text" placeholder="Ask about live sessions, curriculum, fees..." class="flex-1 px-3 py-2 text-xs rounded-xl bg-[#12171A] border border-white/15 text-white focus:outline-none focus:border-emerald-500" />
       <button id="floating-ai-send" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors">Send</button>
     </div>
   </div>
@@ -2335,15 +2340,15 @@
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-          <input id="auth-login-email" type="email" required placeholder="name@example.com" 
+          <label for="auth-login-email" class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+          <input id="auth-login-email" name="auth_login_email" type="email" required placeholder="name@example.com" 
                  class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-opacity" />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Password *</label>
+          <label for="auth-login-password" class="block text-xs font-semibold text-slate-300 mb-1">Password *</label>
           <div class="relative">
-            <input id="auth-login-password" type="password" required placeholder="••••••••" 
+            <input id="auth-login-password" name="auth_login_password" type="password" required placeholder="••••••••" 
                    class="w-full pl-3.5 pr-10 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-opacity" />
             <button type="button" id="toggle-login-pass-visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm transition-colors" aria-label="Toggle password visibility">
               👁
@@ -2354,7 +2359,7 @@
         <!-- Human Verification Security Challenge (Reveals after 2 failed attempts) -->
         <div id="auth-challenge-container" class="hidden p-3 rounded-xl bg-black/50 border border-emerald-500/30 space-y-2">
           <div class="flex items-center justify-between">
-            <label class="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5">
+            <label for="auth-challenge-input" class="text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5">
               <span>🛡️ Human Verification Security Challenge</span>
             </label>
             <button type="button" id="auth-challenge-refresh-btn" class="text-[10px] text-slate-400 hover:text-white underline">Refresh</button>
@@ -2364,7 +2369,7 @@
             <div id="auth-challenge-display" class="px-3 py-2 rounded-lg bg-[#181C1E] border border-white/15 text-emerald-400 font-mono text-xs font-bold tracking-wider select-none shrink-0">
               Loading puzzle...
             </div>
-            <input id="auth-challenge-input" type="text" placeholder="Enter answer" class="flex-1 px-3 py-2 rounded-lg bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500 font-mono" />
+            <input id="auth-challenge-input" name="auth_challenge_input" aria-label="Security challenge answer" type="text" placeholder="Enter answer" class="flex-1 px-3 py-2 rounded-lg bg-black/60 border border-white/15 text-white text-xs focus:outline-none focus:border-emerald-500 font-mono" />
           </div>
           <input type="hidden" id="auth-challenge-id" />
         </div>
@@ -2382,27 +2387,27 @@
       <!-- SIGN UP FORM -->
       <form id="auth-signup-form" class="space-y-3.5 hidden">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
-          <input id="auth-signup-name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
+          <label for="auth-signup-name" class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+          <input id="auth-signup-name" name="auth_signup_name" type="text" required placeholder="e.g. K. Dinesh Kumar" 
                  class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
-          <input id="auth-signup-email" type="email" required placeholder="dinesh@gmail.com" 
+          <label for="auth-signup-email" class="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
+          <input id="auth-signup-email" name="auth_signup_email" type="email" required placeholder="dinesh@gmail.com" 
                  class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Mobile / WhatsApp Number (+91) *</label>
-          <input id="auth-signup-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
+          <label for="auth-signup-phone" class="block text-xs font-semibold text-slate-300 mb-1">Mobile / WhatsApp Number (+91) *</label>
+          <input id="auth-signup-phone" name="auth_signup_phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile (e.g. 9876543210)" 
                  class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Create Password *</label>
+          <label for="auth-signup-password" class="block text-xs font-semibold text-slate-300 mb-1">Create Password *</label>
           <div class="relative">
-            <input id="auth-signup-password" type="password" required minlength="8" placeholder="Min 8 characters (Upper, Lower, Num, Symbol)" 
+            <input id="auth-signup-password" name="auth_signup_password" type="password" required minlength="8" placeholder="Min 8 characters (Upper, Lower, Num, Symbol)" 
                    class="w-full pl-3.5 pr-10 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
             <button type="button" id="toggle-signup-pass-visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-sm transition-colors" aria-label="Toggle password visibility">
               👁
@@ -2462,20 +2467,20 @@
 
       <form id="feedback-form" class="space-y-3 text-xs">
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Your Full Name *</label>
-          <input id="feedback-name" type="text" required placeholder="e.g. Anand R." 
+          <label for="feedback-name" class="block font-semibold text-slate-300 mb-1">Your Full Name *</label>
+          <input id="feedback-name" name="feedback-name" type="text" required placeholder="e.g. Anand R." 
                  class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Your Role / College / City *</label>
-          <input id="feedback-role" type="text" required placeholder="e.g. Final Year CSE, Salem" 
+          <label for="feedback-role" class="block font-semibold text-slate-300 mb-1">Your Role / College / City *</label>
+          <input id="feedback-role" name="feedback-role" type="text" required placeholder="e.g. Final Year CSE, Salem" 
                  class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Workshop / Track Attended *</label>
-          <select id="feedback-workshop" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
+          <label for="feedback-workshop" class="block font-semibold text-slate-300 mb-1">Workshop / Track Attended *</label>
+          <select id="feedback-workshop" name="feedback-workshop" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
             <option value="100% Live Online Microservices Masterclass">100% Live Online Microservices Masterclass</option>
             <option value="Full Stack MERN & Python Live Masterclass">Full Stack MERN &amp; Python Live Masterclass</option>
             <option value="UI/UX Design Systems & Figma Studio">UI/UX Design Systems &amp; Figma Studio</option>
@@ -2484,8 +2489,8 @@
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Rating *</label>
-          <select id="feedback-rating" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
+          <label for="feedback-rating" class="block font-semibold text-slate-300 mb-1">Rating *</label>
+          <select id="feedback-rating" name="feedback-rating" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-emerald-500">
             <option value="5">★★★★★ (5 Stars - Exceptional)</option>
             <option value="4">★★★★☆ (4 Stars - Very Good)</option>
             <option value="3">★★★☆☆ (3 Stars - Average)</option>
@@ -2493,14 +2498,14 @@
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Your Honest Feedback *</label>
-          <textarea id="feedback-comment" required rows="3" placeholder="What did you build? How was the mentor code review and bilingual explanation?" 
+          <label for="feedback-comment" class="block font-semibold text-slate-300 mb-1">Your Honest Feedback *</label>
+          <textarea id="feedback-comment" name="feedback-comment" required rows="3" placeholder="What did you build? How was the mentor code review and bilingual explanation?" 
                     class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500"></textarea>
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">LinkedIn or GitHub Profile (Optional)</label>
-          <input id="feedback-linkedin" type="url" placeholder="https://linkedin.com/in/yourname" 
+          <label for="feedback-linkedin" class="block font-semibold text-slate-300 mb-1">LinkedIn or GitHub Profile (Optional)</label>
+          <input id="feedback-linkedin" name="feedback-linkedin" type="url" placeholder="https://linkedin.com/in/yourname" 
                  class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500" />
         </div>
 
@@ -2525,28 +2530,28 @@
 
       <form id="counseling-form" class="p-6 space-y-3.5 text-xs">
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Full Name *</label>
-          <input id="counseling-name" type="text" required placeholder="e.g. K. Dinesh" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="counseling-name" class="block font-semibold text-slate-300 mb-1">Full Name *</label>
+          <input id="counseling-name" name="counseling-name" type="text" required placeholder="e.g. K. Dinesh" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">WhatsApp / Phone Number (+91) *</label>
-          <input id="counseling-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="counseling-phone" class="block font-semibold text-slate-300 mb-1">WhatsApp / Phone Number (+91) *</label>
+          <input id="counseling-phone" name="counseling-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Email Address</label>
-          <input id="counseling-email" type="email" placeholder="dinesh@gmail.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="counseling-email" class="block font-semibold text-slate-300 mb-1">Email Address</label>
+          <input id="counseling-email" name="counseling-email" type="email" placeholder="dinesh@gmail.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">College / Organization / City</label>
-          <input id="counseling-city" type="text" placeholder="Salem, Rasipuram, Namakkal, Coimbatore, etc." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="counseling-city" class="block font-semibold text-slate-300 mb-1">College / Organization / City</label>
+          <input id="counseling-city" name="counseling-city" type="text" placeholder="Salem, Rasipuram, Namakkal, Coimbatore, etc." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Select Program</label>
-          <select id="counseling-modal-course-select" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs"></select>
+          <label for="counseling-modal-course-select" class="block font-semibold text-slate-300 mb-1">Select Program</label>
+          <select id="counseling-modal-course-select" name="counseling-modal-course-select" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs"></select>
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Preferred Batch Timing</label>
-          <select id="counseling-batch-pref" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs">
+          <label for="counseling-batch-pref" class="block font-semibold text-slate-300 mb-1">Preferred Batch Timing</label>
+          <select id="counseling-batch-pref" name="counseling-batch-pref" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs">
             <option value="100% Live Online (Weekend Mornings)">100% Live Online (Weekend Mornings: 10:00 AM - 1:00 PM IST)</option>
             <option value="100% Live Online (Weekday Evenings)">100% Live Online (Weekday Evenings: 7:30 PM - 9:00 PM IST)</option>
           </select>
@@ -2594,20 +2599,20 @@
       <form onsubmit="event.preventDefault(); NexcoStore.addLead({ name: document.getElementById('ws-reg-name').value, phone: document.getElementById('ws-reg-phone').value, email: document.getElementById('ws-reg-email').value, cityCollege: document.getElementById('ws-reg-city').value, program: document.getElementById('workshop-reg-title').textContent, source: 'Live Workshop Registration' }); NexcoApp.showToast('Registered! Google Meet invite sent to your WhatsApp.', 'success'); NexcoLanding.closeWorkshopRegisterModal();" class="space-y-3">
         <input type="hidden" id="workshop-reg-session-id" />
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name *</label>
-          <input id="ws-reg-name" type="text" required placeholder="Alex Rivera / K. Anand" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="ws-reg-name" class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name *</label>
+          <input id="ws-reg-name" name="ws-reg-name" type="text" required placeholder="Alex Rivera / K. Anand" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Mobile (+91) *</label>
-          <input id="ws-reg-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="ws-reg-phone" class="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Mobile (+91) *</label>
+          <input id="ws-reg-phone" name="ws-reg-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit Indian Mobile" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Email (for Meet Invite) *</label>
-          <input id="ws-reg-email" type="email" required placeholder="name@domain.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="ws-reg-email" class="block text-xs font-semibold text-slate-300 mb-1">Email (for Meet Invite) *</label>
+          <input id="ws-reg-email" name="ws-reg-email" type="email" required placeholder="name@domain.com" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City</label>
-          <input id="ws-reg-city" type="text" placeholder="Salem, Coimbatore, Chennai, Bangalore" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
+          <label for="ws-reg-city" class="block text-xs font-semibold text-slate-300 mb-1">College / Organization / City</label>
+          <input id="ws-reg-city" name="ws-reg-city" type="text" placeholder="Salem, Coimbatore, Chennai, Bangalore" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs" />
         </div>
         <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs mt-2">
           Claim Free Live Seat ↗
@@ -2626,13 +2631,13 @@
 
       <form id="admin-course-form" class="space-y-3 text-xs">
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Course Title *</label>
-          <input id="admin-course-title" type="text" required placeholder="e.g. Next.js 15 & AI Systems" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-course-title" class="block font-semibold text-slate-300 mb-1">Course Title *</label>
+          <input id="admin-course-title" name="admin-course-title" type="text" required placeholder="e.g. Next.js 15 & AI Systems" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block font-semibold text-slate-300 mb-1">Category</label>
-            <select id="admin-course-category" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
+            <label for="admin-course-category" class="block font-semibold text-slate-300 mb-1">Category</label>
+            <select id="admin-course-category" name="admin-course-category" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
               <option value="fullstack">Full Stack</option>
               <option value="uiux">UI/UX Design</option>
               <option value="ai">AI Tools</option>
@@ -2640,29 +2645,29 @@
             </select>
           </div>
           <div>
-            <label class="block font-semibold text-slate-300 mb-1">Duration</label>
-            <input id="admin-course-duration" type="text" placeholder="e.g. 24 Weeks" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+            <label for="admin-course-duration" class="block font-semibold text-slate-300 mb-1">Duration</label>
+            <input id="admin-course-duration" name="admin-course-duration" type="text" placeholder="e.g. 24 Weeks" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
           </div>
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Batch Mode</label>
-          <input id="admin-course-batch-mode" type="text" value="100% Live Online Interactive Classes" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-course-batch-mode" class="block font-semibold text-slate-300 mb-1">Batch Mode</label>
+          <input id="admin-course-batch-mode" name="admin-course-batch-mode" type="text" value="100% Live Online Interactive Classes" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Mentor Name</label>
-          <input id="admin-course-mentor" type="text" placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-course-mentor" class="block font-semibold text-slate-300 mb-1">Mentor Name</label>
+          <input id="admin-course-mentor" name="admin-course-mentor" type="text" placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Thumbnail Image URL</label>
-          <input id="admin-course-thumbnail" type="url" placeholder="https://images.unsplash.com/photo-..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-course-thumbnail" class="block font-semibold text-slate-300 mb-1">Thumbnail Image URL</label>
+          <input id="admin-course-thumbnail" name="admin-course-thumbnail" type="url" placeholder="https://images.unsplash.com/photo-..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Description</label>
-          <textarea id="admin-course-desc" rows="3" placeholder="Course highlights and learning outcomes..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+          <label for="admin-course-desc" class="block font-semibold text-slate-300 mb-1">Description</label>
+          <textarea id="admin-course-desc" name="admin-course-desc" rows="3" placeholder="Course highlights and learning outcomes..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Skills (comma separated)</label>
-          <input id="admin-course-skills" type="text" placeholder="React 19, Node.js, Python, PostgreSQL, Docker" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-course-skills" class="block font-semibold text-slate-300 mb-1">Skills (comma separated)</label>
+          <input id="admin-course-skills" name="admin-course-skills" type="text" placeholder="React 19, Node.js, Python, PostgreSQL, Docker" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
 
         <!-- Course Module Links & Study Materials -->
@@ -2692,28 +2697,28 @@
 
       <form id="admin-session-form" class="space-y-3 text-xs">
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Workshop Title *</label>
-          <input id="admin-session-title" type="text" required placeholder="e.g. Building Full Stack MERN App in 90 Mins" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-session-title" class="block font-semibold text-slate-300 mb-1">Workshop Title *</label>
+          <input id="admin-session-title" name="admin-session-title" type="text" required placeholder="e.g. Building Full Stack MERN App in 90 Mins" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Mentor Name *</label>
-          <input id="admin-session-mentor" type="text" required placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-session-mentor" class="block font-semibold text-slate-300 mb-1">Mentor Name *</label>
+          <input id="admin-session-mentor" name="admin-session-mentor" type="text" required placeholder="Karthik Sundaram (Staff Architect)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Date &amp; Time (IST) *</label>
-          <input id="admin-session-datetime" type="text" required placeholder="Sunday, 6:00 PM - 8:30 PM IST" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-session-datetime" class="block font-semibold text-slate-300 mb-1">Date &amp; Time (IST) *</label>
+          <input id="admin-session-datetime" name="admin-session-datetime" type="text" required placeholder="Sunday, 6:00 PM - 8:30 PM IST" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Batch / Mode</label>
-          <input id="admin-session-batch" type="text" value="100% Live Online Stream (Google Meet)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-session-batch" class="block font-semibold text-slate-300 mb-1">Batch / Mode</label>
+          <input id="admin-session-batch" name="admin-session-batch" type="text" value="100% Live Online Stream (Google Meet)" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Google Meet / Zoom URL *</label>
-          <input id="admin-session-link" type="url" required placeholder="https://meet.google.com/nex-live-stream" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
+          <label for="admin-session-link" class="block font-semibold text-slate-300 mb-1">Google Meet / Zoom URL *</label>
+          <input id="admin-session-link" name="admin-session-link" type="url" required placeholder="https://meet.google.com/nex-live-stream" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white" />
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Status</label>
-          <select id="admin-session-status" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
+          <label for="admin-session-status" class="block font-semibold text-slate-300 mb-1">Status</label>
+          <select id="admin-session-status" name="admin-session-status" class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white">
             <option value="Upcoming Workshop">Upcoming Workshop</option>
             <option value="LIVE NOW">LIVE NOW (Red Pulse)</option>
             <option value="Seats Filling Fast">Seats Filling Fast</option>
@@ -2721,8 +2726,8 @@
           </select>
         </div>
         <div>
-          <label class="block font-semibold text-slate-300 mb-1">Description</label>
-          <textarea id="admin-session-desc" rows="2" placeholder="Topics covered in workshop..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
+          <label for="admin-session-desc" class="block font-semibold text-slate-300 mb-1">Description</label>
+          <textarea id="admin-session-desc" name="admin-session-desc" rows="2" placeholder="Topics covered in workshop..." class="w-full px-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white"></textarea>
         </div>
 
         <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-black font-bold text-xs mt-2">
