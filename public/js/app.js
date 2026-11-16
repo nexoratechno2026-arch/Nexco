@@ -81,7 +81,7 @@ class NexcoApplication {
 
     const publicContainer = document.getElementById("view-landing-page");
     const lmsContainer = document.getElementById("view-lms-portal");
-    const adminContainer = document.getElementById("view-admin-portal");
+    const adminContainer = document.getElementById("admin-view") || document.getElementById("view-admin-portal");
     const termsContainer = document.getElementById("view-terms-page");
     const privacyContainer = document.getElementById("view-privacy-page");
     const floatingWidgets = document.getElementById("floating-widgets-container");
@@ -130,6 +130,9 @@ class NexcoApplication {
       }
       if (floatingWidgets) floatingWidgets.classList.add("hidden"); // do not obstruct admin tables
       window.scrollTo({ top: 0, behavior: "smooth" });
+      if (window.Admin && typeof window.Admin.renderAdminStickyNavTabs === "function") {
+        window.Admin.renderAdminStickyNavTabs();
+      }
       if (window.Admin && typeof window.Admin.init === "function") {
         window.Admin.init();
       } else if (window.NexcoAdmin && typeof window.NexcoAdmin.init === "function") {
@@ -137,6 +140,9 @@ class NexcoApplication {
       }
       if (window.Admin && typeof window.Admin.populateSiteSettingsForm === "function") {
         window.Admin.populateSiteSettingsForm();
+      }
+      if (window.Admin && typeof window.Admin.switchAdminTab === "function") {
+        window.Admin.switchAdminTab("cms");
       }
       this.showToast("⚡ Nexco Admin Command Center Active", "success");
     } else if (targetView === "terms") {

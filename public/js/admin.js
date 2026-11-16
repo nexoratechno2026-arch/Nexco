@@ -21,6 +21,7 @@ function escapeHTML(str) {
 }
 
 function initAdminDashboard() {
+  renderAdminStickyNavTabs();
   setupAdminNavigation();
   setupAdminModals();
   setupAdminEventListeners();
@@ -33,6 +34,8 @@ function initAdminDashboard() {
   renderAdminLeads();
   renderAdminSubmissions();
   renderAdminOverview();
+
+  switchAdminTab(currentAdminTab || "cms");
 
   // Subscribe to real-time store changes
   NexcoStore.subscribe("all", () => refreshAdminViews());
@@ -59,24 +62,87 @@ function refreshAdminViews() {
   renderAdminSubmissions();
 }
 
-// 1. Navigation within Admin Command Center
+// 1. Guaranteed Sticky Admin Navigation Tab Bar
+function renderAdminStickyNavTabs() {
+  const adminView = document.getElementById("admin-view") || document.getElementById("view-admin-portal");
+  if (!adminView) return;
+
+  // Ensure adminView is accessible by #admin-view
+  if (adminView.id !== "admin-view") {
+    adminView.id = "admin-view";
+    adminView.setAttribute("data-view", "admin-view");
+  }
+
+  let navTabs = document.getElementById("admin-nav-tabs");
+  if (!navTabs) {
+    navTabs = document.createElement("nav");
+    navTabs.id = "admin-nav-tabs";
+    const header = adminView.querySelector("header") || adminView.firstElementChild;
+    if (header && header.nextSibling) {
+      adminView.insertBefore(navTabs, header.nextSibling);
+    } else {
+      adminView.prepend(navTabs);
+    }
+  }
+
+  // Force explicit inline styles for guaranteed sticky visibility
+  navTabs.style.cssText = "display: flex !important; flex-wrap: wrap !important; gap: 10px !important; padding: 14px 24px !important; background: rgba(15, 23, 20, 0.95) !important; border-bottom: 1px solid rgba(34, 197, 94, 0.2) !important; position: sticky !important; top: 64px !important; z-index: 40 !important;";
+
+  const tabsConfig = [
+    { id: "cms", label: "📝 Site Content & Hero CMS" },
+    { id: "courses", label: "📚 Courses & Links" },
+    { id: "workshops", label: "🔴 Live Workshops" },
+    { id: "leads", label: "👥 Counseling Leads & Students" },
+    { id: "feedback", label: "💬 Charter & Reviews" },
+    { id: "qa", label: "🧪 QA & Security Suite" }
+  ];
+
+  const activeNormalized = (currentAdminTab === "site-content") ? "cms"
+    : (currentAdminTab === "sessions") ? "workshops"
+    : (currentAdminTab === "qa-tests") ? "qa"
+    : currentAdminTab || "cms";
+
+  navTabs.innerHTML = tabsConfig.map(t => {
+    const isActive = (activeNormalized === t.id);
+    const activeStyle = isActive
+      ? "background: #22C55E !important; color: #050807 !important; font-weight: 700 !important; border-color: #22C55E !important; box-shadow: 0 0 15px rgba(34, 197, 94, 0.35) !important;"
+      : "background: rgba(255, 255, 255, 0.05) !important; color: #94A3B8 !important; border: 1px solid rgba(255, 255, 255, 0.1) !important;";
+    return `
+      <button type="button" data-tab="${t.id}" data-admin-tab="${t.id}" class="admin-tab-btn ${isActive ? 'active' : ''}" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 16px !important; border-radius: 9999px !important; font-size: 13px !important; font-weight: ${isActive ? '700' : '600'} !important; white-space: nowrap !important; cursor: pointer !important; transition: all 0.2s ease !important; ${activeStyle}">
+        ${t.label}
+      </button>
+    `;
+  }).join("");
+
+  navTabs.querySelectorAll(".admin-tab-btn").forEach(btn => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      const tab = btn.getAttribute("data-tab");
+      if (tab) switchAdminTab(tab);
+    };
+  });
+}
+
+// 2. Navigation event handlers
 function setupAdminNavigation() {
-  const navBtns = document.querySelectorAll(".admin-nav-item");
+  const navBtns = document.querySelectorAll(".admin-nav-item, #admin-nav-tabs .admin-tab-btn");
   navBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const tab = btn.getAttribute("data-admin-tab");
+      const tab = btn.getAttribute("data-tab") || btn.getAttribute("data-admin-tab");
       if (tab) switchAdminTab(tab);
     });
   });
 
-  // Global event delegation for all admin nav buttons (including dynamically rendered ones)
+  // Global event delegation for all admin nav buttons (including dynamically injected ones)
   document.addEventListener("click", (e) => {
-    const navBtn = e.target.closest(".admin-nav-item");
-    if (navBtn) {
-      e.preventDefault();
-      const tab = navBtn.getAttribute("data-admin-tab");
-      if (tab) switchAdminTab(tab);
+    const navBtn = e.target.closest(".admin-nav-item, #admin-nav-tabs .admin-tab-btn, [data-admin-tab], [data-tab]");
+    if (navBtn && (navBtn.closest("#admin-view") || navBtn.closest("#view-admin-portal") || navBtn.closest("#admin-nav-tabs"))) {
+      const tab = navBtn.getAttribute("data-tab") || navBtn.getAttribute("data-admin-tab");
+      if (tab) {
+        e.preventDefault();
+        switchAdminTab(tab);
+      }
     }
   });
 
@@ -90,7 +156,7 @@ function switchAdminTab(tabName) {
   if (!tabName) return;
   currentAdminTab = tabName;
 
-  // Tab alias mapping (supporting both user-specified short keys and legacy container keys)
+  // Tab alias mapping (supporting short keys and legacy container keys)
   const tabMap = {
     "cms": "admin-tab-site-content",
     "site-content": "admin-tab-site-content",
@@ -109,11 +175,40 @@ function switchAdminTab(tabName) {
   document.getElementById("admin-mobile-drawer")?.classList.add("hidden");
 
   // Normalize active key for button highlighting
-  const activeNormalized = (tabName === "site-content") ? "cms" : (tabName === "sessions") ? "workshops" : (tabName === "qa-tests") ? "qa" : tabName;
+  const activeNormalized = (tabName === "site-content") ? "cms"
+    : (tabName === "sessions") ? "workshops"
+    : (tabName === "qa-tests") ? "qa"
+    : tabName;
 
-  // Update active state on all admin nav buttons (desktop sidebar and mobile horizontal pill bar)
+  // 1. Highlight active tab button in solid emerald green (#22C55E background, #050807 bold text)
+  const navTabsContainer = document.getElementById("admin-nav-tabs");
+  if (navTabsContainer) {
+    navTabsContainer.querySelectorAll("button").forEach((btn) => {
+      const t = btn.getAttribute("data-tab") || btn.getAttribute("data-admin-tab");
+      const isBtnActive = (t === activeNormalized || t === tabName);
+      if (isBtnActive) {
+        btn.classList.add("active");
+        btn.setAttribute("data-active", "true");
+        btn.style.setProperty("background", "#22C55E", "important");
+        btn.style.setProperty("color", "#050807", "important");
+        btn.style.setProperty("font-weight", "700", "important");
+        btn.style.setProperty("border-color", "#22C55E", "important");
+        btn.style.setProperty("box-shadow", "0 0 15px rgba(34, 197, 94, 0.35)", "important");
+      } else {
+        btn.classList.remove("active");
+        btn.removeAttribute("data-active");
+        btn.style.setProperty("background", "rgba(255, 255, 255, 0.05)", "important");
+        btn.style.setProperty("color", "#94A3B8", "important");
+        btn.style.setProperty("font-weight", "600", "important");
+        btn.style.setProperty("border-color", "rgba(255, 255, 255, 0.1)", "important");
+        btn.style.removeProperty("box-shadow");
+      }
+    });
+  }
+
+  // Also sync any other admin-nav-item buttons
   document.querySelectorAll(".admin-nav-item").forEach((btn) => {
-    const t = btn.getAttribute("data-admin-tab");
+    const t = btn.getAttribute("data-admin-tab") || btn.getAttribute("data-tab");
     const tNormalized = (t === "site-content") ? "cms" : (t === "sessions") ? "workshops" : (t === "qa-tests") ? "qa" : t;
     if (tNormalized === activeNormalized || t === tabName) {
       btn.classList.add("bg-emerald-500/15", "text-emerald-400", "font-semibold", "border-emerald-500/40");
@@ -124,8 +219,22 @@ function switchAdminTab(tabName) {
     }
   });
 
-  // Switch content containers
+  // 2. Hide all other .admin-tab-panel sections (display: none) and display ONLY the selected panel (display: block)
   const targetContainerId = tabMap[tabName] || `admin-tab-${tabName}`;
+  const allPanels = document.querySelectorAll(".admin-tab-panel");
+  if (allPanels.length > 0) {
+    allPanels.forEach((panel) => {
+      if (panel.id === targetContainerId) {
+        panel.classList.remove("hidden");
+        panel.style.setProperty("display", "block", "important");
+      } else {
+        panel.classList.add("hidden");
+        panel.style.setProperty("display", "none", "important");
+      }
+    });
+  }
+
+  // Backup fallback by explicit container ID
   const allContainers = [
     "admin-tab-site-content",
     "admin-tab-courses",
@@ -142,14 +251,23 @@ function switchAdminTab(tabName) {
     if (el) {
       if (id === targetContainerId) {
         el.classList.remove("hidden");
-        el.classList.add("block");
+        el.style.setProperty("display", "block", "important");
       } else {
         el.classList.add("hidden");
-        el.classList.remove("block");
+        el.style.setProperty("display", "none", "important");
       }
     }
   });
 
+  // 3. Render specific panel data on tab switch
+  if (targetContainerId === "admin-tab-site-content") renderAdminSiteSettings();
+  if (targetContainerId === "admin-tab-courses") renderAdminCourses();
+  if (targetContainerId === "admin-tab-sessions") renderAdminSessions();
+  if (targetContainerId === "admin-tab-leads") renderAdminLeads();
+  if (targetContainerId === "admin-tab-feedback") {
+    renderAdminCharter();
+    renderAdminFeedback();
+  }
   if (targetContainerId === "admin-tab-qa-tests" && typeof renderAdminQATab === "function") {
     renderAdminQATab();
   }
@@ -354,6 +472,76 @@ async function saveAdminSiteSettings() {
   }
 }
 
+async function resetToHumanizedCopy() {
+  const defaults = (typeof DEFAULT_SITE_SETTINGS !== "undefined" ? DEFAULT_SITE_SETTINGS : null) || NexcoStore.getDefaultState()?.siteSettings || {};
+
+  const annActive = document.getElementById("admin-site-ann-active");
+  const annBadge = document.getElementById("admin-site-ann-badge");
+  const annText = document.getElementById("admin-site-ann-text");
+  const annCta = document.getElementById("admin-site-ann-cta");
+  const annLink = document.getElementById("admin-site-ann-link");
+
+  if (annActive) annActive.checked = defaults.bannerVisible !== undefined ? defaults.bannerVisible : true;
+  if (annBadge) annBadge.value = defaults.bannerBadge || "Live Online Batches";
+  if (annText) annText.value = defaults.bannerText || "Admissions open for our upcoming live online batches. Learn in Tamil & English.";
+  if (annCta) annCta.value = defaults.bannerCtaText || "Book a free demo session →";
+  if (annLink) annLink.value = defaults.bannerCtaLink || "#workshops";
+
+  const heroBadge = document.getElementById("admin-site-hero-badge");
+  const heroTitle = document.getElementById("admin-site-hero-title");
+  const heroSub = document.getElementById("admin-site-hero-sub");
+  const heroCta1 = document.getElementById("admin-site-hero-cta1");
+  const heroCta2 = document.getElementById("admin-site-hero-cta2");
+  const formTitle = document.getElementById("admin-site-hero-form-title");
+  const formSub = document.getElementById("admin-site-hero-form-sub");
+
+  if (heroBadge) heroBadge.value = defaults.heroCollabBadge || "Nexora Techno × Gencode";
+  if (heroTitle) heroTitle.value = defaults.heroHeadline || "Learn to build real software with working engineers.";
+  if (heroSub) heroSub.value = defaults.heroSubheadline || "Skip the recorded theory videos. Join our live online classes, write code alongside mentors, get your projects reviewed on screen, and build a solid GitHub portfolio.";
+  if (heroCta1) heroCta1.value = defaults.heroPrimaryCta || "View Courses";
+  if (heroCta2) heroCta2.value = defaults.heroSecondaryCta || "Attend a Free Live Class";
+  if (formTitle) formTitle.value = defaults.leadCardTitle || "Not sure which track fits you?";
+  if (formSub) formSub.value = defaults.leadCardSubtitle || "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point.";
+
+  const promoBadge = document.getElementById("admin-site-promo-badge");
+  const promoTitle = document.getElementById("admin-site-promo-title");
+  const promoSub = document.getElementById("admin-site-promo-sub");
+
+  if (promoBadge) promoBadge.value = defaults.promoBadge || "New Batch Starting Soon";
+  if (promoTitle) promoTitle.value = defaults.promoHeadline || "Small batches. Direct mentor support.";
+  if (promoSub) promoSub.value = defaults.promoSubtitle || "We keep our online batches limited to 30 students so everyone can unmute, share their screen, and get their doubts cleared on the spot.";
+
+  const b1t = document.getElementById("admin-site-bento1-title");
+  const b1d = document.getElementById("admin-site-bento1-desc");
+  const b2t = document.getElementById("admin-site-bento2-title");
+  const b2d = document.getElementById("admin-site-bento2-desc");
+  const b3t = document.getElementById("admin-site-bento3-title");
+  const b3d = document.getElementById("admin-site-bento3-desc");
+
+  if (b1t) b1t.value = defaults.bento1Title || "Live classes, not video dumps";
+  if (b1d) b1d.value = defaults.bento1Desc || "Every class happens live online. Stuck on an error? Share your screen and fix it together with your mentor.";
+  if (b2t) b2t.value = defaults.bento2Title || "Build projects from week one";
+  if (b2d) b2d.value = defaults.bento2Desc || "You will build and host full working applications from scratch instead of copying toy examples.";
+  if (b3t) b3t.value = defaults.bento3Title || "Line-by-line code & design reviews";
+  if (b3d) b3d.value = defaults.bento3Desc || "Before you finish a module, our mentors check your code and UI designs and show you how to improve them.";
+
+  const phone = document.getElementById("admin-site-phone");
+  const email = document.getElementById("admin-site-email");
+  const addr = document.getElementById("admin-site-address");
+  const dispAddr = document.getElementById("admin-site-display-address");
+
+  if (phone) phone.value = defaults.phone || "+91 93451 21988";
+  if (email) email.value = defaults.email || "admissions@nexco.in";
+  if (addr) addr.value = defaults.registeredAddress || "15/2, Sankar Nagar, Salem-7 (Registered HQ & Admin Office)";
+  if (dispAddr) dispAddr.value = defaults.displayAddress || "15/2, Sankar Nagar, Salem-7, Tamil Nadu";
+
+  // Automatically save to Store & backend API
+  await saveAdminSiteSettings();
+  if (typeof NexcoApp !== 'undefined') {
+    NexcoApp.showToast("✔ Reset to Humanized Copy & published live!", "success");
+  }
+}
+
 // =========================================================================
 // TAB 2: COURSES & CURRICULUM FULL CRUD
 // =========================================================================
@@ -512,12 +700,17 @@ function renderAdminSessions() {
         <td class="py-3.5 px-4 text-slate-300 font-mono text-xs">
           ${escapeHTML(session.dateTime || session.date || 'TBD')}
         </td>
-        <td class="py-3.5 px-4">
-          <select class="change-session-status px-2.5 py-1.5 rounded-md text-xs font-bold border ${isLive ? 'bg-red-500/20 text-red-300 border-red-500/40' : 'bg-black/40 text-emerald-300 border-white/10'}" data-id="${session.id}">
-            <option value="Upcoming Workshop" ${session.status === 'Upcoming Workshop' ? 'selected' : ''}>📅 Upcoming Workshop</option>
-            <option value="LIVE NOW" ${isLive ? 'selected' : ''}>🔴 LIVE NOW</option>
-            <option value="Completed" ${session.status === 'Completed' ? 'selected' : ''}>✓ Completed</option>
-          </select>
+        <td class="py-3.5 px-4 whitespace-nowrap">
+          <div class="flex items-center gap-1.5">
+            <button type="button" class="toggle-live-now-btn px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all ${isLive ? 'bg-red-500 text-white shadow-lg shadow-red-500/40 animate-pulse' : 'bg-white/10 hover:bg-red-500/20 text-slate-300 hover:text-red-300 border border-white/10'}" data-id="${session.id}" data-action="toggle-live-now">
+              ${isLive ? '🔴 LIVE NOW' : '⚪ Set LIVE NOW'}
+            </button>
+            <select class="change-session-status px-2 py-1.5 rounded-md text-xs font-bold border ${isLive ? 'bg-red-500/20 text-red-300 border-red-500/40' : 'bg-black/40 text-emerald-300 border-white/10'}" data-id="${session.id}">
+              <option value="Upcoming Workshop" ${session.status === 'Upcoming Workshop' ? 'selected' : ''}>Upcoming Workshop</option>
+              <option value="LIVE NOW" ${isLive ? 'selected' : ''}>🔴 LIVE NOW</option>
+              <option value="Completed" ${session.status === 'Completed' ? 'selected' : ''}>✓ Completed</option>
+            </select>
+          </div>
         </td>
         <td class="py-3.5 px-4 text-xs">
           <a href="${session.meetingLink || session.meetLink || '#'}" target="_blank" class="text-emerald-400 hover:underline font-mono truncate max-w-[140px] inline-block">
@@ -644,6 +837,9 @@ function renderAdminFeedback() {
             ✅ Approve
           </button>
         ` : ''}
+        <button class="edit-fb-btn px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-black font-semibold text-xs" data-action="edit-feedback" data-id="${fb.id}">
+          ✏️ Edit
+        </button>
         <button class="delete-fb-btn px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500 text-red-300 hover:text-white font-semibold text-xs" data-action="delete-feedback" data-id="${fb.id}">
           🗑️ Delete
         </button>
@@ -834,6 +1030,16 @@ function setupAdminEventListeners() {
         e.preventDefault();
         openNewSessionModal();
         break;
+      case "toggle-live-now":
+        e.preventDefault();
+        if (id) {
+          const session = NexcoStore.getLiveSessions().find(s => s.id === id);
+          const currentIsLive = session && (session.status === "LIVE NOW" || session.isLive === true);
+          const newStatus = currentIsLive ? "Upcoming Workshop" : "LIVE NOW";
+          await NexcoStore.toggleSessionLiveStatus(id, newStatus);
+          NexcoApp.showToast(newStatus === "LIVE NOW" ? "🔴 Workshop marked LIVE NOW!" : "Workshop marked as Upcoming.", "success");
+        }
+        break;
       case "edit-session":
         e.preventDefault();
         if (id) openEditSessionModal(id);
@@ -868,6 +1074,23 @@ function setupAdminEventListeners() {
         if (id) {
           await NexcoStore.approveFeedback(id);
           NexcoApp.showToast("✔ Changes saved & published live!", "success");
+        }
+        break;
+      case "edit-feedback":
+        e.preventDefault();
+        if (id) {
+          const feedbacks = NexcoStore.getFeedbacks();
+          const fb = feedbacks.find(f => f.id === id);
+          if (fb) {
+            const newComment = prompt("Edit review text:", fb.comment || fb.content || "");
+            if (newComment !== null && newComment.trim()) {
+              fb.comment = newComment.trim();
+              if (fb.content) fb.content = newComment.trim();
+              NexcoStore.saveState("feedbacks");
+              NexcoStore.notify("feedbacks");
+              NexcoApp.showToast("✔ Review updated & published live!", "success");
+            }
+          }
         }
         break;
       case "delete-feedback":
@@ -1391,7 +1614,9 @@ window.NexcoAdmin = {
   unlockUserTarget: (t) => unlockUserTarget(t),
   init: initAdminDashboard,
   populateSiteSettingsForm: renderAdminSiteSettings,
-  renderAdminSiteSettings
+  renderAdminSiteSettings,
+  renderAdminStickyNavTabs,
+  resetToHumanizedCopy
 };
 
 // Aliases for window.Admin

@@ -692,37 +692,70 @@ code, pre {
 }
 
 /* Admin Desktop Left Sidebar (>= 992px) */
-@media screen and (min-width: 992px) {
-  .admin-desktop-sidebar {
-    display: flex !important;
-    width: 250px !important;
-    min-width: 250px !important;
-    max-width: 250px !important;
-    position: sticky !important;
-    top: 57px !important;
-    height: calc(100vh - 57px) !important;
-    box-sizing: border-box !important;
-  }
-  .admin-mobile-tab-bar {
-    display: none !important;
-  }
+/* Sticky Admin Navigation Tab Bar (Guaranteed Visibility Across All Screen Sizes) */
+#admin-nav-tabs {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  padding: 14px 24px !important;
+  background: rgba(15, 23, 20, 0.95) !important;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.2) !important;
+  position: sticky !important;
+  top: 64px !important;
+  z-index: 40 !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
 }
 
-/* Admin Scrollable Horizontal Pill Tab Bar (< 992px) */
-@media screen and (max-width: 991px) {
-  .admin-desktop-sidebar {
-    display: none !important;
-  }
-  .admin-mobile-tab-bar {
-    display: flex !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    white-space: nowrap !important;
-    scrollbar-width: none !important;
-  }
-  .admin-mobile-tab-bar::-webkit-scrollbar {
-    display: none !important;
-  }
+#admin-nav-tabs::-webkit-scrollbar {
+  display: none !important;
+}
+
+#admin-nav-tabs .admin-tab-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  border-radius: 9999px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #94A3B8 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-decoration: none !important;
+}
+
+#admin-nav-tabs .admin-tab-btn:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+}
+
+#admin-nav-tabs .admin-tab-btn.active,
+#admin-nav-tabs .admin-tab-btn[data-active="true"] {
+  background: #22C55E !important;
+  color: #050807 !important;
+  font-weight: 700 !important;
+  border-color: #22C55E !important;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.35) !important;
+}
+
+.admin-tab-panel {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Hide legacy sidebar and mobile bar in favor of sticky #admin-nav-tabs */
+.admin-desktop-sidebar,
+.admin-mobile-tab-bar {
+  display: none !important;
 }
 
 /* Site Content & Hero Editor Section Header Stacking on Mobile */

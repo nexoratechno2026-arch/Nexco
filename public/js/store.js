@@ -3,7 +3,7 @@
 // Localized for Nexco (An Official Collaboration of Nexora Techno & Gencode)
 // Registered HQ: 15/2, Sankar Nagar, Salem-7, Tamil Nadu, India
 
-const STORAGE_KEY = "NEXCO_STATE_PROD_V3";
+const STORAGE_KEY = "nexco_store_v5_clean";
 const SESSION_KEY = "NEXCO_USER_SESSION_V3";
 const TOKEN_KEY = "NEXCO_AUTH_TOKEN";
 

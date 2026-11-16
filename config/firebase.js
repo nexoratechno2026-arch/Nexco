@@ -240,9 +240,9 @@ if (projectId && clientEmail && privateKey && !privateKey.includes('your-service
             announcement: defaultState.announcement,
             contact: defaultState.brand,
             hero: {
-              collaborationBadge: "🤝 An Official Collaboration of Nexora Techno & Gencode",
-              headline: "Become the Professional the Future of Technology Demands.",
-              subheadline: "100% Live Interactive Online Classes — Learn from anywhere with hands-on project building, direct screen-share code reviews, and bilingual mentor guidance in Tamil & English."
+              collaborationBadge: "Nexora Techno × Gencode",
+              headline: "Learn to build real software with working engineers.",
+              subheadline: "Skip the recorded theory videos. Join our live online classes, write code alongside mentors, get your projects reviewed on screen, and build a solid GitHub portfolio."
             }
           });
           console.log('✅ [Nexco Firebase] Cloud Firestore seeding completed successfully!');
