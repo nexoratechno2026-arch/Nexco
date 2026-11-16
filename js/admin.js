@@ -63,10 +63,21 @@ function refreshAdminViews() {
 function setupAdminNavigation() {
   const navBtns = document.querySelectorAll(".admin-nav-item");
   navBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
       const tab = btn.getAttribute("data-admin-tab");
       if (tab) switchAdminTab(tab);
     });
+  });
+
+  // Global event delegation for all admin nav buttons (including dynamically rendered ones)
+  document.addEventListener("click", (e) => {
+    const navBtn = e.target.closest(".admin-nav-item");
+    if (navBtn) {
+      e.preventDefault();
+      const tab = navBtn.getAttribute("data-admin-tab");
+      if (tab) switchAdminTab(tab);
+    }
   });
 
   // Mobile menu close button
@@ -76,29 +87,60 @@ function setupAdminNavigation() {
 }
 
 function switchAdminTab(tabName) {
+  if (!tabName) return;
   currentAdminTab = tabName;
+
+  // Tab alias mapping (supporting both user-specified short keys and legacy container keys)
+  const tabMap = {
+    "cms": "admin-tab-site-content",
+    "site-content": "admin-tab-site-content",
+    "courses": "admin-tab-courses",
+    "workshops": "admin-tab-sessions",
+    "sessions": "admin-tab-sessions",
+    "leads": "admin-tab-leads",
+    "feedback": "admin-tab-feedback",
+    "qa": "admin-tab-qa-tests",
+    "qa-tests": "admin-tab-qa-tests",
+    "overview": "admin-tab-overview",
+    "submissions": "admin-tab-submissions"
+  };
 
   // Close mobile drawer if open
   document.getElementById("admin-mobile-drawer")?.classList.add("hidden");
 
-  // Update sidebar active buttons
+  // Normalize active key for button highlighting
+  const activeNormalized = (tabName === "site-content") ? "cms" : (tabName === "sessions") ? "workshops" : (tabName === "qa-tests") ? "qa" : tabName;
+
+  // Update active state on all admin nav buttons (desktop sidebar and mobile horizontal pill bar)
   document.querySelectorAll(".admin-nav-item").forEach((btn) => {
     const t = btn.getAttribute("data-admin-tab");
-    if (t === tabName) {
-      btn.classList.add("bg-emerald-500/15", "text-emerald-400", "font-semibold", "border-emerald-500/30");
-      btn.classList.remove("text-slate-400", "hover:text-white");
+    const tNormalized = (t === "site-content") ? "cms" : (t === "sessions") ? "workshops" : (t === "qa-tests") ? "qa" : t;
+    if (tNormalized === activeNormalized || t === tabName) {
+      btn.classList.add("bg-emerald-500/15", "text-emerald-400", "font-semibold", "border-emerald-500/40");
+      btn.classList.remove("text-slate-400", "hover:text-white", "border-transparent");
     } else {
-      btn.classList.remove("bg-emerald-500/15", "text-emerald-400", "font-semibold", "border-emerald-500/30");
-      btn.classList.add("text-slate-400", "hover:text-white");
+      btn.classList.remove("bg-emerald-500/15", "text-emerald-400", "font-semibold", "border-emerald-500/40");
+      btn.classList.add("text-slate-400", "hover:text-white", "border-transparent");
     }
   });
 
   // Switch content containers
-  const tabs = ["site-content", "courses", "sessions", "feedback", "leads", "submissions", "overview", "qa-tests"];
-  tabs.forEach((t) => {
-    const el = document.getElementById(`admin-tab-${t}`);
+  const targetContainerId = tabMap[tabName] || `admin-tab-${tabName}`;
+  const allContainers = [
+    "admin-tab-site-content",
+    "admin-tab-courses",
+    "admin-tab-sessions",
+    "admin-tab-feedback",
+    "admin-tab-leads",
+    "admin-tab-submissions",
+    "admin-tab-overview",
+    "admin-tab-qa-tests"
+  ];
+
+  allContainers.forEach((id) => {
+    const el = document.getElementById(id);
     if (el) {
-      if (t === tabName) {
+      if (id === targetContainerId) {
         el.classList.remove("hidden");
         el.classList.add("block");
       } else {
@@ -108,7 +150,7 @@ function switchAdminTab(tabName) {
     }
   });
 
-  if (tabName === "qa-tests") {
+  if (targetContainerId === "admin-tab-qa-tests" && typeof renderAdminQATab === "function") {
     renderAdminQATab();
   }
 }
@@ -117,21 +159,21 @@ function switchAdminTab(tabName) {
 // TAB 1: SITE CONTENT & HERO EDITOR (FULL CMS SETTINGS)
 // =========================================================================
 function renderAdminSiteSettings() {
-  const s = NexcoStore.getSiteSettings();
+  const s = NexcoStore.getSiteSettings() || (typeof DEFAULT_SITE_SETTINGS !== "undefined" ? DEFAULT_SITE_SETTINGS : {});
   if (!s) return;
 
-  // Top Announcement
+  // Top Announcement / Banner
   const annActive = document.getElementById("admin-site-ann-active");
   const annBadge = document.getElementById("admin-site-ann-badge");
   const annText = document.getElementById("admin-site-ann-text");
   const annCta = document.getElementById("admin-site-ann-cta");
   const annLink = document.getElementById("admin-site-ann-link");
 
-  if (annActive && s.announcement) annActive.checked = s.announcement.active !== false;
-  if (annBadge && s.announcement) annBadge.value = s.announcement.badge || "";
-  if (annText && s.announcement) annText.value = s.announcement.text || "";
-  if (annCta && s.announcement) annCta.value = s.announcement.ctaText || "";
-  if (annLink && s.announcement) annLink.value = s.announcement.ctaLink || "";
+  if (annActive) annActive.checked = s.bannerVisible !== undefined ? s.bannerVisible : (s.announcement?.active !== false);
+  if (annBadge) annBadge.value = s.bannerBadge || s.announcement?.badge || "Live Online Batches";
+  if (annText) annText.value = s.bannerText || s.announcement?.text || "";
+  if (annCta) annCta.value = s.bannerCtaText || s.announcement?.ctaText || s.ctaText || "Book a free demo session →";
+  if (annLink) annLink.value = s.bannerCtaLink || s.announcement?.ctaLink || s.ctaLink || "#workshops";
 
   // Hero Section
   const heroBadge = document.getElementById("admin-site-hero-badge");
@@ -142,22 +184,22 @@ function renderAdminSiteSettings() {
   const formTitle = document.getElementById("admin-site-hero-form-title");
   const formSub = document.getElementById("admin-site-hero-form-sub");
 
-  if (heroBadge && s.hero) heroBadge.value = s.hero.collaborationBadge || "";
-  if (heroTitle && s.hero) heroTitle.value = s.hero.headline || "";
-  if (heroSub && s.hero) heroSub.value = s.hero.subheadline || "";
-  if (heroCta1 && s.hero) heroCta1.value = s.hero.primaryCtaText || "";
-  if (heroCta2 && s.hero) heroCta2.value = s.hero.secondaryCtaText || "";
-  if (formTitle && s.hero) formTitle.value = s.hero.counselingCardTitle || "";
-  if (formSub && s.hero) formSub.value = s.hero.counselingCardSubtitle || "";
+  if (heroBadge) heroBadge.value = s.heroCollabBadge || s.hero?.collaborationBadge || s.hero?.badge || "Nexora Techno × Gencode";
+  if (heroTitle) heroTitle.value = s.heroHeadline || s.hero?.headline || "Learn to build real software with working engineers.";
+  if (heroSub) heroSub.value = s.heroSubheadline || s.hero?.subheadline || "Skip the recorded theory videos. Join our live online classes, write code alongside mentors, get your projects reviewed on screen, and build a solid GitHub portfolio.";
+  if (heroCta1) heroCta1.value = s.heroPrimaryCta || s.hero?.primaryCtaText || s.hero?.ctaPrimaryText || "View Courses";
+  if (heroCta2) heroCta2.value = s.heroSecondaryCta || s.hero?.secondaryCtaText || s.hero?.ctaSecondaryText || "Attend a Free Live Class";
+  if (formTitle) formTitle.value = s.leadCardTitle || s.hero?.leadCardTitle || s.hero?.counselingCardTitle || "Not sure which track fits you?";
+  if (formSub) formSub.value = s.leadCardSubtitle || s.hero?.leadCardSubtitle || s.hero?.leadCardSub || s.hero?.counselingCardSubtitle || "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point.";
 
   // Promo Banner
   const promoBadge = document.getElementById("admin-site-promo-badge");
   const promoTitle = document.getElementById("admin-site-promo-title");
   const promoSub = document.getElementById("admin-site-promo-sub");
 
-  if (promoBadge && s.promoBanner) promoBadge.value = s.promoBanner.badge || "";
-  if (promoTitle && s.promoBanner) promoTitle.value = s.promoBanner.title || "";
-  if (promoSub && s.promoBanner) promoSub.value = s.promoBanner.subtitle || "";
+  if (promoBadge) promoBadge.value = s.promoBadge || s.promoBanner?.badge || "New Batch Starting Soon";
+  if (promoTitle) promoTitle.value = s.promoHeadline || s.promoBanner?.title || "Small batches. Direct mentor support.";
+  if (promoSub) promoSub.value = s.promoSubtitle || s.promoBanner?.subtitle || "We keep our online batches limited to 30 students so everyone can unmute, share their screen, and get their doubts cleared on the spot.";
 
   // Bento Grid
   const b1t = document.getElementById("admin-site-bento1-title");
@@ -167,12 +209,12 @@ function renderAdminSiteSettings() {
   const b3t = document.getElementById("admin-site-bento3-title");
   const b3d = document.getElementById("admin-site-bento3-desc");
 
-  if (b1t && s.bento) b1t.value = s.bento.card1Title || "";
-  if (b1d && s.bento) b1d.value = s.bento.card1Desc || "";
-  if (b2t && s.bento) b2t.value = s.bento.card2Title || "";
-  if (b2d && s.bento) b2d.value = s.bento.card2Desc || "";
-  if (b3t && s.bento) b3t.value = s.bento.card3Title || "";
-  if (b3d && s.bento) b3d.value = s.bento.card3Desc || "";
+  if (b1t) b1t.value = s.bento1Title || s.bento?.card1Title || "Live classes, not video dumps";
+  if (b1d) b1d.value = s.bento1Desc || s.bento?.card1Desc || "Every class happens live online. Stuck on an error? Share your screen and fix it together with your mentor.";
+  if (b2t) b2t.value = s.bento2Title || s.bento?.card2Title || "Build projects from week one";
+  if (b2d) b2d.value = s.bento2Desc || s.bento?.card2Desc || "You will build and host full working applications from scratch instead of copying toy examples.";
+  if (b3t) b3t.value = s.bento3Title || s.bento?.card3Title || "Line-by-line code & design reviews";
+  if (b3d) b3d.value = s.bento3Desc || s.bento?.card3Desc || "Before you finish a module, our mentors check your code and UI designs and show you how to improve them.";
 
   // Contact
   const phone = document.getElementById("admin-site-phone");
@@ -180,49 +222,113 @@ function renderAdminSiteSettings() {
   const addr = document.getElementById("admin-site-address");
   const dispAddr = document.getElementById("admin-site-display-address");
 
-  if (phone && s.contact) phone.value = s.contact.phone || "";
-  if (email && s.contact) email.value = s.contact.email || "";
-  if (addr && s.contact) addr.value = s.contact.address || "";
-  if (dispAddr && s.contact) dispAddr.value = s.contact.displayAddress || "";
+  if (phone) phone.value = s.phone || s.contact?.phone || "+91 93451 21988";
+  if (email) email.value = s.email || s.contact?.email || "admissions@nexco.in";
+  if (addr) addr.value = s.registeredAddress || s.contact?.address || "15/2, Sankar Nagar, Salem-7 (Registered HQ & Admin Office)";
+  if (dispAddr) dispAddr.value = s.displayAddress || s.contact?.displayAddress || "15/2, Sankar Nagar, Salem-7, Tamil Nadu";
 }
 
 async function saveAdminSiteSettings() {
+  const annActive = document.getElementById("admin-site-ann-active")?.checked !== false;
+  const annBadge = document.getElementById("admin-site-ann-badge")?.value.trim() || "Live Online Batches";
+  const annText = document.getElementById("admin-site-ann-text")?.value.trim() || "";
+  const annCta = document.getElementById("admin-site-ann-cta")?.value.trim() || "Book a free demo session →";
+  const annLink = document.getElementById("admin-site-ann-link")?.value.trim() || "#workshops";
+
+  const heroBadge = document.getElementById("admin-site-hero-badge")?.value.trim() || "Nexora Techno × Gencode";
+  const heroTitle = document.getElementById("admin-site-hero-title")?.value.trim() || "Learn to build real software with working engineers.";
+  const heroSub = document.getElementById("admin-site-hero-sub")?.value.trim() || "";
+  const heroCta1 = document.getElementById("admin-site-hero-cta1")?.value.trim() || "View Courses";
+  const heroCta2 = document.getElementById("admin-site-hero-cta2")?.value.trim() || "Attend a Free Live Class";
+  const formTitle = document.getElementById("admin-site-hero-form-title")?.value.trim() || "Not sure which track fits you?";
+  const formSub = document.getElementById("admin-site-hero-form-sub")?.value.trim() || "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point.";
+
+  const promoBadge = document.getElementById("admin-site-promo-badge")?.value.trim() || "New Batch Starting Soon";
+  const promoTitle = document.getElementById("admin-site-promo-title")?.value.trim() || "Small batches. Direct mentor support.";
+  const promoSub = document.getElementById("admin-site-promo-sub")?.value.trim() || "";
+
+  const b1t = document.getElementById("admin-site-bento1-title")?.value.trim() || "Live classes, not video dumps";
+  const b1d = document.getElementById("admin-site-bento1-desc")?.value.trim() || "";
+  const b2t = document.getElementById("admin-site-bento2-title")?.value.trim() || "Build projects from week one";
+  const b2d = document.getElementById("admin-site-bento2-desc")?.value.trim() || "";
+  const b3t = document.getElementById("admin-site-bento3-title")?.value.trim() || "Line-by-line code & design reviews";
+  const b3d = document.getElementById("admin-site-bento3-desc")?.value.trim() || "";
+
+  const phone = document.getElementById("admin-site-phone")?.value.trim() || "+91 93451 21988";
+  const email = document.getElementById("admin-site-email")?.value.trim() || "admissions@nexco.in";
+  const addr = document.getElementById("admin-site-address")?.value.trim() || "15/2, Sankar Nagar, Salem-7 (Registered HQ & Admin Office)";
+  const dispAddr = document.getElementById("admin-site-display-address")?.value.trim() || "15/2, Sankar Nagar, Salem-7, Tamil Nadu";
+
   const settings = {
+    // Exact canonical flat keys
+    bannerVisible: annActive,
+    bannerBadge: annBadge,
+    bannerText: annText,
+    bannerCtaText: annCta,
+    bannerCtaLink: annLink,
+    heroCollabBadge: heroBadge,
+    heroHeadline: heroTitle,
+    heroSubheadline: heroSub,
+    heroPrimaryCta: heroCta1,
+    heroSecondaryCta: heroCta2,
+    leadCardTitle: formTitle,
+    leadCardSubtitle: formSub,
+    promoBadge: promoBadge,
+    promoHeadline: promoTitle,
+    promoSubtitle: promoSub,
+    bento1Title: b1t,
+    bento1Desc: b1d,
+    bento2Title: b2t,
+    bento2Desc: b2d,
+    bento3Title: b3t,
+    bento3Desc: b3d,
+    phone: phone,
+    email: email,
+    registeredAddress: addr,
+    displayAddress: dispAddr,
+
+    // Backward-compatible nested objects
     announcement: {
-      active: document.getElementById("admin-site-ann-active")?.checked !== false,
-      badge: document.getElementById("admin-site-ann-badge")?.value.trim() || "100% Live Online Cohort",
-      text: document.getElementById("admin-site-ann-text")?.value.trim() || "",
-      ctaText: document.getElementById("admin-site-ann-cta")?.value.trim() || "Join Free Workshop ↗",
-      ctaLink: document.getElementById("admin-site-ann-link")?.value.trim() || "#workshops"
+      active: annActive,
+      badge: annBadge,
+      text: annText,
+      ctaText: annCta,
+      ctaLink: annLink
     },
     hero: {
-      collaborationBadge: document.getElementById("admin-site-hero-badge")?.value.trim() || "🤝 An Official Collaboration of Nexora Techno & Gencode",
-      headline: document.getElementById("admin-site-hero-title")?.value.trim() || "Become the Professional the Future of Technology Demands.",
-      subheadline: document.getElementById("admin-site-hero-sub")?.value.trim() || "",
-      primaryCtaText: document.getElementById("admin-site-hero-cta1")?.value.trim() || "Explore Flagship Programs ↗",
-      secondaryCtaText: document.getElementById("admin-site-hero-cta2")?.value.trim() || "Join Free Live Masterclass",
-      counselingCardTitle: document.getElementById("admin-site-hero-form-title")?.value.trim() || "Get Personalized Course Plan from Our Team",
-      counselingCardSubtitle: document.getElementById("admin-site-hero-form-sub")?.value.trim() || "Speak directly with an engineering mentor online in < 15 mins."
+      badge: heroBadge,
+      collaborationBadge: heroBadge,
+      subBadge: "Live Online Classes • Taught in Tamil & English",
+      headline: heroTitle,
+      subheadline: heroSub,
+      primaryCtaText: heroCta1,
+      ctaPrimaryText: heroCta1,
+      secondaryCtaText: heroCta2,
+      ctaSecondaryText: heroCta2,
+      leadCardTitle: formTitle,
+      counselingCardTitle: formTitle,
+      leadCardSub: formSub,
+      counselingCardSubtitle: formSub
     },
     promoBanner: {
-      badge: document.getElementById("admin-site-promo-badge")?.value.trim() || "Joint Venture Launch",
-      title: document.getElementById("admin-site-promo-title")?.value.trim() || "Founding Online Cohort Admissions Open — Build Real Projects with Industry Mentors",
-      subtitle: document.getElementById("admin-site-promo-sub")?.value.trim() || ""
+      badge: promoBadge,
+      title: promoTitle,
+      subtitle: promoSub
     },
     bento: {
-      card1Title: document.getElementById("admin-site-bento1-title")?.value.trim() || "100% Live Online Interactive Sessions",
-      card1Desc: document.getElementById("admin-site-bento1-desc")?.value.trim() || "",
-      card2Title: document.getElementById("admin-site-bento2-title")?.value.trim() || "Hands-On Real-World Project Building",
-      card2Desc: document.getElementById("admin-site-bento2-desc")?.value.trim() || "",
-      card3Title: document.getElementById("admin-site-bento3-title")?.value.trim() || "Direct 1-on-1 Live Screen-Share Code & Design Reviews",
-      card3Desc: document.getElementById("admin-site-bento3-desc")?.value.trim() || ""
+      card1Title: b1t,
+      card1Desc: b1d,
+      card2Title: b2t,
+      card2Desc: b2d,
+      card3Title: b3t,
+      card3Desc: b3d
     },
     contact: {
-      phone: document.getElementById("admin-site-phone")?.value.trim() || "+91 93451 21988",
-      whatsapp: document.getElementById("admin-site-phone")?.value.trim() || "+91 93451 21988",
-      email: document.getElementById("admin-site-email")?.value.trim() || "admissions@nexco.in",
-      address: document.getElementById("admin-site-address")?.value.trim() || "15/2, Sankar Nagar, Salem - 636007, Tamil Nadu, India",
-      displayAddress: document.getElementById("admin-site-display-address")?.value.trim() || "15/2, Sankar Nagar, Salem-7 (Registered HQ)",
+      phone: phone,
+      whatsapp: phone,
+      email: email,
+      address: addr,
+      displayAddress: dispAddr,
       hours: "10:00 AM – 8:00 PM IST (Mon – Sat) • 100% Live Online Batches",
       languages: "Tamil & English Bilingual Mentorship"
     }
@@ -234,7 +340,19 @@ async function saveAdminSiteSettings() {
     btn.innerHTML = `<span>Saving Changes...</span>`;
   }
 
-  await NexcoStore.updateSiteSettings(settings);
+  const res = await NexcoStore.updateSiteSettings(settings);
+
+  if (btn) {
+    btn.disabled = false;
+    btn.innerHTML = `<span>💾 Save All Site Settings</span>`;
+  }
+
+  if (res && res.success !== false) {
+    NexcoApp.showToast("✔ Changes saved & published live!", "success");
+  } else {
+    NexcoApp.showToast("Failed to save settings: " + (res?.error || "Unknown error"), "error");
+  }
+}
 
   if (btn) {
     btn.disabled = false;

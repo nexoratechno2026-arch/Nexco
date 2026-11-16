@@ -230,12 +230,38 @@ class NexcoStoreManager {
       currentUser: null,
       registeredUsers: [],
 
-      // Central Site Settings for CMS Editing (Humanized & Grounded Copy)
+      // Central Site Settings for CMS Editing (Canonical Flat Keys + Backward Compatibility)
       siteSettings: {
+        bannerVisible: true,
+        bannerBadge: "Live Online Batches",
+        bannerText: "Admissions open for our upcoming live online batches. Learn in Tamil & English.",
+        bannerCtaText: "Book a free demo session →",
+        bannerCtaLink: "#workshops",
+        heroCollabBadge: "Nexora Techno × Gencode",
+        heroHeadline: "Learn to build real software with working engineers.",
+        heroSubheadline: "Skip the recorded theory videos. Join our live online classes, write code alongside mentors, get your projects reviewed on screen, and build a solid GitHub portfolio.",
+        heroPrimaryCta: "View Courses",
+        heroSecondaryCta: "Attend a Free Live Class",
+        leadCardTitle: "Not sure which track fits you?",
+        leadCardSubtitle: "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point.",
+        promoBadge: "New Batch Starting Soon",
+        promoHeadline: "Small batches. Direct mentor support.",
+        promoSubtitle: "We keep our online batches limited to 30 students so everyone can unmute, share their screen, and get their doubts cleared on the spot.",
+        bento1Title: "Live classes, not video dumps",
+        bento1Desc: "Every class happens live online. Stuck on an error? Share your screen and fix it together with your mentor.",
+        bento2Title: "Build projects from week one",
+        bento2Desc: "You will build and host full working applications from scratch instead of copying toy examples.",
+        bento3Title: "Line-by-line code & design reviews",
+        bento3Desc: "Before you finish a module, our mentors check your code and UI designs and show you how to improve them.",
+        phone: "+91 93451 21988",
+        email: "admissions@nexco.in",
+        registeredAddress: "15/2, Sankar Nagar, Salem-7 (Registered HQ & Admin Office)",
+        displayAddress: "15/2, Sankar Nagar, Salem-7, Tamil Nadu",
+
         announcement: {
           active: true,
           badge: "Live Online Batches",
-          text: "Admissions open for our upcoming live online batches. Learn in Tamil & English",
+          text: "Admissions open for our upcoming live online batches. Learn in Tamil & English.",
           ctaText: "Book a free demo session →",
           ctaLink: "#workshops"
         },

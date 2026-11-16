@@ -1242,6 +1242,24 @@ window.initScrollReveal = () => {
   }
 };
 
+// Global App Proxy for immediate inline onclick access
+window.App = {
+  navigate(view) {
+    if (view === "landing" || view === "website") view = "public";
+    if (window.NexcoApp && window.NexcoApp.switchView) {
+      return window.NexcoApp.switchView(view);
+    }
+  },
+  switchView(view) {
+    return this.navigate(view);
+  }
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   window.NexcoApp = new NexcoApplication();
+  window.NexcoApp.navigate = function(view) {
+    if (view === "landing" || view === "website") view = "public";
+    return this.switchView(view);
+  };
+  window.App = window.NexcoApp;
 });

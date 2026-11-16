@@ -52,60 +52,85 @@ function initSiteSettings() {
   const heroFormTitle = document.getElementById("hero-form-title");
   const heroFormSub = document.getElementById("hero-form-sub");
 
-  if (settings.hero) {
-    if (heroBadge && settings.hero.badge) heroBadge.textContent = settings.hero.badge;
-    if (heroHeadline && settings.hero.headline) heroHeadline.innerHTML = escapeHTML(settings.hero.headline).replace(/\n/g, "<br/>");
-    if (heroSubheadline && settings.hero.subheadline) heroSubheadline.textContent = settings.hero.subheadline;
-    if (heroCtaExplore && settings.hero.ctaPrimaryText) heroCtaExplore.textContent = settings.hero.ctaPrimaryText;
-    if (heroCtaMasterclass && settings.hero.ctaSecondaryText) heroCtaMasterclass.textContent = settings.hero.ctaSecondaryText;
-    if (heroFormTitle && settings.hero.leadCardTitle) heroFormTitle.textContent = settings.hero.leadCardTitle;
-    if (heroFormSub && settings.hero.leadCardSub) heroFormSub.textContent = settings.hero.leadCardSub;
-  }
+  const badgeVal = settings.heroCollabBadge || settings.hero?.collaborationBadge || settings.hero?.badge;
+  if (heroBadge && badgeVal) heroBadge.textContent = badgeVal;
+
+  const headlineVal = settings.heroHeadline || settings.hero?.headline;
+  if (heroHeadline && headlineVal) heroHeadline.innerHTML = escapeHTML(headlineVal).replace(/\n/g, "<br/>");
+
+  const subheadlineVal = settings.heroSubheadline || settings.hero?.subheadline;
+  if (heroSubheadline && subheadlineVal) heroSubheadline.textContent = subheadlineVal;
+
+  const ctaPrimaryVal = settings.heroPrimaryCta || settings.hero?.primaryCtaText || settings.hero?.ctaPrimaryText;
+  if (heroCtaExplore && ctaPrimaryVal) heroCtaExplore.textContent = ctaPrimaryVal;
+
+  const ctaSecondaryVal = settings.heroSecondaryCta || settings.hero?.secondaryCtaText || settings.hero?.ctaSecondaryText;
+  if (heroCtaMasterclass && ctaSecondaryVal) heroCtaMasterclass.textContent = ctaSecondaryVal;
+
+  const leadTitleVal = settings.leadCardTitle || settings.hero?.leadCardTitle || settings.hero?.counselingCardTitle;
+  if (heroFormTitle && leadTitleVal) heroFormTitle.textContent = leadTitleVal;
+
+  const leadSubVal = settings.leadCardSubtitle || settings.hero?.leadCardSub || settings.hero?.counselingCardSubtitle;
+  if (heroFormSub && leadSubVal) heroFormSub.textContent = leadSubVal;
 
   // Promotional Banner
   const promoBadge = document.getElementById("promo-banner-badge");
   const promoTitle = document.getElementById("promo-banner-title");
   const promoSub = document.getElementById("promo-banner-sub");
 
-  if (settings.promoBanner) {
-    if (promoBadge && settings.promoBanner.badge) promoBadge.textContent = settings.promoBanner.badge;
-    if (promoTitle && settings.promoBanner.title) promoTitle.textContent = settings.promoBanner.title;
-    if (promoSub && settings.promoBanner.subtitle) promoSub.textContent = settings.promoBanner.subtitle;
-  }
+  const promoBadgeVal = settings.promoBadge || settings.promoBanner?.badge;
+  if (promoBadge && promoBadgeVal) promoBadge.textContent = promoBadgeVal;
+
+  const promoTitleVal = settings.promoHeadline || settings.promoBanner?.title;
+  if (promoTitle && promoTitleVal) promoTitle.textContent = promoTitleVal;
+
+  const promoSubVal = settings.promoSubtitle || settings.promoBanner?.subtitle;
+  if (promoSub && promoSubVal) promoSub.textContent = promoSubVal;
 
   // Bento Grid Cards
-  if (settings.bento) {
-    const card1Title = document.getElementById("bento-card1-title");
-    const card1Desc = document.getElementById("bento-card1-desc");
-    const card2Title = document.getElementById("bento-card2-title");
-    const card2Desc = document.getElementById("bento-card2-desc");
-    const card3Title = document.getElementById("bento-card3-title");
-    const card3Desc = document.getElementById("bento-card3-desc");
+  const card1Title = document.getElementById("bento-card1-title");
+  const card1Desc = document.getElementById("bento-card1-desc");
+  const card2Title = document.getElementById("bento-card2-title");
+  const card2Desc = document.getElementById("bento-card2-desc");
+  const card3Title = document.getElementById("bento-card3-title");
+  const card3Desc = document.getElementById("bento-card3-desc");
 
-    if (card1Title && settings.bento.card1Title) card1Title.textContent = settings.bento.card1Title;
-    if (card1Desc && settings.bento.card1Desc) card1Desc.textContent = settings.bento.card1Desc;
-    if (card2Title && settings.bento.card2Title) card2Title.textContent = settings.bento.card2Title;
-    if (card2Desc && settings.bento.card2Desc) card2Desc.textContent = settings.bento.card2Desc;
-    if (card3Title && settings.bento.card3Title) card3Title.textContent = settings.bento.card3Title;
-    if (card3Desc && settings.bento.card3Desc) card3Desc.textContent = settings.bento.card3Desc;
-  }
+  const b1t = settings.bento1Title || settings.bento?.card1Title;
+  if (card1Title && b1t) card1Title.textContent = b1t;
+
+  const b1d = settings.bento1Desc || settings.bento?.card1Desc;
+  if (card1Desc && b1d) card1Desc.textContent = b1d;
+
+  const b2t = settings.bento2Title || settings.bento?.card2Title;
+  if (card2Title && b2t) card2Title.textContent = b2t;
+
+  const b2d = settings.bento2Desc || settings.bento?.card2Desc;
+  if (card2Desc && b2d) card2Desc.textContent = b2d;
+
+  const b3t = settings.bento3Title || settings.bento?.card3Title;
+  if (card3Title && b3t) card3Title.textContent = b3t;
+
+  const b3d = settings.bento3Desc || settings.bento?.card3Desc;
+  if (card3Desc && b3d) card3Desc.textContent = b3d;
 
   // Contact Info
-  if (settings.contact) {
-    const phoneEls = document.querySelectorAll(".contact-phone-display");
-    const emailEls = document.querySelectorAll(".contact-email-display");
-    const addressEls = document.querySelectorAll(".contact-address-display");
-    const waLinks = document.querySelectorAll(".contact-wa-link");
+  const phoneEls = document.querySelectorAll(".contact-phone-display");
+  const emailEls = document.querySelectorAll(".contact-email-display");
+  const addressEls = document.querySelectorAll(".contact-address-display");
+  const waLinks = document.querySelectorAll(".contact-wa-link");
 
-    phoneEls.forEach(el => { el.textContent = settings.contact.phone || "+91 93451 21988"; });
-    emailEls.forEach(el => { el.textContent = settings.contact.email || "admissions@nexco.in"; });
-    addressEls.forEach(el => { el.textContent = settings.contact.address || "15/2, Sankar Nagar, Salem-7, Tamil Nadu"; });
+  const phoneVal = settings.phone || settings.contact?.phone || "+91 93451 21988";
+  const emailVal = settings.email || settings.contact?.email || "admissions@nexco.in";
+  const addrVal = settings.displayAddress || settings.registeredAddress || settings.contact?.displayAddress || settings.contact?.address || "15/2, Sankar Nagar, Salem-7, Tamil Nadu";
 
-    const cleanNum = (settings.contact.phone || "9345121988").replace(/[^0-9]/g, "");
-    waLinks.forEach(el => {
-      el.href = `https://wa.me/${cleanNum}?text=${encodeURIComponent("Vanakkam Nexco! I would like to inquire about 100% Live Online batches.")}`;
-    });
-  }
+  phoneEls.forEach(el => { el.textContent = phoneVal; });
+  emailEls.forEach(el => { el.textContent = emailVal; });
+  addressEls.forEach(el => { el.textContent = addrVal; });
+
+  const cleanNum = phoneVal.replace(/[^0-9]/g, "");
+  waLinks.forEach(el => {
+    el.href = `https://wa.me/${cleanNum}?text=${encodeURIComponent("Vanakkam Nexco! I would like to inquire about 100% Live Online batches.")}`;
+  });
 }
 
 // 2. Render Honest Charter Cards (Dynamic from State)
@@ -147,8 +172,11 @@ function initLiveAnnouncementBar() {
   const bar = document.getElementById("top-live-announcement-bar");
   if (!bar) return;
 
-  const ann = NexcoStore.getAnnouncement();
-  if (!ann || !ann.active) {
+  const settings = (window.NexcoStore && NexcoStore.getSiteSettings()) || {};
+  const ann = (window.NexcoStore && NexcoStore.getAnnouncement()) || {};
+
+  const isVisible = settings.bannerVisible !== undefined ? settings.bannerVisible : (ann.active !== false);
+  if (!isVisible) {
     bar.classList.add("hidden");
     return;
   }
@@ -158,11 +186,11 @@ function initLiveAnnouncementBar() {
   const textEl = document.getElementById("top-ann-text");
   const ctaEl = document.getElementById("top-ann-cta");
 
-  if (badgeEl) badgeEl.textContent = ann.badge;
-  if (textEl) textEl.textContent = ann.text;
+  if (badgeEl) badgeEl.textContent = settings.bannerBadge || ann.badge || "Live Online Batches";
+  if (textEl) textEl.textContent = settings.bannerText || ann.text || "";
   if (ctaEl) {
-    ctaEl.textContent = ann.ctaText;
-    ctaEl.href = ann.ctaLink || "#workshops";
+    ctaEl.textContent = settings.bannerCtaText || ann.ctaText || "Book a free demo session →";
+    ctaEl.href = settings.bannerCtaLink || ann.ctaLink || "#workshops";
   }
 }
 

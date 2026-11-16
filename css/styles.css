@@ -675,13 +675,54 @@ code, pre {
 }
 
 .admin-header-actions button,
-.admin-header-actions a {
-  white-space: nowrap !important;
-  padding: 6px 12px !important;
-  font-size: 12px !important;
+.admin-header-actions a,
+.btn-admin-header-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
   border-radius: 9999px !important;
+  white-space: nowrap !important;
   height: auto !important;
   line-height: normal !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+/* Admin Desktop Left Sidebar (>= 992px) */
+@media screen and (min-width: 992px) {
+  .admin-desktop-sidebar {
+    display: flex !important;
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    position: sticky !important;
+    top: 57px !important;
+    height: calc(100vh - 57px) !important;
+    box-sizing: border-box !important;
+  }
+  .admin-mobile-tab-bar {
+    display: none !important;
+  }
+}
+
+/* Admin Scrollable Horizontal Pill Tab Bar (< 992px) */
+@media screen and (max-width: 991px) {
+  .admin-desktop-sidebar {
+    display: none !important;
+  }
+  .admin-mobile-tab-bar {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    scrollbar-width: none !important;
+  }
+  .admin-mobile-tab-bar::-webkit-scrollbar {
+    display: none !important;
+  }
 }
 
 /* Site Content & Hero Editor Section Header Stacking on Mobile */
