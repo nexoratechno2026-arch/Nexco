@@ -1,7 +1,9 @@
 // Nexco Official Data Catalog & Configuration
 // An Official Collaboration of Nexora Techno & Gencode
 // Headquarters: 15/2, Sankar Nagar, Salem-7, Tamil Nadu, India
-const STORAGE_KEY = 'nexco_store_v5_clean';
+if (typeof window !== "undefined") {
+  window.STORAGE_KEY = 'nexco_store_v5_clean';
+}
 const NEXCO_DATA = {
   // Brand Configuration
   brand: {
@@ -811,11 +813,11 @@ const DEFAULT_SITE_SETTINGS = {
 };
 
 if (typeof window !== "undefined") {
-  window.STORAGE_KEY = STORAGE_KEY;
+  window.STORAGE_KEY = 'nexco_store_v5_clean';
   window.NEXCO_DATA = NEXCO_DATA;
   window.DEFAULT_SITE_SETTINGS = DEFAULT_SITE_SETTINGS;
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { STORAGE_KEY, NEXCO_DATA, DEFAULT_SITE_SETTINGS };
+  module.exports = { STORAGE_KEY: 'nexco_store_v5_clean', NEXCO_DATA, DEFAULT_SITE_SETTINGS };
 }

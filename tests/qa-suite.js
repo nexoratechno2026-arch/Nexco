@@ -287,8 +287,8 @@ async function runFullQASuite() {
     return `Datastore write, read, and delete succeeded cleanly in [${mode}] mode.`;
   });
 
-  // Test 1.5: Frontend Syntax & Integrity Verification across all 6 modular JS files
-  await runner.runTest('1.5 Unit Test: Frontend Syntax Integrity (data.js, store.js, landing.js, lms.js, admin.js, app.js)', async () => {
+  // Test 1.5: Frontend Syntax & Browser Global Scope Integrity across all 6 modular JS files
+  await runner.runTest('1.5 Unit Test: Frontend Syntax & Browser Global Scope Integrity (data.js, store.js, landing.js, lms.js, admin.js, app.js)', async () => {
     const fs = require('fs');
     const path = require('path');
     const vm = require('vm');
@@ -302,12 +302,37 @@ async function runFullQASuite() {
       'public/js/app.js'
     ];
 
+    // 1. Detect any duplicate top-level lexical declaration collisions across files
+    const declarations = {};
+    for (const f of files) {
+      const fullPath = path.resolve(__dirname, '..', f);
+      if (!fs.existsSync(fullPath)) throw new Error(`Frontend script missing: ${f}`);
+      const content = fs.readFileSync(fullPath, 'utf8');
+      const lines = content.split('\n');
+      lines.forEach((line, idx) => {
+        const match = line.match(/^(?:const|let|class)\s+([a-zA-Z0-9_$]+)/);
+        if (match) {
+          const name = match[1];
+          if (!declarations[name]) declarations[name] = [];
+          declarations[name].push({ file: f, line: idx + 1 });
+        }
+      });
+    }
+
+    const collisions = [];
+    for (const [name, locs] of Object.entries(declarations)) {
+      if (locs.length > 1) {
+        collisions.push(`${name} declared in both ${locs.map(l => `${l.file}:${l.line}`).join(' and ')}`);
+      }
+    }
+    if (collisions.length > 0) {
+      throw new Error(`Global declaration collisions detected: ${collisions.join('; ')}`);
+    }
+
+    // 2. Compile each file
     const validated = [];
     for (const f of files) {
       const fullPath = path.resolve(__dirname, '..', f);
-      if (!fs.existsSync(fullPath)) {
-        throw new Error(`Frontend script missing: ${f}`);
-      }
       const code = fs.readFileSync(fullPath, 'utf8');
       try {
         new vm.Script(code, { filename: f });
@@ -316,7 +341,7 @@ async function runFullQASuite() {
         throw new Error(`Fatal syntax error in ${f}: ${err.message}`);
       }
     }
-    return `All 6 frontend scripts validated with 0 syntax errors (${validated.join(', ')}).`;
+    return `All 6 frontend scripts validated with 0 syntax errors and 0 global declaration collisions (${validated.join(', ')}).`;
   });
 
   // =========================================================================
