@@ -230,53 +230,59 @@ class NexcoStoreManager {
       currentUser: null,
       registeredUsers: [],
 
-      // Central Site Settings for CMS Editing
+      // Central Site Settings for CMS Editing (Humanized & Grounded Copy)
       siteSettings: {
         announcement: {
           active: true,
-          badge: "100% Live Online Cohort",
-          text: "Founding Online Cohort Admissions Open — 100% Live Interactive Classes with Mentors | Powered by Nexora Techno & Gencode",
-          ctaText: "Join Free Workshop ↗",
+          badge: "Live Online Batches",
+          text: "Admissions open for our upcoming live online batches. Learn in Tamil & English",
+          ctaText: "Book a free demo session →",
           ctaLink: "#workshops"
         },
         hero: {
-          collaborationBadge: "🤝 An Official Collaboration of Nexora Techno & Gencode",
-          headline: "Become the Professional the Future of Technology Demands.",
-          subheadline: "100% Live Interactive Online Classes — Learn from anywhere with hands-on project building, direct screen-share code reviews, and bilingual mentor guidance in Tamil & English.",
-          primaryCtaText: "Explore Flagship Programs ↗",
-          secondaryCtaText: "Join Free Live Masterclass",
-          counselingCardTitle: "Get Personalized Course Plan from Our Team",
-          counselingCardSubtitle: "Speak directly with an engineering mentor online in < 15 mins."
+          badge: "Nexora Techno × Gencode",
+          collaborationBadge: "Nexora Techno × Gencode",
+          subBadge: "Live Online Classes • Taught in Tamil & English",
+          headline: "Learn to build real software with working engineers.",
+          subheadline: "Skip the recorded theory videos. Join our live online classes, write code alongside mentors, get your projects reviewed on screen, and build a solid GitHub portfolio.",
+          ctaPrimaryText: "View Courses",
+          primaryCtaText: "View Courses",
+          ctaSecondaryText: "Attend a Free Live Class ▷",
+          secondaryCtaText: "Attend a Free Live Class ▷",
+          leadCardTitle: "Not sure which track fits you?",
+          counselingCardTitle: "Not sure which track fits you?",
+          leadCardSub: "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point.",
+          counselingCardSubtitle: "Drop your details. One of our mentors will call or WhatsApp you to help you pick the right starting point."
         },
         promoBanner: {
-          badge: "Joint Venture Launch",
-          title: "Founding Online Cohort Admissions Open — Build Real Projects with Industry Mentors",
-          subtitle: "Join the inaugural online cohort jointly delivered by Nexora Techno & Gencode. Strict 30-seat cap per track. 100% Live Online Interactive Sessions, verified GitHub portfolios, and direct bilingual mentorship."
+          badge: "New Batch Starting Soon",
+          title: "Small batches. Direct mentor support.",
+          subtitle: "We keep our online batches limited to 30 students so everyone can unmute, share their screen, and get their doubts cleared on the spot."
         },
         bento: {
-          card1Title: "100% Live Online Interactive Sessions",
-          card1Desc: "Attend live weekend & weekday evening sessions with screen sharing, live coding labs, and zero boring pre-recorded slide decks.",
-          card2Title: "Hands-On Real-World Project Building",
-          card2Desc: "Build production-grade distributed microservices, semantic vector RAG architectures, and design token systems shipped live to the cloud.",
-          card3Title: "Direct 1-on-1 Live Screen-Share Code & Design Reviews",
-          card3Desc: "Senior Staff Architects review every Pull Request line-by-line via live screen-share with bilingual mentoring in Tamil & English."
+          card1Title: "Live classes, not video dumps",
+          card1Desc: "Every class happens live online. Stuck on an error? Share your screen and fix it together with your mentor.",
+          card2Title: "Build projects from week one",
+          card2Desc: "You won't just follow along with simple tutorials. You will build and deploy real applications with user logins, databases, and clean code.",
+          card3Title: "Line-by-line code & design reviews",
+          card3Desc: "Mentors review your GitHub pull requests line by line. We discuss what to improve in clear Tamil and English so you learn how engineering teams work."
         },
         charter: [
           {
-            title: "Zero Fake Placement Guarantees",
-            desc: "No exaggerated CTC or fake hike claims. Real tech hiring depends on demonstrable engineering competence, deep fundamentals, and clean problem solving."
+            title: "No fake placement guarantees",
+            desc: "We don't sell 100% placement hype or inflated salary claims. Companies hire people who can build and solve problems. We teach you how to write good code and help you build a portfolio that speaks for itself."
           },
           {
-            title: "Build & Deploy Live Production Projects",
-            desc: "No toy todo-apps or clone tutorials. Every learner engineers distributed microservices, semantic vector pipelines, and production design systems."
+            title: "Real projects, not cloned tutorials",
+            desc: "You will build and deploy real web applications with databases, authentication, and APIs. When interviewers look at your GitHub, they will see thoughtful architecture, not another generic tutorial app."
           },
           {
-            title: "Direct Mentor Code Reviews & Bilingual Guidance",
-            desc: "Senior engineers review your Pull Requests line by line over live video with clear Tamil & English guidance."
+            title: "Tamil & English bilingual mentorship",
+            desc: "Learning tech shouldn't be blocked by language. Our mentors explain complex concepts clearly in Tamil and English so you can grasp fundamentals faster."
           },
           {
-            title: "Verified Collaboration Certificate & Portfolio Proof",
-            desc: "Proof of engineering competence verified jointly by Nexora Techno & Gencode with verifiable credentials."
+            title: "Direct code reviews from engineers",
+            desc: "Mentors review your work over live screen share, point out edge cases, and teach you how to write maintainable code that passes team code reviews."
           }
         ],
         contact: {
@@ -292,8 +298,8 @@ class NexcoStoreManager {
 
       brand: {
         name: "Nexco",
-        tagline: "Tech & Career Accelerator",
-        collaboration: "An Official Collaboration of Nexora Techno & Gencode",
+        tagline: "Live Online Engineering Accelerator",
+        collaboration: "Nexora Techno × Gencode",
         jointDelivery: "Joint Delivery: Nexora Techno × Gencode",
         headquarters: "Salem, Tamil Nadu, India",
         regionsServed: "100% Live Online Across Salem, Coimbatore, Chennai, Bangalore & Pan-India",
@@ -308,9 +314,9 @@ class NexcoStoreManager {
 
       announcement: {
         active: true,
-        badge: "100% Live Online Cohort",
-        text: "Founding Online Cohort Admissions Open — 100% Live Interactive Classes with Mentors | Powered by Nexora Techno & Gencode",
-        ctaText: "Join Free Workshop ↗",
+        badge: "Live Online Batches",
+        text: "Admissions open for our upcoming live online batches. Learn in Tamil & English",
+        ctaText: "Book a free demo session →",
         ctaLink: "#workshops"
       },
 

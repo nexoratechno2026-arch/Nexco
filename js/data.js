@@ -289,95 +289,95 @@ const NEXCO_DATA = {
     }
   ],
 
-  // Diagnostic Configurator Situations
+  // Diagnostic Configurator Situations (Humanized & Grounded)
   diagnosticSituations: {
-    "career-transition": {
-      id: "career-transition",
-      title: "I want a career transition",
-      subtitle: "Switching from non-tech, QA, support or another domain into high-growth software engineering.",
-      badge: "Most Common Transition",
-      matchPercentage: "98% Match",
-      recommendedTrack: "Full Stack Web & AI Engineering (with Foundation Bridge)",
-      programOptions: [
-        { value: "fs-ai", label: "Full Stack Web & AI Engineering (Recommended)" },
-        { value: "ui-ux", label: "Product UI/UX & Design Systems Track" },
-        { value: "ai-genai", label: "Data Science & GenAI Accelerated" }
-      ],
-      highlights: [
-        "Includes dedicated 4-week Foundation Module: zero coding experience needed to begin",
-        "Assigned 1-on-1 Senior Mentor with weekly code reviews & doubt solving",
-        "Complete portfolio of 14 live deployed full-stack & AI applications",
-        "Resume re-engineering, LinkedIn optimization & guaranteed interview referrals"
-      ],
-      timeInvestment: "15-18 hours/week",
-      projectedHike: "120% - 180% average compensation increase",
-      timelineDuration: "24 Weeks + 8 Weeks Career Placement Support"
-    },
     "fresh-graduate": {
       id: "fresh-graduate",
-      title: "I am a final-year student / fresh graduate",
-      subtitle: "Aiming to bypass low-tier mass recruiters and land a top-tier product company role right after graduation.",
-      badge: "Fast-Track Placement",
+      title: "I'm in college and want practical coding skills before placements.",
+      subtitle: "Looking to clear technical interviews and build production apps before campus placement drives.",
+      badge: "Placement Track",
       matchPercentage: "99% Match",
-      recommendedTrack: "Nexco Accelerator - Full Stack & Placement FastTrack",
+      recommendedTrack: "Full Stack Web Development (MERN & Python)",
       programOptions: [
-        { value: "fs-ai", label: "Full Stack Web & AI Engineering (Fast-Track)" },
+        { value: "fs-ai", label: "Full Stack Web Development (MERN & Python)" },
         { value: "dist-systems", label: "High-Performance Distributed Systems" },
         { value: "cloud-devops", label: "Cloud Native DevOps & Kubernetes" }
       ],
       highlights: [
-        "Heavy emphasis on Data Structures & Algorithms + Real Production Systems",
-        "Build full-stack apps that impress Staff Engineers during portfolio screenings",
-        "10+ live technical mock interviews with actual interviewers from FAANG & Unicorns",
-        "Direct access to Nexco Hiring Partner Network (180+ tech companies)"
+        "Hands-on practice with modern Git, API design, and clean architecture",
+        "Target product companies and remote engineering teams",
+        "Live technical mock interviews with mentors in Tamil and English",
+        "Direct portfolio building with deployed web and mobile applications"
       ],
-      timeInvestment: "20-25 hours/week",
-      projectedHike: "First job offer starting ₹14LPA - ₹28LPA or $45k - $70k remote",
-      timelineDuration: "20 Weeks + Direct Campus Placement Referral Drive"
+      timeInvestment: "15-20 hours/week",
+      projectedHike: "First job offer with strong engineering fundamentals",
+      timelineDuration: "20 Weeks + Placement Preparation"
+    },
+    "build-saas": {
+      id: "build-saas",
+      title: "I watch tutorials online, but I struggle to build a project on my own.",
+      subtitle: "Want to move beyond video tutorials and build clean full-stack and UI/UX projects from scratch.",
+      badge: "Builder Track",
+      matchPercentage: "97% Match",
+      recommendedTrack: "UI/UX Design & Product Prototyping",
+      programOptions: [
+        { value: "ui-ux", label: "UI/UX Design & Product Prototyping (Recommended)" },
+        { value: "fs-ai", label: "Full Stack Web Development (MERN & Python)" },
+        { value: "cloud-devops", label: "Cloud Native DevOps & Kubernetes" }
+      ],
+      highlights: [
+        "Stop passive tutorial watching: write code live alongside mentors",
+        "Ship 3 end-to-end full stack web applications with authentication and database",
+        "Learn UI/UX prototyping in Figma and convert designs into clean code",
+        "Screen-share code reviews to debug syntax and architecture errors"
+      ],
+      timeInvestment: "14-18 hours/week",
+      projectedHike: "Independent builder confidence with live hosted apps",
+      timelineDuration: "16 Weeks Hands-On Accelerator"
+    },
+    "career-transition": {
+      id: "career-transition",
+      title: "I'm from a non-coding background and want to start from the basics.",
+      subtitle: "Switching from non-tech, arts, science, or support into software engineering with a foundation module.",
+      badge: "Foundation Track",
+      matchPercentage: "98% Match",
+      recommendedTrack: "Full Stack Web Development (MERN & Python)",
+      programOptions: [
+        { value: "fs-ai", label: "Full Stack Web Development (Foundation Bridge)" },
+        { value: "ui-ux", label: "UI/UX Design & Product Prototyping" },
+        { value: "ai-genai", label: "AI Tools & Automation" }
+      ],
+      highlights: [
+        "Dedicated 4-week zero-coding foundation track: start with basics in Tamil & English",
+        "Assigned 1-on-1 mentor with weekly live screen-share code reviews",
+        "100% live online evening and weekend sessions with instant doubt clearing",
+        "Complete portfolio of clean web applications hosted on GitHub"
+      ],
+      timeInvestment: "15-18 hours/week",
+      projectedHike: "Smooth career pivot with demonstrable portfolio projects",
+      timelineDuration: "24 Weeks + Mentor Guidance"
     },
     "upskill-ai": {
       id: "upskill-ai",
-      title: "I want to upskill in AI & Modern Tech",
-      subtitle: "Stuck in legacy tech stack or plateaued in mid-level role; aiming for Senior/Staff Architect positions.",
-      badge: "High Seniority Impact",
+      title: "I know the basics and want to build full-stack or AI apps.",
+      subtitle: "Aiming to build real-world AI copilots, automate workflows with n8n, and level up to modern full-stack.",
+      badge: "Modern Tech Track",
       matchPercentage: "96% Match",
-      recommendedTrack: "Enterprise LLM Engineering & Autonomous Agents",
+      recommendedTrack: "AI Tools, Prompt Engineering & Automation",
       programOptions: [
-        { value: "ent-llm", label: "Enterprise LLM Engineering & Agents (Recommended)" },
+        { value: "ent-llm", label: "AI Tools, Prompt Engineering & Automation" },
         { value: "ai-genai", label: "Data Science & GenAI Masterclass" },
         { value: "dist-systems", label: "High-Performance Distributed Systems" }
       ],
       highlights: [
-        "Go beyond toy OpenAI API calls: master LangGraph, multi-agent frameworks & DSPy",
-        "Architect enterprise-scale RAG with pgvector, hybrid search & reranking",
-        "Learn vLLM high-throughput GPU serving, LoRA fine-tuning & evaluation benchmarks",
-        "System design for AI products handling millions of real user queries"
+        "Master AI agents, prompt engineering, n8n, and local LLM integrations",
+        "Weekday evening batches designed for college students and working professionals",
+        "Automate manual business workflows and 10x your daily engineering output",
+        "Hands-on building of custom enterprise copilot tools"
       ],
-      timeInvestment: "12-15 hours/week (Built for working professionals)",
-      projectedHike: "Promotion to Lead AI Engineer or ₹32LPA - ₹50LPA package",
-      timelineDuration: "14-16 Weeks Executive Accelerated Cohort"
-    },
-    "build-saas": {
-      id: "build-saas",
-      title: "I want to build real-world SaaS products",
-      subtitle: "Prioritize shipping live products, monetization, scalable backend architectures, and AI features.",
-      badge: "Builder & Founder Track",
-      matchPercentage: "97% Match",
-      recommendedTrack: "Modern Product Architecture & Cloud Native SaaS",
-      programOptions: [
-        { value: "fs-ai", label: "Full Stack Web & AI Engineering" },
-        { value: "cloud-devops", label: "Cloud Native DevOps & Kubernetes" },
-        { value: "ui-ux", label: "Product UI/UX & Design Systems" }
-      ],
-      highlights: [
-        "Ship 3 end-to-end production SaaS products with Stripe billing & user auth",
-        "Master Next.js 15 Server Actions, PostgreSQL, Redis queues, and Docker deployment",
-        "Integrate AI copilot features that deliver genuine user utility",
-        "Nexco Demo Day: Pitch your working SaaS to seed investors & engineering leaders"
-      ],
-      timeInvestment: "16-20 hours/week",
-      projectedHike: "Ship your own profitable SaaS or join Series-A startups as founding engineer",
-      timelineDuration: "20 Weeks Hands-On Build Accelerator"
+      timeInvestment: "10-14 hours/week",
+      projectedHike: "Level up to modern full-stack and AI developer roles",
+      timelineDuration: "14 Weeks Live Cohort"
     }
   },
 
@@ -572,91 +572,130 @@ const NEXCO_DATA = {
       }
     ],
 
-    // Classroom Lessons & Syllabus
+    // Classroom Lessons & Live Resources (100% Live Interactive Online Classes)
     classroomModules: [
       {
         id: "mod-1",
-        title: "Module 1: Modern Full Stack Architecture & TypeScript",
+        title: "Module 1: Modern Web Architecture & TypeScript",
         completed: true,
-        lessons: [
-          { id: "les-1-1", title: "1.1 Deep Dive: TypeScript Type Systems & Utility Types", duration: "32:10", completed: true, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" },
-          { id: "les-1-2", title: "1.2 React 19 Server Components, Actions & Suspense", duration: "45:20", completed: true, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" },
-          { id: "les-1-3", title: "1.3 Enterprise State Machines with Zustand & XState", duration: "38:40", completed: true, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" }
+        resources: [
+          {
+            id: "res-1-1",
+            title: "Live Class: TypeScript Fundamentals & Architecture",
+            type: "live",
+            url: "https://meet.google.com/nex-co-live",
+            mentor: "Karthik Sundaram (Lead Architect)",
+            dateTime: "Completed • Recording & Notes Available",
+            isLive: false,
+            completed: true,
+            description: "Interactive session on TypeScript type safety, generics, and clean interface design."
+          },
+          {
+            id: "res-1-2",
+            title: "Study Guide: React 19 & Modern JavaScript ES2026",
+            type: "doc",
+            url: "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/preview",
+            completed: true,
+            description: "Comprehensive guide to React 19 Server Components, hooks, and clean state patterns."
+          },
+          {
+            id: "res-1-3",
+            title: "Starter Repository: Clean Monorepo Template",
+            type: "repo",
+            url: "https://github.com/nexoratechno2026-arch/Nexco",
+            completed: true,
+            description: "GitHub starter project with TypeScript, Tailwind CSS, Vite, and ESLint configuration."
+          }
         ]
       },
       {
         id: "mod-2",
-        title: "Module 2: AI Embeddings, Vector Databases & Hybrid Search",
+        title: "Module 2: Full-Stack APIs & PostgreSQL Databases",
         completed: false,
         active: true,
-        lessons: [
-          { 
-            id: "les-2-1", 
-            title: "2.1 Vector Mathematics: Cosine Similarity, Dot Product & Euclidean", 
-            duration: "28:15", 
-            completed: true, 
-            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            chapters: [
-              { time: "00:00", title: "Introduction & Math Intuition" },
-              { time: "06:40", title: "Dot Product vs Cosine Similarity" },
-              { time: "15:20", title: "High-Dimensional Vector Embeddings" },
-              { time: "22:10", title: "Interactive Python Code Demo" }
-            ]
+        resources: [
+          {
+            id: "res-2-1",
+            title: "Live Class: PostgreSQL Schema Design & Indexing",
+            type: "live",
+            url: "https://meet.google.com/nex-co-live",
+            mentor: "Karthik Sundaram (Lead Architect)",
+            dateTime: "Saturday & Sunday • 7:00 PM IST",
+            isLive: true,
+            completed: false,
+            active: true,
+            description: "Live interactive coding session: Designing normalized schemas, writing complex SQL queries, and optimizing indexes."
           },
-          { 
-            id: "les-2-2", 
-            title: "2.2 Building Production Vector DBs with PostgreSQL & pgvector", 
-            duration: "42:15", 
-            completed: false, 
-            active: true, 
-            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-            chapters: [
-              { time: "00:00", title: "Setup pgvector Extension" },
-              { time: "08:15", title: "Indexing: HNSW vs IVFFlat Algorithms" },
-              { time: "18:40", title: "Hands-on Live Coding with Prisma & Drizzle" },
-              { time: "32:10", title: "Benchmarking 1M Vectors & Hybrid Reciprocal Rank Fusion" }
-            ]
+          {
+            id: "res-2-2",
+            title: "Study Guide: High-Performance REST & FastAPIs",
+            type: "doc",
+            url: "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/preview",
+            completed: false,
+            description: "Architecture blueprint for robust API authentication, rate limiting, and database connection pooling."
           },
-          { 
-            id: "les-2-3", 
-            title: "2.3 Context-Aware Chunking Strategies & Metadata Filtering", 
-            duration: "34:50", 
-            completed: false, 
-            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-            chapters: [
-              { time: "00:00", title: "Why Fixed-Size Chunking Fails" },
-              { time: "11:20", title: "Semantic & Recursive Boundary Chunking" },
-              { time: "24:00", title: "Multi-tenant Metadata Filtering" }
-            ]
+          {
+            id: "res-2-3",
+            title: "Practice Exercise: Build a Multi-Tenant Storefront API",
+            type: "task",
+            url: "https://github.com/nexoratechno2026-arch/Nexco/blob/main/README.md",
+            completed: false,
+            description: "Build an API with JWT authentication, PostgreSQL queries, and validation middleware."
           }
         ]
       },
       {
         id: "mod-3",
-        title: "Module 3: Autonomous Agents, LangGraph & Tool Calling",
+        title: "Module 3: AI Tools, Prompt Engineering & Automation",
         completed: false,
         locked: false,
-        lessons: [
-          { id: "les-3-1", title: "3.1 Agentic Loops & The ReAct Pattern", duration: "36:00", completed: false, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" },
-          { id: "les-3-2", title: "3.2 Stateful Multi-Agent Workflows with LangGraph", duration: "48:30", completed: false, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" }
+        resources: [
+          {
+            id: "res-3-1",
+            title: "Live Class: Building Workflow Automations with n8n",
+            type: "live",
+            url: "https://meet.google.com/nex-co-live",
+            mentor: "Divya Balasubramanian (AI Engineering Lead)",
+            dateTime: "Upcoming • Next Weekend",
+            isLive: false,
+            completed: false,
+            description: "Hands-on workflow automation: Connecting WhatsApp, Gmail, and databases with custom AI agents."
+          },
+          {
+            id: "res-3-2",
+            title: "Code Repository: Local LLM Copilot with Ollama",
+            type: "repo",
+            url: "https://github.com/nexoratechno2026-arch/Nexco",
+            completed: false,
+            description: "Repository template for running local open-source LLMs with Python FastEmbed and SQLite."
+          }
         ]
       },
       {
         id: "mod-4",
-        title: "Module 4: Kubernetes, Production Deployment & Zero-Downtime CI/CD",
+        title: "Module 4: Cloud Deployment, Docker & DevOps CI/CD",
         completed: false,
         locked: true,
-        lessons: [
-          { id: "les-4-1", title: "4.1 Multi-Stage Docker & Kubernetes Manifests", duration: "41:00", completed: false, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
-          { id: "les-4-2", title: "4.2 Canary Releases with ArgoCD & Prometheus Monitoring", duration: "52:10", completed: false, videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }
+        resources: [
+          {
+            id: "res-4-1",
+            title: "Live Workshop: Containerizing Apps with Docker",
+            type: "live",
+            url: "https://meet.google.com/nex-co-live",
+            mentor: "Karthik Sundaram (Lead Architect)",
+            dateTime: "Phase 4 Schedule",
+            isLive: false,
+            completed: false,
+            description: "Multi-stage Docker builds, Docker Compose local development, and deploying to Vercel and Railway."
+          }
         ]
       }
     ],
 
-    // Default timestamped notes for active lesson
+    // Default timestamped notes for active session
     initialNotes: [
-      { id: "n-1", timestamp: "08:15", seconds: 495, text: "HNSW builds a hierarchical navigable small-world graph. Better recall than IVFFlat but requires 1.5x more RAM." },
-      { id: "n-2", timestamp: "18:40", seconds: 1120, text: "Remember to configure `ef_search` dynamically inside the transaction before executing semantic search!" }
+      { id: "n-1", timestamp: "Session 2", seconds: 0, text: "Always index foreign keys in PostgreSQL to prevent full table scans on JOIN operations." },
+      { id: "n-2", timestamp: "Lab 3", seconds: 0, text: "Use connection pooling (PgBouncer) when deploying serverless functions with databases." }
     ],
 
     // Interactive Assessment Quiz

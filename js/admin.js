@@ -282,6 +282,32 @@ function renderAdminCourses() {
   `).join("");
 }
 
+function addCourseResourceRow(data = {}) {
+  const container = document.getElementById("admin-course-resources-container");
+  if (!container) return;
+
+  const row = document.createElement("div");
+  row.className = "course-resource-row p-2.5 rounded-xl bg-black/40 border border-white/10 flex flex-col sm:flex-row items-center gap-2 text-xs";
+  row.innerHTML = `
+    <input type="text" placeholder="Resource Title (e.g. Live Class / Study Guide)" value="${escapeHTML(data.title || '')}" 
+           class="resource-title-input flex-1 px-2.5 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto" />
+    <select class="resource-type-select px-2 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto">
+      <option value="live" ${data.type === 'live' ? 'selected' : ''}>🔴 Live Class</option>
+      <option value="doc" ${data.type === 'doc' ? 'selected' : ''}>📄 Study Doc</option>
+      <option value="repo" ${data.type === 'repo' ? 'selected' : ''}>💻 Code Repo</option>
+      <option value="task" ${data.type === 'task' ? 'selected' : ''}>📝 Task</option>
+      <option value="video" ${data.type === 'video' ? 'selected' : ''}>🎥 Video</option>
+    </select>
+    <input type="url" placeholder="URL (Meet, Doc, GitHub, YouTube)" value="${escapeHTML(data.url || '')}" 
+           class="resource-url-input flex-1 px-2.5 py-1.5 rounded-lg bg-black/60 border border-white/15 text-white text-xs w-full sm:w-auto" />
+    <button type="button" onclick="this.closest('.course-resource-row').remove()" 
+            class="p-1.5 rounded-lg bg-red-500/20 text-red-300 hover:bg-red-500 hover:text-white transition-colors shrink-0" title="Remove Resource">
+      ✕
+    </button>
+  `;
+  container.appendChild(row);
+}
+
 function openEditCourseModal(courseId) {
   const course = NexcoStore.getCourseById(courseId);
   if (!course) return;
@@ -301,6 +327,18 @@ function openEditCourseModal(courseId) {
   if (document.getElementById("admin-course-desc")) document.getElementById("admin-course-desc").value = course.description || "";
   if (document.getElementById("admin-course-skills")) document.getElementById("admin-course-skills").value = course.skills ? course.skills.join(", ") : "";
 
+  // Populate module resources
+  const resContainer = document.getElementById("admin-course-resources-container");
+  if (resContainer) {
+    resContainer.innerHTML = "";
+    const resources = course.resources || [];
+    if (resources.length > 0) {
+      resources.forEach(r => addCourseResourceRow(r));
+    } else {
+      addCourseResourceRow({ title: "Live Class Session", type: "live", url: "https://meet.google.com/nex-co-live" });
+    }
+  }
+
   if (modal) {
     modal.classList.remove("hidden");
     modal.classList.add("flex");
@@ -318,6 +356,12 @@ function openNewCourseModal() {
 
   if (document.getElementById("admin-course-batch-mode")) {
     document.getElementById("admin-course-batch-mode").value = "100% Live Online Interactive Classes";
+  }
+
+  const resContainer = document.getElementById("admin-course-resources-container");
+  if (resContainer) {
+    resContainer.innerHTML = "";
+    addCourseResourceRow({ title: "Live Class Session", type: "live", url: "https://meet.google.com/nex-co-live" });
   }
 
   if (modal) {
@@ -770,6 +814,23 @@ function setupAdminModals() {
 
     const skills = skillsStr ? skillsStr.split(",").map(s => s.trim()) : ["React 19", "Node.js", "Docker"];
 
+    // Extract module resources
+    const resourceRows = document.querySelectorAll("#admin-course-resources-container .course-resource-row");
+    const resources = [];
+    resourceRows.forEach((row, idx) => {
+      const rTitle = row.querySelector(".resource-title-input")?.value.trim();
+      const rType = row.querySelector(".resource-type-select")?.value || "doc";
+      const rUrl = row.querySelector(".resource-url-input")?.value.trim();
+      if (rTitle || rUrl) {
+        resources.push({
+          id: `res-${idx + 1}`,
+          title: rTitle || "Classroom Resource",
+          type: rType,
+          url: rUrl || "https://meet.google.com/nex-co-live"
+        });
+      }
+    });
+
     if (editingCourseId) {
       await NexcoStore.updateCourse(editingCourseId, {
         title,
@@ -780,7 +841,8 @@ function setupAdminModals() {
         mentorName,
         thumbnail,
         description: desc,
-        skills
+        skills,
+        resources
       });
       NexcoApp.showToast("✔ Changes saved & published live!", "success");
     } else {
@@ -794,6 +856,7 @@ function setupAdminModals() {
         thumbnail,
         description: desc,
         skills,
+        resources,
         syllabus: [
           { week: "Weeks 1-4", module: "Fundamentals & Architecture", deliverable: "Production Working Repo" },
           { week: "Weeks 5-10", module: "Advanced Systems & Production Engineering", deliverable: "Interactive Application System" }
@@ -1173,6 +1236,7 @@ window.NexcoAdmin = {
   openNewCourseModal,
   openEditCourseModal,
   closeCourseModal,
+  addCourseResourceRow,
   openNewSessionModal,
   openEditSessionModal,
   closeSessionModal,

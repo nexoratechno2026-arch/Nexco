@@ -620,7 +620,7 @@ function closeSyllabusModal() {
 }
 
 // 10. Diagnostic Configurator
-let selectedSituationKey = "career-transition";
+let selectedSituationKey = "fresh-graduate";
 
 function initDiagnosticConfigurator() {
   const radioCards = document.querySelectorAll(".diagnostic-radio-card");
@@ -636,7 +636,7 @@ function initDiagnosticConfigurator() {
       const dot = card.querySelector(".radio-dot");
       if (dot) dot.classList.add("bg-emerald-500", "border-emerald-500");
 
-      selectedSituationKey = card.getAttribute("data-situation") || "career-transition";
+      selectedSituationKey = card.getAttribute("data-situation") || "fresh-graduate";
       updateDiagnosticRecommendation();
     });
   });
@@ -646,65 +646,65 @@ function initDiagnosticConfigurator() {
 
 function updateDiagnosticRecommendation() {
   const situations = {
+    "fresh-graduate": {
+      title: "Full Stack Web Development (MERN & Python)",
+      match: "99% Match",
+      badge: "Placement Track",
+      highlights: [
+        "Hands-on practice with modern Git, API design, and clean architecture",
+        "Target product companies and remote engineering teams",
+        "Live technical mock interviews with mentors in Tamil and English",
+        "Direct portfolio building with deployed web and mobile applications"
+      ],
+      time: "15-20 hrs/week",
+      hike: "First job offer with strong engineering fundamentals",
+      duration: "20 Weeks + Placement Prep"
+    },
+    "build-saas": {
+      title: "UI/UX Design & Product Prototyping",
+      match: "97% Match",
+      badge: "Builder Track",
+      highlights: [
+        "Stop passive tutorial watching: write code live alongside mentors",
+        "Ship 3 end-to-end full stack web applications with authentication and database",
+        "Learn UI/UX prototyping in Figma and convert designs into clean code",
+        "Screen-share code reviews to debug syntax and architecture errors"
+      ],
+      time: "14-18 hrs/week",
+      hike: "Independent builder confidence with live hosted apps",
+      duration: "16 Weeks Hands-On Accelerator"
+    },
     "career-transition": {
-      title: "Full Stack Web Development (MERN & Python) — Foundation Bridge",
+      title: "Full Stack Web Development (Foundation Bridge)",
       match: "98% Match",
-      badge: "100% Live Online Interactive Batch",
+      badge: "Foundation Track",
       highlights: [
         "Dedicated 4-week zero-coding foundation track: start with basics in Tamil & English",
-        "Assigned 1-on-1 Senior Architect mentor with weekly live screen-share code reviews",
-        "100% Live Online evening & weekend sessions with interactive doubt clearing",
-        "Direct placement drive with 180+ tech companies across Tamil Nadu & Bangalore"
+        "Assigned 1-on-1 mentor with weekly live screen-share code reviews",
+        "100% live online evening and weekend sessions with instant doubt clearing",
+        "Complete portfolio of clean web applications hosted on GitHub"
       ],
       time: "15-18 hrs/week",
-      hike: "120% - 180% average compensation increase",
-      duration: "24 Weeks"
-    },
-    "fresh-graduate": {
-      title: "Nexco Campus to Product Accelerator (Full Stack & AI Tools)",
-      match: "99% Match",
-      badge: "Fast-Track Placement",
-      highlights: [
-        "Heavy emphasis on production Git, clean code, and API engineering",
-        "Bypass low-paying bulk service jobs and target ₹8LPA - ₹18LPA product companies",
-        "10+ live technical mock interviews in English & Tamil with FAANG/Zoho leads",
-        "Direct referral network across Zoho, Freshworks, Swiggy, and Bengaluru startups"
-      ],
-      time: "20-25 hrs/week",
-      hike: "First job offer starting ₹6LPA - ₹14LPA",
-      duration: "20 Weeks"
+      hike: "Smooth career pivot with demonstrable portfolio projects",
+      duration: "24 Weeks + Mentor Guidance"
     },
     "upskill-ai": {
       title: "AI Tools, Prompt Engineering & Automation",
       match: "96% Match",
-      badge: "For Working Professionals",
+      badge: "Modern Tech Track",
       highlights: [
-        "Master AI agents, prompt engineering, n8n, and Ollama local LLMs",
-        "Weekday evening batches (7:30 PM - 9:00 PM IST) designed for job holders",
+        "Master AI agents, prompt engineering, n8n, and local LLM integrations",
+        "Weekday evening batches designed for college students and working professionals",
         "Automate manual business workflows and 10x your daily engineering output",
         "Hands-on building of custom enterprise copilot tools"
       ],
-      time: "10-12 hrs/week",
-      hike: "Promotion to Lead AI / Automation Specialist",
-      duration: "12 Weeks"
-    },
-    "build-saas": {
-      title: "UI/UX Design & Product Prototyping Accelerator",
-      match: "97% Match",
-      badge: "Design & Product Track",
-      highlights: [
-        "Design production design systems in Figma from scratch",
-        "Master Auto-Layout, Tokens, and Framer interactive motion",
-        "Build 4 complete startup portfolio case studies ready for hiring directors",
-        "Live interactive online studio masterclasses with Lead Designers"
-      ],
-      time: "14-16 hrs/week",
-      hike: "UI/UX Product Designer role in tech startups",
-      duration: "16 Weeks"
+      time: "10-14 hrs/week",
+      hike: "Level up to modern full-stack and AI developer roles",
+      duration: "14 Weeks Live Cohort"
     }
   };
 
-  const data = situations[selectedSituationKey] || situations["career-transition"];
+  const data = situations[selectedSituationKey] || situations["fresh-graduate"];
   const titleEl = document.getElementById("diag-track-title");
   const matchEl = document.getElementById("diag-match-badge");
   const badgeEl = document.getElementById("diag-situation-badge");

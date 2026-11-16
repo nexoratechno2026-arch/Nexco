@@ -817,3 +817,41 @@ input[type="range"].video-scrubber::-moz-range-thumb:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #10B981;
 }
+
+/* ========================================================================= */
+/* IN-APP LMS EMBEDDED VIEWER & WORKSPACE                                    */
+/* ========================================================================= */
+#lms-content-viewer {
+  background: #0A0D0E !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+#lms-content-viewer.lms-viewer-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  z-index: 99999 !important;
+}
+
+#lms-content-viewer.lms-viewer-fullscreen #lms-viewer-frame-container {
+  height: calc(100vh - 58px) !important;
+  min-height: calc(100vh - 58px) !important;
+}
+
+.lms-resource-card {
+  transition: all 0.2s ease;
+}
+
+.lms-resource-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 197, 94, 0.4);
+}
